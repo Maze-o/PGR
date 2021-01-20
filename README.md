@@ -1,6 +1,0 @@
-# JAVA WEB TEST
-asdasd
-
-1. 2342
-2. 34234
-3.

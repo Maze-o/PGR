@@ -32,8 +32,28 @@ body {
     font-family: 'IBM Plex Serif', serif;
 }
 
+/*delete scroll*/
+::-webkit-scrollbar {
+    width: 0px;
+}
+
 /*wrap*/
 .wrap {
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+/*visual*/
+.visual {
+    position: relative;
+    display: block;
+    height: 100vh;
+    background: crimson;
+}
+
+/*content*/
+.content {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -156,26 +176,33 @@ input[type=button] {
     cursor: pointer;
     margin: 15px 0;
     margin-right: 10px;
-    border-radius: 15px;
-}
-
-/*main_page*/
-.page {
-    position: relative;
-    display: block;
-    flex: 1;
-}
-
-/*visual*/
-.visual {
-    position: relative;
-    display: block;
+    border-radius: 10px;
 }
 
 /*main*/
 .main {
     position: relative;
+    height: 100%;
+    display: flex;
+    flex: 1;
+}
+
+.main_left {
+    position: relative;
     display: block;
+    flex: 1;
+}
+
+.main_mid {
+    position: relative;
+    display: block;
+    flex: 1;
+}
+
+.main_right {
+    position: relative;
+    display: block;
+    flex: 1;
 }
 
 /*footer*/

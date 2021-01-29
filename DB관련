@@ -1,3 +1,6 @@
+JSON SIMPLE PARSER 설명
+https://dololak.tistory.com/625
+
 프리미어 리그 데이터 관련 API (espn)
 Scores: http://site.api.espn.com/apis/site/v2/sports/soccer/:league/scoreboard
 http://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard
@@ -17,11 +20,41 @@ api document
 
 
 NEED
+팀 순위
+팀 통계
 플레이어 순위
 플레이어 통계
 경기 통계
-곧 시작할 경기들(베팅관련)
 
 ING
-팀 순위
-팀 통계
+곧 시작할 경기들(베팅관련)
+http://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard
+
+simple description
+events(A){ 
+	id uid(unique id) date name shortname // 경기일정 팀이름 유니크id 등
+	competitions(A) { // 참여하는팀 부가 설명
+		competitors(A) {
+			id // 참여한 경기의 id(위의 id랑같음)
+			uid // 해당 팀 unique id
+			winner // 이겼는지 졌는지 bool
+			score // 팀 스코어
+			team // 해당 팀 설명 내용많음
+			statistics(A) // 해당 경기 stat 기록
+		}
+	}
+	status {
+		type {
+			completed // 경기가 끝낫는지 안끝낫는지
+		}
+	}
+}
+(A) = array
+
+DB
+events // T
+id uid date name shortname completed // C
+
+T = table
+c = column
+

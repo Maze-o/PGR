@@ -55,51 +55,47 @@ body {
 /*header*/
 .header {
     position: relative;
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     left: 0;
     top: 0;
     width: 100%;
     height: 145px;
-    overflow: hidden;
-    transition: all 0.6s;
+    padding-top: 35px;
     border-bottom: 1px solid #333;
     z-index: 999999;
 }
 
+.sticky {
+    padding-top: 0;
+    height: 110px;
+}
+
 .h_logo {
     position: relative;
-    display: block;
-    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 20%;
     font-size: 50px;
     color: #000;
-    line-height: 145px;
     text-align: center;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 2px;
-    z-index: 999999;
-    transition: all 0.6s;
-}
-
-.h_cont {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    height: 100%;
 }
 
 .h_list {
     position: relative;
     display: flex;
+    flex: 1;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 100%;
-    line-height: 143px;
     text-align: center;
-    padding: 75px 0 25px 0;
 }
 
 .h_list li {
@@ -113,7 +109,7 @@ body {
     position: absolute;
     display: block;
     content: "";
-    bottom: 60px;
+    bottom: 0px;
     height: 2px;
     left: 50%;
     background: #000;
@@ -139,15 +135,14 @@ body {
     display: block;
     height: 100%;
     width: 20%;
-    float: right;
 }
 
 .login_container {
     position: absolute;
-    left: 50%;
-    top: 70%;
-    transform: translate(-50%,-50%);
     display: flex;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
 }
 
 input[type=button] {
@@ -180,25 +175,27 @@ input[type=button] {
     position: relative;
     height: 100%;
     display: flex;
-    background: crimson;
 }
 
 .main_left {
     position: relative;
     display: block;
     flex: 1;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .main_mid {
     position: relative;
     display: block;
     flex: 1;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .main_right {
     position: relative;
     display: block;
     flex: 1;
+    background: rgba(0, 0, 0, 0.7);
 }
 
 /*footer*/
@@ -209,3 +206,54 @@ input[type=button] {
     background-color: #000;
     z-index: 99;
 }*/
+
+/* 반응형 코드 */
+@media all and (max-width: 1024px) {
+    .h_logo {
+        font-size: 45px;
+    }
+
+}
+
+@media all and (max-width: 960px) {
+    .header {
+        padding-top: 25px;
+    }
+
+    .h_logo {
+        font-size: 40px;
+    }
+
+    .h_list li a {
+        font-size: 15px;
+    }
+
+    input[type=button] {
+        padding: 0 10px;
+        margin-right: 10px;
+        height: 25px;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .h_login {
+        width: 15%;
+    }
+
+    .login_container {
+        display: block;
+        left: 60%;
+    }
+
+    .h_logo {
+        font-size: 37px;
+    }
+
+    input[type=button] {
+        margin-right: 0;
+        width: 68px;
+    }
+
+}
+
+@media all and (max-width: 480px) {}

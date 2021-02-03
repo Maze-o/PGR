@@ -58,3 +58,12 @@ id uid date name shortname completed // C
 T = table
 c = column
 
+//RECENT MATCHS 쿼리문
+CREATE TABLE `rmatch`(
+`pkid` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`id` VARCHAR(200) NOT NULL,
+`uid` VARCHAR(200) NOT NULL,
+`date` VARCHAR(200) NOT NULL,
+`name` VARCHAR(200) NOT NULL,
+`shortname` VARCHAR(200) NOT NULL,
+`completed` boolean NULL);

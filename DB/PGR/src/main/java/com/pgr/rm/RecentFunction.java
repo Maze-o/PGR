@@ -34,15 +34,27 @@ public class RecentFunction {
 				JSONObject temp = (JSONObject)event.get(i);
 				
 				RecentEntity re = new RecentEntity();
-				re.setId((String)temp.get("id"));
-				re.setUid((String)temp.get("uid"));
+				re.setId(Integer.parseInt((String)temp.get("id")));
 				re.setDate((String)temp.get("date"));
-				re.setName((String)temp.get("name"));
-				re.setShortname((String)temp.get("shortName"));
 				
 				JSONObject status = (JSONObject)temp.get("status");
 				JSONObject type = (JSONObject)status.get("type");
 				re.setCompleted((Boolean)type.get("completed"));
+				
+				JSONArray competitions = (JSONArray)temp.get("competitions");
+				JSONObject left = (JSONObject)competitions.get(0);
+				competitions = (JSONArray)left.get("competitors");
+				
+				left = (JSONObject)competitions.get(0);
+				JSONObject right = (JSONObject)competitions.get(1);
+				
+				re.setLscore(Integer.parseInt((String)left.get("score")));
+				re.setRscore(Integer.parseInt((String)right.get("score")));
+				
+				left = (JSONObject)left.get("team");
+				re.setLteam((String)left.get("name"));
+				right = (JSONObject)right.get("team");
+				re.setRteam((String)right.get("name"));
 				
 				list.add(re);
 			}

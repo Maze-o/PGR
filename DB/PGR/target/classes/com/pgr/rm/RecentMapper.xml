@@ -5,10 +5,10 @@
 <mapper namespace="com.pgr.rm.RecentMapper">
 	<insert id="insRecentMatch" parameterType="java.util.List">
 		INSERT INTO rmatch
-		( id, uid, date, name, shortname, completed )
+		( id, date, lteam, lscore, rteam, rscore, completed )
 		VALUES
 		<foreach collection="list" item="item" separator=" , ">
-		( #{item.id}, #{item.uid}, #{item.date}, #{item.name}, #{item.shortname}, #{item.completed})
+		( #{item.id}, #{item.date}, #{item.lteam}, #{item.lscore}, #{item.rteam}, #{item.rscore}, #{item.completed} )
 		</foreach>
 	</insert>
 </mapper>

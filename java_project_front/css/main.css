@@ -86,10 +86,16 @@ body {
     text-transform: uppercase;
 }
 
-#close_chat {
+.close_icon {
     position: relative;
     display: block;
+    line-height: 35px;
+    height: 100%;
     flex: 1;
+}
+
+#close_chat {
+    cursor: pointer;
 }
 
 .titlebox > span {

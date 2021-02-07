@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="resources/static/css/main.css">
     <!-- js -->
     <script type="text/javascript" src="resources/static/js/script"></script>
-    <style>
+<style>
     * {
     margin: 0;
     padding: 0;
@@ -220,6 +220,13 @@ input[type=button] {
     flex: 1;
 }
 
+/*aside*/
+.aside {
+ 	position: relative;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
 /*footer*/
 .footer {
     position: relative;
@@ -228,6 +235,8 @@ input[type=button] {
     background-color: #000;
 }
     </style>
+
+
 </head>
 
 <body>
@@ -271,7 +280,7 @@ input[type=button] {
                 </div>
             </div>
             <div class="aside">
-                <a href="/chat"><input type="button" value="chatroom"></a>
+                <a href="/room"><input type="button" value="chatroom"></a>
             </div>
             <!-- footer -->
             <div class="footer">

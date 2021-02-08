@@ -12,6 +12,12 @@ $(document).ready(function() {
         licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
         autoScrolling: true,
         scrollHorizontally: true,
+        // autoplay
+        afterRender: function () {
+            setInterval(function () {
+                $.fn.fullpage.moveSlideRight();
+            }, 5000);
+        }
     });
     const hBot = $('.h_bot');
     // content의 높이값계산

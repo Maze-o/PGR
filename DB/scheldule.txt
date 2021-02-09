@@ -69,3 +69,12 @@ CREATE TABLE `rmatch` (
 `rteam` VARCHAR(100) NOT NULL,
 `rscore` INT UNSIGNED,
 `completed` boolean NULL);
+
+
+sports[A] -> leagues[A] -> teams[A] -> id, name
+sports[A] -> leagues[A] -> teams[A] -> record -> stats[A] -> 
+wins, losses, ties, gamesPlayed, poinrtsFor, pointsAgainst, points
+streak, rankChange, rank, pointDifferential, homePointsFor
+homePointsAgainst, homeLosses, homeWins, homeTies, homeGamesPlayed
+awayPointsFor, awayPointsAgainst, awayLosses, awayWins, awayTies, awayGamesPlayed, deductions, ppg
+-> value

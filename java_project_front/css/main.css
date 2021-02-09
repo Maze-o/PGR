@@ -234,8 +234,9 @@ body {
 /*wrap*/
 .wrap {
     position: relative;
-    display: block;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 /*visual*/

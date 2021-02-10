@@ -58,8 +58,7 @@ id uid date name shortname completed // C
 T = table
 c = column
 
-//RECENT MATCHS 쿼리문
-CREATE TABLE `rmatch`(
+//RECENT MATCHS create 쿼리문
 CREATE TABLE `rmatch` (
 `pkid` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 `id` INT UNSIGNED NOT NULL,
@@ -71,10 +70,33 @@ CREATE TABLE `rmatch` (
 `completed` boolean NULL);
 
 
-sports[A] -> leagues[A] -> teams[A] -> id, name
-sports[A] -> leagues[A] -> teams[A] -> record -> stats[A] -> 
-wins, losses, ties, gamesPlayed, poinrtsFor, pointsAgainst, points
-streak, rankChange, rank, pointDifferential, homePointsFor
-homePointsAgainst, homeLosses, homeWins, homeTies, homeGamesPlayed
-awayPointsFor, awayPointsAgainst, awayLosses, awayWins, awayTies, awayGamesPlayed, deductions, ppg
--> value
+//TEAMS create 쿼리문
+CREATE TABLE teams (
+pkid INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+id INT UNSIGNED NOT NULL,
+name VARCHAR(50) NOT NULL,
+wins DOUBLE NOT NULL,
+losses DOUBLE NOT NULL,
+ties DOUBLE NOT NULL,
+gamesPlayed DOUBLE NOT NULL,
+pointsFor DOUBLE NOT NULL,
+pointsAgainst DOUBLE NOT NULL,
+points DOUBLE NOT NULL,
+streak DOUBLE NOT NULL,
+rankChange DOUBLE NOT NULL,
+rank DOUBLE NOT NULL,
+pointDifferential DOUBLE NOT NULL,
+homePointsFor DOUBLE NOT NULL,
+homePointsAgainst DOUBLE NOT NULL,
+homeLosses DOUBLE NOT NULL,
+homeWins DOUBLE NOT NULL,
+homeTies DOUBLE NOT NULL,
+homeGamesPlayed DOUBLE NOT NULL,
+awayPointsFor DOUBLE NOT NULL,
+awayPointsAgainst DOUBLE NOT NULL,
+awayLosses DOUBLE NOT NULL,
+awayWins DOUBLE NOT NULL,
+awayTies DOUBLE NOT NULL,
+awayGamesPlayed DOUBLE NOT NULL,
+deductions DOUBLE NOT NULL,
+ppg DOUBLE NOT NULL);

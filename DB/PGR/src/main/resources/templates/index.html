@@ -5,26 +5,9 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 layout:decorator="layout/layout_index">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <title>PGR</title>
-    <!-- jquery -->
-    <script th:src="@{js/jquery.min.js}"></script>
-    <!-- fullpage -->
-    <link rel="stylesheet" type="text/css" th:href="@{css/fullpage.css}">
-    <script type="text/javascript" th:src="@{js/fullpage.js}"></script>
-    <!-- font awesome -->
-    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css}" />
-    <!-- css -->
-    <link rel="stylesheet" type="text/css" th:href="@{css/header.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{css/main.css}">
-    <!-- js -->
-    <script type="text/javascript" th:src="@{js/modal.js}"></script>
-    <script type="text/javascript" th:src="@{js/script.js}"></script>
-    <script type="text/javascript" th:src="@{js/chat.js}"></script>
 </head>
 
-<body>
 <div layout:fragment="content">
     <!-- show chat -->
     <button id="show_chat">+</button>
@@ -82,6 +65,5 @@ layout:decorator="layout/layout_index">
         </div>
     </div>
 </div>
-</body>
 
 </html>

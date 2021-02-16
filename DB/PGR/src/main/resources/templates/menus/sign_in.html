@@ -2,22 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 xmlns:th="http://www.thymeleaf.org"
 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-layout:decorator="layout/layout">
+layout:decorator="layout/layout_default">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <title>Sign In</title>
-    <!-- jquery -->
-    <script src="js/jquery.min.js"></script>
-    <!-- css -->
-    <link rel="stylesheet" type="text/css" href="css/header.css">
-    <link rel="stylesheet" type="text/css" href="css/footer.css">
-    <link rel="stylesheet" type="text/css" href="css/sign.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
-<body>
+<th:block layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="css/sign.css">
+</th:block>
+
 <div layout:fragment="content">
     <!-- wrap -->
     <div class="wrap">
@@ -42,6 +36,5 @@ layout:decorator="layout/layout">
         </div>
     </div>
 </div>
-</body>
 
 </html>

@@ -1,0 +1,19 @@
+<html lang="ko" 
+      xmlns:th="http://www.thymeleaf.org">
+    <!-- header -->
+    <div th:fragment="header" class="header">
+        <a href="/" class="h_logo" title="logo">PGR</a>
+        <ul class="h_list">
+            <li><a href="#">Notice</a></li>
+            <li><a href="#">Betting</a></li>
+            <li><a href="/teams">Team</a></li>
+            <li><a href="#">News</a></li>
+        </ul>
+        <div class="h_login">
+            <div class="login_container">
+                <a href="/sign_in"><input type="button" name="signIn" value="sign in"></a>
+                <a href="/sign_up"><input type="button" name="signUp" value="sign up"></a>
+            </div>
+        </div>
+    </div>
+</html>

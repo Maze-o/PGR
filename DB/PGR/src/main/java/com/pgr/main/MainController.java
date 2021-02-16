@@ -18,9 +18,4 @@ public class MainController {
 	public String signup() {
 		return "menus/sign_up";
 	}
-	
-	@GetMapping("/teams")
-	public String teams() {
-		return "menus/teams";
-	}
 }

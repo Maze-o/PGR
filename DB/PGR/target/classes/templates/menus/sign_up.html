@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="layout/layout_default">
+
+<head>
+     <title>Sign Up</title>
+</head>
+
+<th:block layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="css/sign.css">
+</th:block>
+
+<div layout:fragment="content">
+	<div class="wrap">
+	    <div class="signup_wrap">
+	    	<div class="signup_form">
+	             <span>sign up</span>
+	                <form id="signupFrm">
+	                    <div class="txt_field">
+	                        <input type="text" name="Email" required>
+	                        <label>e-mail</label>
+	                    </div>
+	                    <div class="txt_field">
+	                        <input type="password" name="PW" required>
+	                        <label>Password</label>
+	                    </div>
+	                    <div class="txt_field">
+	                        <input type="password" name="REPW" required>
+	                        <label>Re Password</label>
+	                    </div>
+	                    <div class="txt_field">
+	                        <input type="text" name="nickname" required>
+	                        <label>Nickname</label>
+	                    </div>
+	                    <input type="button" name="signUp" value="signup">
+	                </form>
+	        </div>
+	    </div>
+    </div>
+</div>
+
+</html>

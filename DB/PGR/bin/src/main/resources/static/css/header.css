@@ -1,0 +1,110 @@
+/*header*/
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 145px;
+    padding-top: 35px;
+    border-bottom: 1px solid #333;
+    z-index: 999999;
+}
+
+.sticky {
+    padding-top: 0;
+    height: 110px;
+}
+
+.h_logo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+    font-size: 50px;
+    color: #000;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.h_list {
+    position: relative;
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.h_list li {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.h_list li a::after {
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: 0px;
+    height: 2px;
+    left: 50%;
+    background: #000;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.h_list li:hover a::after {
+    width: 100%;
+    left: 0;
+}
+
+.h_list li a {
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: #000;
+    text-transform: capitalize;
+}
+
+.h_login {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 20%;
+}
+
+.login_container {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+}
+
+input[type=button] {
+    position: relative;
+    display: block;
+    height: 40px;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #333;
+    padding: 10px 10px;
+    text-decoration: none;
+    text-transform: capitalize;
+    text-align: center;
+    cursor: pointer;
+    margin: 15px 0;
+    margin-right: 20px;
+    border-radius: 2px;
+}

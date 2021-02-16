@@ -3,7 +3,6 @@ wsEvt();
 
 function wsEvt() {
 	ws.onopen = function(data){
-		//소켓이 열리면 초기화 세팅하기
 	}
 	
 	ws.onmessage = function(data) {

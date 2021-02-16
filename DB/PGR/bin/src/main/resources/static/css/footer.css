@@ -1,0 +1,8 @@
+@charset 'utf-8';
+
+.footer {
+	position: relative;
+	display: block;
+	height: 50px;
+	background: #000;
+}

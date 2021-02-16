@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pgr.team.TeamMapper">
+	<insert id="insTeam">
+		INSERT INTO teams
+		( id, name, wins, losses, ties, gamesPlayed, 
+		 pointsFor, pointsAgainst, points, streak, 
+		 rankChange, rank, pointDifferential, homePointsFor, 
+		 homePointsAgainst, homeLosses, homeWins, homeTies, 
+		 homeGamesPlayed, awayPointsFor, awayPointsAgainst, 
+		 awayLosses, awayWins, awayTies, awayGamesPlayed, 
+		 deductions, ppg )
+		VALUES
+		<foreach collection="list" item="item" separator=" , ">
+		( #{item.id}, #{item.name}, #{item.wins}, #{item.losses}, #{item.ties}, 
+		#{item.gamesPlayed}, #{item.pointsFor}, #{item.pointsAgainst}, #{item.points}, 
+		#{item.streak}, #{item.rankChange}, #{item.rank}, #{item.pointDifferential}, 
+		#{item.homePointsFor}, #{item.homePointsAgainst}, #{item.homeLosses}, #{item.homeWins}, 
+		#{item.homeTies}, #{item.homeGamesPlayed}, #{item.awayPointsFor}, #{item.awayPointsAgainst}, 
+		#{item.awayLosses}, #{item.awayWins}, #{item.awayTies}, #{item.awayGamesPlayed}, #{item.deductions}, #{item.ppg} )
+		</foreach>
+	</insert>
+	<select id="selTeamList" resultType="com.pgr.model.TeamEntity">
+		SELECT * FROM teams
+	</select>
+	<update id="updTeam">
+		UPDATE teams
+		SET wins = #{wins}, losses = #{losses}, ties = #{ties},
+		gamesPlayed = #{gamesPlayed}, pointsFor = #{pointsFor}, pointsAgainst = #{pointsAgainst},
+		points = #{points}, streak = #{streak}, rankChange = #{rankChange},
+		rank = #{rank}, pointDifferential = #{pointDifferential},
+		homePointsFor = #{homePointsFor}, homePointsAgainst = #{homePointsAgainst},
+		homeLosses = #{homeLosses}, homeWins = #{homeWins}, homeTies = #{homeTies},
+		homeGamesPlayed = #{homeGamesPlayed}, awayPointsFor = #{awayPointsFor},
+		awayPointsAgainst = #{awayPointsAgainst}, awayLosses = #{awayLosses},
+		awayWins = #{awayWins}, awayTies = #{awayTies},
+		awayGamesPlayed = #{awayGamesPlayed}, deductions = #{deductions}, ppg = #{ppg}
+		WHERE id = #{id}
+	</update>
+</mapper>

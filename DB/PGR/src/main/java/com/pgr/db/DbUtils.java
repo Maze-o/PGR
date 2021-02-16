@@ -207,11 +207,10 @@ public class DbUtils {
 			if (response.getStatusLine().getStatusCode() == 200) {
 				ResponseHandler<String> handler = new BasicResponseHandler();
 				String body = handler.handleResponse(response);
-				System.out.println("response confirm");
 				return body;
 				
 			} else {
-				System.out.println("response is error : " + response.getStatusLine().getStatusCode());
+				//System.out.println("response is error : " + response.getStatusLine().getStatusCode());
 			}
 
 		} catch (Exception e){

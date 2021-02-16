@@ -37,146 +37,222 @@ body {
     width: 0px;
 }
 
+.hidden {
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden !important;
+}
+
+/*show chat*/
+#show_chat {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    width: 50px;
+    height: 50px;
+    display: block;
+    border-radius: 50%;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+/*modal chat*/
+.chat_container {
+    display: none;
+}
+
+.chat_con {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 300px;
+    height: 400px;
+    min-width: 390px;
+    background: #FFF;
+    margin: 20px 20px 20px 0;
+    border: 1px solid #333;
+    border-radius: 2px;
+    font-family: tahoma, serif;
+}
+
+.titlebox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.close_icon {
+    position: relative;
+    display: block;
+    line-height: 35px;
+    height: 100%;
+    flex: 1;
+}
+
+#close_chat {
+    cursor: pointer;
+}
+
+.titlebox>span {
+    position: relative;
+    display: block;
+    line-height: 35px;
+    height: 100%;
+    font-size: 15px;
+    flex: 2;
+}
+
+.chatbox {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 328px;
+    background: #fff;
+    padding: 15px;
+}
+
+.chatlogs::-webkit-scrollbar {
+    width: 10px;
+}
+
+.chatlogs::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.chatlogs {
+    position: relative;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    height: 225px;
+    background: #fbfbfb;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.chat {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.profile {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #ccc;
+    border-radius: 50%;
+}
+
+.chat .chat_message {
+    position: relative;
+    width: 80%;
+    padding: 10px;
+    margin: 0 10px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.others .chat_message {
+    background: #fc766aff;
+}
+
+.me .chat_message {
+    background: #5b84b1ff;
+    order: -1;
+}
+
+.chat_form {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.chat_form textarea {
+    position: relative;
+    background: #fbfbfb;
+    width: 75%;
+    height: 65px;
+    border: 2px solid #ccc;
+    resize: none;
+    padding: 12px;
+    font-size: 15px;
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #333;
+}
+
+.chat_form textarea:focus {
+    background: #fff;
+}
+
+.chat_form textarea::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chat_form textarea::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.chat_form button {
+    position: relative;
+    background: #fc766aff;
+    padding: 5px 15px;
+    margin: 16px 10px;
+    border-radius: 3px;
+    font-size: 20px;
+    color: #fff;
+    border: none;
+    box-shadow: 0 3px 0 #333;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-transform: capitalize;
+}
+
+.chat_form button:active {
+    background: #fb4737;
+}
+
+
 /*wrap*/
 .wrap {
-    position: relative;
-    display: block;
-    height: 100%;
-}
-
-/*visual*/
-.visual {
-    position: relative;
-    display: block;
-    height: 100vh;
-    background: crimson;
-}
-
-/*content*/
-.content {
     position: relative;
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
 
-/*header*/
-.header {
+/*visual*/
+.visual {
     position: relative;
-    display: block;
-    height: 145px;
-    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
 }
 
-.h_logo {
+/*content*/
+.content {
     position: relative;
     display: block;
-    float: left;
-    height: 100%;
-    width: 20%;
-    font-size: 50px;
-    color: #fff;
-    background-color: #000;
-    line-height: 149px;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 700;
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
+    height: 100vh;
+    width: 100vw;
     z-index: 999999;
-}
-
-.h_top {
-    position: relative;
-    display: block;
-    height: 50%;
-    overflow: hidden;
-}
-
-.h_top_img {
-	position: relative;
-	display: block;
-	height: 100%;
-	background: url('../asset/h_top_img') no-repeat center;
-}
-
-.h_bot {
-    position: absolute;
-    display: flex;
-    left: 0;
-    top: 50%;
-    justify-content: space-around;
-    height: 50%;
-    width: 100%;
-    background-color: #000;
-}
-
-
-.h_list {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    height: 100%;
-    line-height: 72.5px;
-    text-align: center;
-    font-size: 20px;
-    margin-left: 20%;
-    z-index: 9999;
-}
-
-.h_list li {
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.h_list li a::after {
-    position: absolute;
-    display: block;
-    content: "";
-    bottom: 20px;
-    height: 2px;
-    left: 50%;
-    background: #fff;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-}
-
-.h_list li:hover a::after {
-    width: 100%;
-    left: 0;
-}
-
-.h_list li a {
-    color: #fff;
-	text-transform: capitalize;
-}
-
-.h_login {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    height: 100%;
-    width: 30%;
-    float: right;
-}
-
-input[type=button] {
-	position: relative;
-	display: inline-block;
-    background-color: #fff;
-    color: #000;
-    border: none;
-    padding: 10px 10px;
-    text-decoration: none;
-    text-transform: capitalize;
-    text-align: center;
-    cursor: pointer;
-    margin: 15px 0;
-    margin-right: 10px;
-    border-radius: 10px;
 }
 
 /*main*/
@@ -184,31 +260,85 @@ input[type=button] {
     position: relative;
     height: 100%;
     display: flex;
-    flex: 1;
 }
 
 .main_left {
     position: relative;
     display: block;
     flex: 1;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .main_mid {
     position: relative;
     display: block;
     flex: 1;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .main_right {
     position: relative;
     display: block;
     flex: 1;
+    background: rgba(0, 0, 0, 0.7);
 }
 
 /*footer*/
-.footer {
+/*.footer {
     position: relative;
     display: block;
     height: 50px;
     background-color: #000;
+    z-index: 99;
+}*/
+
+/* 반응형 코드 */
+@media all and (max-width: 1024px) {
+    .h_logo {
+        font-size: 45px;
+    }
+
 }
+
+@media all and (max-width: 960px) {
+    .header {
+        padding-top: 25px;
+    }
+
+    .h_logo {
+        font-size: 40px;
+    }
+
+    .h_list li a {
+        font-size: 15px;
+    }
+
+    input[type=button] {
+        padding: 0 10px;
+        margin-right: 10px;
+        height: 25px;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .h_login {
+        width: 15%;
+    }
+
+    .login_container {
+        display: block;
+        left: 60%;
+    }
+
+    .h_logo {
+        font-size: 37px;
+    }
+
+    input[type=button] {
+        margin-right: 0;
+        width: 68px;
+    }
+
+}
+
+@media all and (max-width: 480px) {}

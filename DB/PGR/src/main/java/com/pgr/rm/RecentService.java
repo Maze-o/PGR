@@ -23,4 +23,8 @@ public class RecentService {
 	public int updRecentMatch(RecentEntity data) {
 		return mapper.updRecentMatch(data);
 	}
+	
+	public List<RecentEntity> selListRecentMatch() {
+		return mapper.selListRecentMatch();
+	}
 }

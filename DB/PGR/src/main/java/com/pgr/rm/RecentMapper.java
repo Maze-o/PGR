@@ -11,4 +11,5 @@ public interface RecentMapper {
 	int insRecentMatch(List<RecentEntity> data);
 	int updRecentMatch(RecentEntity data);
 	RecentEntity selRecentMatch(RecentEntity data);
+	List<RecentEntity> selListRecentMatch();
 }

@@ -14,7 +14,12 @@
 	<select id="selRecentMatch" resultType="com.pgr.model.RecentEntity">
 		SELECT * FROM rmatch
 		WHERE id = #{id}
-		LIMIT 10;
+		LIMIT 10
+	</select>
+	<select id="selListRecentMatch" resultType="com.pgr.model.RecentEntity">
+		SELECT * FROM rmatch
+		ORDER BY pkid DESC
+		LIMIT 5
 	</select>
 	<update id="updRecentMatch">
 		UPDATE rmatch

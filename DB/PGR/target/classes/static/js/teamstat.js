@@ -9,9 +9,13 @@ if(teamElem) {
 	})
 	
 	function createTable(myJson) {
-		var table = document.createElement('table')
-		table.id = 'teams_stat'
-		var headtr = document.createElement('tr')
+		var table = document.createElement('table') // table 생성
+		table.className = 'sortable'
+		
+		var thead = document.createElement('thead') // thead 생성
+		var tbody = document.createElement('tbody') // tbody 생성
+		
+		var headtr = document.createElement('tr') // tr th 생성
 		headtr.innerHTML = `
 		<th>Name</th>
 		<th>Wins</th>
@@ -38,8 +42,9 @@ if(teamElem) {
 		<th>AwayTies</th>
 		<th>AwayGamesPlayed</th>`
 
-		table.append(headtr)
-		
+		thead.append(headtr)
+		table.append(thead)
+		table.append(tbody)
 		
 		myJson.forEach(function(item) {
 			var tr = document.createElement('tr')
@@ -118,11 +123,12 @@ if(teamElem) {
 			awayties.innerText = item.awayTies
 			awaygamesplayed.innerText = item.awayGamesPlayed
 			
-			table.append(tr)
+			tbody.append(tr)
 		})
+		
+		sorttable.makeSortable(table);
 		
 		teamElem.innerHTML = ''
 		teamElem.append(table)
 	}
-	
 }

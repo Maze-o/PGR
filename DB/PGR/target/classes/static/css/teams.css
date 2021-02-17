@@ -1,0 +1,13 @@
+@charset 'utf-8';
+
+table.sortable tbody tr:hover {
+	background-color: #aaaaaa;
+}
+
+table.sortable thead {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: pointer;
+}
+

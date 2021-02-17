@@ -8,7 +8,12 @@ layout:decorator="layout/layout_default">
     <title>Team Statistics</title>
 </head>
 
+<th:block layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="css/teams.css">
+</th:block>
+
 <th:block layout:fragment="script">
+	<script defer type="text/javascript" th:src="@{js/sorttable.js}"></script>
 	<script defer type="text/javascript" th:src="@{js/teamstat.js}"></script>
 </th:block>
 

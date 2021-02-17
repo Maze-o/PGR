@@ -19,8 +19,15 @@ function wsEvt() {
 	});
 }
 
-function send() {
-	var msg = $("#chatting").val();
-	ws.send(msg);
-	$('#chatting').val("");
+var sendBtnElem = document.querySelector('#sendBtn')
+if(sendBtnElem) {
+	sendBtnElem.addEventListener('click', function() {
+		send()
+	})
+	
+	function send() {
+		var msg = $("#chatting").val();
+		ws.send(msg);
+		$('#chatting').val("");
+	}
 }

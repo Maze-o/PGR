@@ -92,7 +92,8 @@
     transform: translate(-50%, -50%);
 }
 
-input[type=button] {
+input[type=button],
+input[type=submit] {
     position: relative;
     display: block;
     height: 40px;

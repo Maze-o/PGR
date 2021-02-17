@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/sign.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- js -->
+    <script type="text/javascript" src="js/sign.js"></script>
 </head>
 
 <body>
@@ -35,24 +37,30 @@
     <div class="signup_wrap">
     	<div class="signup_form">
              <span>sign up</span>
-                <form id="signupFrm">
+                <form id="signupFrm" method="post">
                     <div class="txt_field">
-                        <input type="text" name="Email" required>
+                        <input type="text" name="email" id="email" required>
+                        <input id="textEmail" placeholder="select email" required> 
                         <label>e-mail</label>
+                        <select name="domain" id="domainSelect" onchange="changeDomain()">
+                            <option value="direct">직접입력</option>
+                            <option value="gmail.com">gmail.com</option>
+                            <option value="naver.com">naver.com</option>
+                        </select>
                     </div>
                     <div class="txt_field">
-                        <input type="password" name="PW" required>
+                        <input type="password" name="pw" required>
                         <label>Password</label>
                     </div>
                     <div class="txt_field">
-                        <input type="password" name="REPW" required>
-                        <label>Re Password</label>
+                        <input type="password" name="repw" required>
+                        <label>Comfirm Password</label>
                     </div>
                     <div class="txt_field">
                         <input type="text" name="nickname" required>
                         <label>Nickname</label>
                     </div>
-                    <input type="button" name="signUp" value="signup">
+                    <input type="submit" name="signUp" value="signup" onclick="chkSign()">
                 </form>
         </div>
     </div>

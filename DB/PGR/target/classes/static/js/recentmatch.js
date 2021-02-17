@@ -10,9 +10,9 @@ if(mainleftElem) {
 		myJson.forEach(function(item) {
 			var div = document.createElement('div')
 			var ing = item.completed == 1 ? '경기 완료' : '경기 예정'
-			var date = item.date
-			div.innerHTML = `
-			${item.lteam}(${item.lscore}) VS ${item.rteam}(${item.rscore}) date: ${item.date}` + ing
+			var date = new Date(item.date).toLocaleString()
+
+			div.innerHTML = `<div>${item.lteam}(${item.lscore}) VS ${item.rteam}(${item.rscore})</div>경기시작시간: ${date}` + ing
 			
 			mainleftElem.append(div)
 		})

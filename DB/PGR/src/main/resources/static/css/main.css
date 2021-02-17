@@ -269,6 +269,10 @@ body {
     background: rgba(0, 0, 0, 0.3);
 }
 
+.main_left div {
+	font-size: 13px;
+}
+
 .main_mid {
     position: relative;
     display: block;

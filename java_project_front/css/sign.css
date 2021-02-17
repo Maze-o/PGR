@@ -67,12 +67,29 @@
     height: 40px;
     border: none;
     background: none;
+    font-size: 15px;
 }
 
+.txt_field input[name=email],
+.txt_field input[id=textEmail] {
+    display: inline-block;
+    width: 40%;
+}
+
+/*유효하다면 올라감*/
 .txt_field input:focus~label,
 .txt_field input:valid~label {
     top: -5px;
     color: #333;
+}
+
+#domainSelect {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    border: none;
+    font-size: 15px;
 }
 
 .fg_pw {
@@ -89,8 +106,8 @@
     text-decoration: underline;
 }
 
-#loginFrm>input[type=button],
-#signupFrm>input[type=button] {
+#loginFrm>input[type=submit],
+#signupFrm>input[type=submit] {
     width: 100%;
     border-radius: 25px;
 }

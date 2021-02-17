@@ -12,35 +12,46 @@
 </head>
 
 <body>
-	<style type="text/css">
-		*{
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-			outline-style: none;
-		}
-	</style>
-    <div id="fullpage">
-        <div class="section" style="background: red; height: 100vh; width:100vw;">
-            <div class="slide" style="background: rgba(0,0,0,0.1);"></div>
-            <div class="slide" style="background: rgba(0,0,0,0.3);"></div>
-            <div class="slide" style="background: rgba(0,0,0,0.5);"></div>
-            <div class="slide" style="background: rgba(0,0,0,0.7);"></div>
-        </div>
-        <div class="section" style="background: blue; height: 100vh; width:100vw;"></div>
-        <div class="section" style="background: green; height: 100vh; width:100vw;"></div>
-        <div class="section" style="background: yellow; height: 100vh; width:100vw;"></div>
+	  <div>
+        <input type="text" id="emailId" value="" placeholder="이메일 입력"> 
+ <span>@</span>
+ <input id="textEmail" disabled="true" placeholder="이메일을 선택하세요."> 
+ <select id="select" required>
+            <option value="">E-Mail 선택</option>
+            <option value="naver.com" id="naver.com">naver.com</option>
+            <option value="hanmail.net" id="hanmail.net">hanmail.net</option>
+            <option value="gmail.com" id="gmail.com">gmail.com</option>
+            <option value="nate.com" id="nate.com">nate.com</option>
+            <option value="directly" >직접 입력하기</option>
+        </select>
     </div>
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('#fullpage').fullpage({
-            //options here
-            licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-            autoScrolling: true,
-            scrollHorizontally: true
-        });
-    });
-    </script>
+
+<script>
+    // $(function() {
+    //     $('#select').change(function() {
+    //         if ($('#select').val() == 'directly') {
+    //             $('#textEmail').attr("disabled", false);
+    //             $('#textEmail').val("");
+    //             $('#textEmail').focus();
+    //         } else {
+    //             $('#textEmail').val($('#select').val());
+    //         }
+    //     })
+    // });
+
+    select.addEventListener('change', function() {
+        if(this.value == 'directly') {
+            textEmail.disabled = false
+            textEmail.value = null
+            textEmail.focus()
+        } else {
+            textEmail.disabled = true
+            textEmail.value = select.value
+        }
+            
+    })
+</script>
+
 </body>
 
 </html>

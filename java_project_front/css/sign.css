@@ -16,7 +16,7 @@
     position: relative;
     display: block;
     width: 500px;
-    height: 500px;
+    height: 600px;
     padding: 0 20px;
     border: 1px solid #333;
     border-radius: 5px;
@@ -44,7 +44,7 @@
     position: relative;
     display: block;
     border-bottom: 2px solid #333;
-    margin: 30px 0;
+    margin: 25px 0;
 }
 
 .txt_field label {
@@ -106,8 +106,8 @@
     text-decoration: underline;
 }
 
-#loginFrm>input[type=submit],
-#signupFrm>input[type=submit] {
+#loginFrm>input[name=signIn],
+#signupFrm>input[name=signUp] {
     width: 100%;
     border-radius: 25px;
 }
@@ -129,4 +129,22 @@
 
 .signup_link a:hover {
     text-decoration: underline;
+}
+
+.cert {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+#emailsend  {
+    width: 100%;
+    border-radius: 25px;
+    margin: 0;
+}
+
+#emailchkbtn {
+    position: absolute;
+    right: 25px;
+    top: 145px;
 }

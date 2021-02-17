@@ -17,30 +17,30 @@
 </head>
 
 <body>
-	<div class="wrap">
-    <!-- header -->
-    <div class="header">
-        <a href="index.html" class="h_logo" title="logo">logo</a>
-        <ul class="h_list">
-            <li><a href="#">menu1</a></li>
-            <li><a href="#">menu2</a></li>
-            <li><a href="#">menu3</a></li>
-            <li><a href="#">menu4</a></li>
-        </ul>
-        <div class="h_login">
-            <div class="login_container">
-                <a href="sign_in.html"><input type="button" name="signIn" value="sign in"></a>
-                <a href="sign_up.html"><input type="button" name="signUp" value="sign up"></a>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header">
+            <a href="index.html" class="h_logo" title="logo">logo</a>
+            <ul class="h_list">
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+            </ul>
+            <div class="h_login">
+                <div class="login_container">
+                    <a href="sign_in.html"><input type="button" name="signIn" value="sign in"></a>
+                    <a href="sign_up.html"><input type="button" name="signUp" value="sign up"></a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="signup_wrap">
-    	<div class="signup_form">
-             <span>sign up</span>
+        <div class="signup_wrap">
+            <div class="signup_form">
+                <span>sign up</span>
                 <form id="signupFrm" method="post">
                     <div class="txt_field">
                         <input type="text" name="email" id="email" required>
-                        <input id="textEmail" placeholder="select email" required> 
+                        <input id="textEmail" placeholder="select email" required>
                         <label>e-mail</label>
                         <select name="domain" id="domainSelect" onchange="changeDomain()">
                             <option value="direct">직접입력</option>
@@ -48,6 +48,12 @@
                             <option value="naver.com">naver.com</option>
                         </select>
                     </div>
+                    <input type="button" value="이메일인증" id="emailsend" onclick="chkSign()">
+                    <div class="txt_field cert">
+                        <input type="text" id="emailchk" required>
+                        <label>Security Comfirm</label>
+                    </div>
+                    <input type="button" value="Comfirm" id="emailchkbtn">
                     <div class="txt_field">
                         <input type="password" name="pw" required>
                         <label>Password</label>
@@ -60,14 +66,14 @@
                         <input type="text" name="nickname" required>
                         <label>Nickname</label>
                     </div>
-                    <input type="submit" name="signUp" value="signup" onclick="chkSign()">
+                    <input type="submit" name="signUp" value="signup">
                 </form>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="footer">
         </div>
     </div>
-    <!-- footer -->
-    <div class="footer">
-    </div>
-</div>
 </body>
 
 </html>

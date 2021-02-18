@@ -17,6 +17,18 @@
 </head>
 
 <body>
+    <div class="email_modal">
+        <div class="email_con">
+            <div class="email_box">
+                <span>이메일 인증</span>
+                <div class="txt_field cert">
+                    <input type="text" id="emailchk" required>
+                    <label>인증번호</label>
+                </div>
+                <input type="button" value="Comfirm" id="emailchkbtn" class="email_close">
+            </div>
+        </div>
+    </div>
     <div class="wrap">
         <!-- header -->
         <div class="header">
@@ -40,7 +52,7 @@
                 <form id="signupFrm" method="post">
                     <div class="txt_field">
                         <input type="text" name="email" id="email" required>
-                        <input id="textEmail" placeholder="select email" required>
+                        <input type="text" name="textEmail" id="textEmail" placeholder="select email" required>
                         <label>e-mail</label>
                         <select name="domain" id="domainSelect" onchange="changeDomain()">
                             <option value="direct">직접입력</option>
@@ -49,18 +61,13 @@
                         </select>
                     </div>
                     <input type="button" value="이메일인증" id="emailsend" onclick="chkSign()">
-                    <div class="txt_field cert">
-                        <input type="text" id="emailchk" required>
-                        <label>Security Comfirm</label>
-                    </div>
-                    <input type="button" value="Comfirm" id="emailchkbtn">
                     <div class="txt_field">
                         <input type="password" name="pw" required>
                         <label>Password</label>
                     </div>
                     <div class="txt_field">
                         <input type="password" name="repw" required>
-                        <label>Comfirm Password</label>
+                        <label>Confirm Password</label>
                     </div>
                     <div class="txt_field">
                         <input type="text" name="nickname" required>

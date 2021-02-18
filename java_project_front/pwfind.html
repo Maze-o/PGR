@@ -4,20 +4,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Sign In</title>
+    <title></title>
     <!-- jquery -->
     <script src="js/jquery.min.js"></script>
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
-    <link rel="stylesheet" type="text/css" href="css/sign.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/sign.css">
 </head>
 
 <body>
     <!-- wrap -->
     <div class="wrap">
-        <!-- header -->
         <div class="header">
             <a href="index.html" class="h_logo" title="logo">logo</a>
             <ul class="h_list">
@@ -33,22 +32,19 @@
                 </div>
             </div>
         </div>
-        <!-- login -->
-        <div class="login_wrap">
-            <div class="login_form">
-                <span>login</span>
-                <form id="loginFrm" method="post">
+        <div class="find_wrap">
+            <div class="find_form">
+                <span>find password</span>
+                <form id="findFrm" method="post">
                     <div class="txt_field">
-                        <input type="text" name="id" required>
+                        <input type="text" name="ID" required>
                         <label>ID (e-mail)</label>
                     </div>
                     <div class="txt_field">
-                        <input type="password" name="pw" required>
-                        <label>Password</label>
+                        <input type="text" name="nickname" required>
+                        <label>Nickname</label>
                     </div>
-                    <input type="submit" name="signIn" value="login">
-                    <div class="fg_pw"><a href="pwfind.html">Forgot your password?</a></div>
-                    <div class="signup_link">Not a member?<a href="sign_up.html">Sign Up</a></div>
+                    <input type="button" name="find" value="confirm">
                 </form>
             </div>
         </div>

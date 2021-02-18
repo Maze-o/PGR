@@ -1,7 +1,49 @@
 @charset 'utf-8';
 
+/*모달*/
+.email_modal {
+    display: none;
+}
+
+.open {
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 99999999;
+}
+
+.email_box {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 39%;
+    transform: translate(-50%,-40%);
+    padding: 30px;
+    height: 230px;
+    width: 550px;
+    background: #fff;
+    border: 2px solid #c0c0c0;
+}
+
+.email_box > span {
+    position: relative;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Noto Serif KR', serif;
+}
+
+
+/*wrap*/
 .login_wrap,
-.signup_wrap {
+.signup_wrap,
+.find_wrap {
     position: relative;
     display: flex;
     justify-content: center;
@@ -16,14 +58,16 @@
     position: relative;
     display: block;
     width: 500px;
-    height: 600px;
+    height: 550px;
     padding: 0 20px;
+    background: #fff;
     border: 1px solid #333;
     border-radius: 5px;
 }
 
 .login_form>span,
-.signup_form>span {
+.signup_form>span,
+.find_form>span {
     display: block;
     text-align: center;
     padding: 20px 0;
@@ -34,7 +78,8 @@
 }
 
 #loginFrm,
-#signupFrm {
+#signupFrm,
+#findFrm {
     position: relative;
     display: block;
     padding: 10px 40px;
@@ -96,8 +141,11 @@
     position: relative;
     display: block;
     cursor: pointer;
-    color: #A9A9A9;
     margin: -5px 0 20px 0;
+}
+
+.fg_pw > a {
+    color: #A9A9A9;
     font-size: 15px;
 }
 
@@ -107,7 +155,8 @@
 }
 
 #loginFrm>input[name=signIn],
-#signupFrm>input[name=signUp] {
+#signupFrm>input[name=signUp],
+#findFrm > input[name=find] {
     width: 100%;
     border-radius: 25px;
 }
@@ -133,8 +182,9 @@
 
 .cert {
     position: relative;
-    display: flex;
-    justify-content: space-between;
+    display: block;
+    font-family: 'Noto Serif KR', serif;
+    margin-top: 35px;
 }
 
 #emailsend  {
@@ -147,4 +197,16 @@
     position: absolute;
     right: 25px;
     top: 145px;
+}
+
+/*find password*/
+.find_form {
+    position: relative;
+    display: block;
+    height: 350px;
+    width: 800px;
+    background: #fff;
+    padding: 0 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
 }

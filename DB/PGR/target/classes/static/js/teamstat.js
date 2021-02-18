@@ -8,7 +8,7 @@ if(teamElem) {
 		createTable(myJson)
 	})
 	
-	function createTable(myJson) {
+	/*function createTable(myJson) {
 		var table = document.createElement('table') // table 생성
 		table.className = 'sortable'
 		
@@ -124,9 +124,72 @@ if(teamElem) {
 			awaygamesplayed.innerText = item.awayGamesPlayed
 			
 			tbody.append(tr)
+		})*/
+		
+		function createTable(myJson) {
+		var table = document.createElement('table') // table 생성
+		table.className = 'sortable'
+		
+		var thead = document.createElement('thead') // thead 생성
+		var tbody = document.createElement('tbody') // tbody 생성
+		
+		var headtr = document.createElement('tr') // tr th 생성
+		headtr.innerHTML = `
+		<th>순위</th>
+		<th>팀 이름</th>
+		<th>경기수</th>
+		<th>승점</th>
+		<th>승</th>
+		<th>무</th>
+		<th>패</th>
+		<th>득점</th>
+		<th>실점</th>
+		<th>득실차</th>`
+
+		thead.append(headtr)
+		table.append(thead)
+		table.append(tbody)
+		
+		myJson.forEach(function(item) {
+			var tr = document.createElement('tr')
+			var name = document.createElement('td')
+			var wins = document.createElement('td')
+			var losses = document.createElement('td')
+			var ties = document.createElement('td')
+			var gamesplayed = document.createElement('td')
+			var pointsfor = document.createElement('td')
+			var pointsagainst = document.createElement('td')
+			var points = document.createElement('td')
+			var rank = document.createElement('td')
+			var pointdifferential = document.createElement('td')
+
+			
+			tr.append(rank)
+			tr.append(name)
+			tr.append(gamesplayed)
+			tr.append(points)
+			tr.append(wins)
+			tr.append(ties)
+			tr.append(losses)
+			tr.append(pointsfor)
+			tr.append(pointsagainst)
+			tr.append(pointdifferential)
+			
+			name.innerText = item.name
+			wins.innerText = item.wins
+			losses.innerText = item.losses
+			ties.innerText = item.ties
+			gamesplayed.innerText = item.gamesPlayed
+			pointsfor.innerText = item.pointsFor
+			pointsagainst.innerText = item.pointsAgainst
+			points.innerText = item.points
+			rank.innerText = item.rank
+			pointdifferential.innerText = item.pointDifferential
+			
+			tbody.append(tr)
 		})
 		
-		sorttable.makeSortable(table);
+		sorttable.makeSortable(table)
 		
 		teamElem.innerHTML = ''
 		teamElem.append(table)

@@ -24,6 +24,7 @@
 	</insert>
 	<select id="selTeamList" resultType="com.pgr.model.TeamEntity">
 		SELECT * FROM teams
+		ORDER BY rank;
 	</select>
 	<update id="updTeam">
 		UPDATE teams

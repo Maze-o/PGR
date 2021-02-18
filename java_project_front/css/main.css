@@ -285,15 +285,6 @@ body {
     background: rgba(0, 0, 0, 0.7);
 }
 
-/*footer*/
-/*.footer {
-    position: relative;
-    display: block;
-    height: 50px;
-    background-color: #000;
-    z-index: 99;
-}*/
-
 /* 반응형 코드 */
 @media all and (max-width: 1024px) {
     .h_logo {

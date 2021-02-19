@@ -136,6 +136,7 @@ if(teamElem) {
 		var headtr = document.createElement('tr') // tr th 생성
 		headtr.innerHTML = `
 		<th>순위</th>
+		<th></th>
 		<th>팀 이름</th>
 		<th>경기수</th>
 		<th>승점</th>
@@ -162,9 +163,12 @@ if(teamElem) {
 			var points = document.createElement('td')
 			var rank = document.createElement('td')
 			var pointdifferential = document.createElement('td')
+			var teamlogo = document.createElement('td')
+			var teamString = 'img/teamlogo/' + item.id + '.png'
 
 			
 			tr.append(rank)
+			tr.append(teamlogo)
 			tr.append(name)
 			tr.append(gamesplayed)
 			tr.append(points)
@@ -185,6 +189,7 @@ if(teamElem) {
 			points.innerText = item.points
 			rank.innerText = item.rank
 			pointdifferential.innerText = item.pointDifferential
+			teamlogo.innerHTML = `<img class="teamlogo" src = "` + teamString + `">`  
 			
 			tbody.append(tr)
 		})

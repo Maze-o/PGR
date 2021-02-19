@@ -9,6 +9,7 @@
 	win INT UNSIGNED,
 	lose INT UNSIGNED,
 	draw INT UNSIGNED,
+	cTeam INT UNSIGNED, -> 서버가 선택한 team값
 	PRIMARY KEY (userPk,id)
 );
 //////////////////////////////////////////////////////////
@@ -42,14 +43,16 @@ user pk값 (o)
 : 배팅금액의 총합
 
 //////////////////////////////////////////////////////////
-UPDATE b_user A
-SET success = property * (SELECT SUM(property)/SUM(draw) FROM b_user)
-WHERE id = 578507 AND team = 1;
-
 SELECT (property * (SELECT SUM(property) FROM b_user WHERE id = 578507) / (SELECT SUM(draw
 ) FROM b_user WHERE id = 578507)) FROM b_user;
+:Success 확인
 
-UPDATE b_user A
+UPDATE b_user
+SET success = property * (SELECT SUM(property)/SUM(draw) FROM b_user)
+WHERE id = 578507 AND team = 1;
+:Success 값을 업데이트 시켜줌
+
+UPDATE b_user
 SET myProperty = success + myProperty
 WHERE id = 578507;
-:myProperty 값 지정
+:myProperty 값 업데이트

@@ -1,4 +1,4 @@
-boolean hasNext() -> 다음 인덱스를 보았을 때, 값이 있다면 true 아니면 false
+﻿boolean hasNext() -> 다음 인덱스를 보았을 때, 값이 있다면 true 아니면 false
 
 object next() -> hasNext했을 때 값이 있는 친구들을 가져옴 
 

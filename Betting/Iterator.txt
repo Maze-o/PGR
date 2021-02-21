@@ -1,0 +1,9 @@
+﻿boolean hasNext() -> 다음 인덱스를 보았을 때, 값이 있다면 true 아니면 false
+
+object next() -> hasNext했을 때 값이 있는 친구들을 가져옴 
+
+boolean hasPrevious() -> 역방향으로 이동
+
+void add(E e) -> 가장 마지막에 추가
+void remove() -> 가장 마지막 제거
+void set(E e) -> 가장 마지막 요소를 다른 객체로 대체

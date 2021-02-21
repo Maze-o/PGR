@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="~{layout/layout_default}">
+
+<head>
+	<title>Find password</title>
+</head>
+
+<th:block layout:fragment="script">
+	<script defer type="text/javascript" th:src="@{js/user/findPw.js}"></script>
+</th:block>
+
+<div layout:fragment="content">
+	<form id="form">
+		<div><input type="text" name="userEmail" id="userEmail" placeholder="가입시 등록한 이메일을 입력하세요."></div>
+		<div><input type="text" name="nickname" id="nickname" placeholder="가입시 등록한 닉네임을 입력하세요."></div>
+		<input type="button" id="findPw" value="Confirm">
+	</form>
+
+	<div id="checkMsg" style="color: red"></div>
+</div>
+
+<script src="js/user/findPw.js"></script>
+
+</html>

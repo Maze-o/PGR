@@ -1,0 +1,102 @@
+﻿JSON SIMPLE PARSER 설명
+https://dololak.tistory.com/625
+
+프리미어 리그 데이터 관련 API (espn)
+Scores: http://site.api.espn.com/apis/site/v2/sports/soccer/:league/scoreboard
+http://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard
+(param: eng.1)
+
+Latest News: http://site.api.espn.com/apis/site/v2/sports/soccer/:league/news
+http://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/news
+(param: eng.1)
+
+List of Team Information: http://site.api.espn.com/apis/site/v2/sports/soccer/:league/teams
+http://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/teams
+(param: eng.1)
+
+https://www.espn.com/apis/devcenter/io-docs.html
+api document
+
+https://www.kryogenix.org/code/browser/sorttable/
+sort table JS 라이브러리
+
+
+NEED
+팀 순위
+팀 통계
+경기 통계
+
+ING
+곧 시작할 경기들(베팅관련)
+http://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard
+
+simple description
+events(A){ 
+	id uid(unique id) date name shortname // 경기일정 팀이름 유니크id 등
+	competitions(A) { // 참여하는팀 부가 설명
+		competitors(A) {
+			id // 참여한 경기의 id(위의 id랑같음)
+			uid // 해당 팀 unique id
+			winner // 이겼는지 졌는지 bool
+			score // 팀 스코어
+			team // 해당 팀 설명 내용많음
+			statistics(A) // 해당 경기 stat 기록
+		}
+	}
+	status {
+		type {
+			completed // 경기가 끝낫는지 안끝낫는지
+		}
+	}
+}
+(A) = array
+
+DB
+events // T
+id uid date name shortname completed // C
+
+T = table
+c = column
+
+//RECENT MATCHS create 쿼리문
+CREATE TABLE `rmatch` (
+`pkid` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`id` INT UNSIGNED NOT NULL,
+`date` VARCHAR(100) NOT NULL,
+`lteam` VARCHAR(100) NOT NULL,
+`lscore` INT UNSIGNED,
+`rteam` VARCHAR(100) NOT NULL,
+`rscore` INT UNSIGNED,
+`completed` boolean NULL);
+
+
+//TEAMS create 쿼리문
+CREATE TABLE teams (
+pkid INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+id INT UNSIGNED NOT NULL,
+name VARCHAR(50) NOT NULL,
+wins DOUBLE NOT NULL,
+losses DOUBLE NOT NULL,
+ties DOUBLE NOT NULL,
+gamesPlayed DOUBLE NOT NULL,
+pointsFor DOUBLE NOT NULL,
+pointsAgainst DOUBLE NOT NULL,
+points DOUBLE NOT NULL,
+streak DOUBLE NOT NULL,
+rankChange DOUBLE NOT NULL,
+rank DOUBLE NOT NULL,
+pointDifferential DOUBLE NOT NULL,
+homePointsFor DOUBLE NOT NULL,
+homePointsAgainst DOUBLE NOT NULL,
+homeLosses DOUBLE NOT NULL,
+homeWins DOUBLE NOT NULL,
+homeTies DOUBLE NOT NULL,
+homeGamesPlayed DOUBLE NOT NULL,
+awayPointsFor DOUBLE NOT NULL,
+awayPointsAgainst DOUBLE NOT NULL,
+awayLosses DOUBLE NOT NULL,
+awayWins DOUBLE NOT NULL,
+awayTies DOUBLE NOT NULL,
+awayGamesPlayed DOUBLE NOT NULL,
+deductions DOUBLE NOT NULL,
+ppg DOUBLE NOT NULL);

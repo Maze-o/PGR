@@ -271,10 +271,6 @@ body {
     background: rgba(0, 0, 0, 0.3);
 }
 
-.main_left div {
-	font-size: 13px;
-}
-
 .main_mid {
     position: relative;
     display: block;
@@ -310,7 +306,7 @@ body {
         font-size: 15px;
     }
 
-    input[type=button] {
+    .login_container>a>input[type=button] {
         padding: 0 10px;
         margin-right: 10px;
         height: 25px;
@@ -331,7 +327,7 @@ body {
         font-size: 37px;
     }
 
-    input[type=button] {
+    .login_container>a>input[type=button] {
         margin-right: 0;
         width: 68px;
     }

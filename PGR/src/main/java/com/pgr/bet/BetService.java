@@ -7,12 +7,16 @@ import org.springframework.stereotype.Service;
 
 import com.pgr.model.BetEntity;
 import com.pgr.model.RecentEntity;
+import com.pgr.rm.RecentMapper;
 
 @Service
 public class BetService {
 	
 	@Autowired
 	BetMapper bMapper;
+	
+	@Autowired
+	RecentMapper mapper;
 	
 	public int insBet(BetEntity p) {
 		if(p.getTeam() == 2) { //팀선택시에 자동으로 property값이 win lose draw에 들어가게 설정
@@ -72,7 +76,9 @@ public class BetService {
 		return 0;
 	}
 
-	public int updBetSuccess(RecentEntity rp,BetEntity bp) {
+	public int updBetSuccess(RecentEntity rp) {
+		BetEntity bp = new BetEntity();
+		bp.setId(rp.getId());
 		if(rp.getLscore() > rp.getRscore()) {
 			bp.setcTeam(2);
 		} else if(rp.getLscore() == rp.getRscore()) {

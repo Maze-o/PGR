@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import com.pgr.bet.BetService;
 import com.pgr.db.DbUtils;
 import com.pgr.model.RecentEntity;
 import com.pgr.model.TeamEntity;
@@ -21,18 +22,28 @@ public class Scheduler {
 	private static Logger logger = LoggerFactory.getLogger(Scheduler.class);
 	
 	@Autowired
+	BetService bService;
+	
+	@Autowired
 	RecentService rService;
 	
 	@Autowired
 	TeamService tService;
 	
-	@Scheduled(cron = "0 * * * * *") // 매분 0초마다 실행한다.
+	@Scheduled(cron = "*/10 * * * * *") // 매분 0초마다 실행한다.
 	public void RecentMatchs() { // 최근 경기를 가져온다.
 		List<RecentEntity> list = DbUtils.getRmList();
 		int count = 0;
 		for(Iterator<RecentEntity> i = list.iterator() ; i.hasNext();) {
 			RecentEntity temp = i.next();
+			temp.setCompleted(true);
+			temp.setLscore(1);
+			temp.setRscore(1);
 			if(rService.selRecentMatch(temp) != null) { // 이미 데이터가 있다면 업데이트된다.
+				if(temp.getCompleted() == true && rService.selRecentMatch(temp).getCompleted() == false) {
+					System.out.println("경 기 완 료");
+					bService.updBetSuccess(temp);
+				}
 				rService.updRecentMatch(temp);
 				count++;
 				i.remove(); // 업데이트하고 리스트에서 삭제	

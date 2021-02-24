@@ -54,11 +54,13 @@ public class DbUtils {
 				re.setLscore(Integer.parseInt((String)obj.get("score")));
 				obj = (JSONObject)obj.get("team");
 				re.setLteam((String)obj.get("name"));
+				re.setLid(Integer.parseInt((String)obj.get("id")));
 				
 				obj = (JSONObject)arr.get(1);
 				re.setRscore(Integer.parseInt((String)obj.get("score")));
 				obj = (JSONObject)obj.get("team");
 				re.setRteam((String)obj.get("name"));
+				re.setRid(Integer.parseInt((String)obj.get("id")));
 				// events안의 id date값, events->status->type의 completed값
 				//events->competitions->competitors->score값, events->competitions->competitors->team->name값을 가져오는 과정
 				

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>PJA</title>
+    <!-- jquery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- js -->
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <!-- show chat -->
+    <button id="show_chat">+</button>
+    <!-- modal chat -->
+    <div class="chat_container">
+        <div class="chat_con">
+            <div class="titlebox">
+                <div class="close_icon">
+                    <i class="far fa-times-circle fa-3x" id="close_chat"></i>
+                </div>
+                <span>chatting room</span>
+            </div>
+            <div class="chatbox">
+                <div class="chatlogs">
+                    <div class="chat me">
+                        <div class="profile"></div>
+                        <p class="chat_message">
+                            hello!
+                        </p>
+                    </div>
+                    <div class="chat others">
+                        <div class="profile"></div>
+                        <p class="chat_message">
+                            hi!
+                        </p>
+                    </div>
+                </div>
+                <div class="chat_form">
+                    <textarea id="chatting"></textarea>
+                    <button onclick="send()" id="sendBtn">send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header">
+            <a href="index.html" class="h_logo" title="logo">logo</a>
+            <ul class="h_list">
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+            </ul>
+            <div class="h_login">
+                <div class="login_container">
+                    <a href="sign_in.html"><input type="button" name="signIn" value="sign in"></a>
+                    <a href="sign_up.html"><input type="button" name="signUp" value="sign up"></a>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+        <div class="pagew">
+            <div class="content">
+                <div class="content_left">
+                    <div class="play_list"></div>
+                    <div class="rank_chart"></div>
+                </div>
+                <div class="content_middle">
+                    <div class="main_news"></div>
+                    <div class="end_game"></div>
+                </div>
+                <div class="content_right"></div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="footer">
+        </div>
+    </div>
+</body>
+
+</html>

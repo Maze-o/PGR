@@ -108,5 +108,6 @@ CREATE TABLE pgrUser(
 	userPw VARCHAR(1000) NOT NULL,
 	nickname VARCHAR(1000) NOT NULL,
 	regDt DATETIME DEFAULT NOW(),
-	PRIMARY KEY (userPk)
+	myProperty INT unsigned DEFAULT 10000 NOT null,
+	PRIMARY KEY (userPk)
 );

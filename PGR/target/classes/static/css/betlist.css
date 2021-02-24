@@ -1,0 +1,17 @@
+.pagew {
+	position: relative;
+	display: block;
+	flex: 1;
+	width: 1600px;
+	margin: 0 auto;
+}
+
+.box {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width:90%;
+	height:600px;
+	border: 1px solid #ccc;
+}

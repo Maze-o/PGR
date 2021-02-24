@@ -1,9 +1,5 @@
 window.onload = function() {
-	// header 스크롤 관련
-    window.addEventListener("scroll", function() {
-        const header = document.querySelector(".header");
-        header.classList.toggle("sticky", window.scrollY > 0);
-    });
+	
 }
 
 $(document).ready(function() {

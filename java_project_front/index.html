@@ -9,6 +9,9 @@
     <script src="js/jquery.min.js"></script>
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <!-- swiper -->
+    <link rel="stylesheet" href="js/swiper/swiper.min.css">
+    <script src="js/swiper/swiper.min.js"></script>
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
@@ -52,6 +55,7 @@
             </div>
         </div>
     </div>
+    <!-- wrap -->
     <div class="wrap">
         <!-- header -->
         <div class="header">
@@ -69,18 +73,95 @@
                 </div>
             </div>
         </div>
-        <!-- content -->
+        <!-- pagew -->
         <div class="pagew">
+            <!-- content -->
             <div class="content">
+                <!-- content_left -->
                 <div class="content_left">
-                    <div class="play_list"></div>
-                    <div class="rank_chart"></div>
+                    <div class="play_list">
+                        <a href="#" class="more">+ more</a>
+                    </div>
+                    <div class="rank_chart">
+                        <a href="#" class="more">+ more</a>
+                        <div class="rank_table">
+                            <div class="rank_title">
+                                <span>순위</span>
+                                <span>팀이름</span>
+                                <span>승점</span>
+                            </div>
+                            <div class="rank_box_cont">
+                                <!-- 랭킹은 4개까지만 -->
+                                <div class="rank_box">
+                                    <div class="overlay"></div>
+                                    <span>1</span>
+                                    <span>맨유</span>
+                                    <span>50</span>
+                                </div>
+                                <div class="rank_box">
+                                    <div class="overlay"></div>
+                                    <span>1</span>
+                                    <span>맨유</span>
+                                    <span>50</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- content_middle -->
                 <div class="content_middle">
-                    <div class="main_news"></div>
-                    <div class="end_game"></div>
+                    <div class="main_news">
+                        <!-- swiper 배치 -->
+                        <div class="news_slide">
+                            <!-- swiper button -->
+                            <div class="sw_prev"><img src="asset/sw_prev.png"></div>
+                            <div class="sw_next"><img src="asset/sw_next.png"></div>
+                            <div class="sw_pause"></div>
+                            <!-- pagination -->
+                            <div class="sw_pg"></div>
+                            <div class="swiper-container sw_news">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" style="background: rgba(0,0,0,0.2);"></div>
+                                    <div class="swiper-slide" style="background: rgba(0,0,0,0.4);"></div>
+                                    <div class="swiper-slide" style="background: rgba(0,0,0,0.6);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="before_game">
+                        <a href="#" class="more">+ more</a>
+                        <div class="bf_list">
+                            <div class="vs_area">
+                                <!-- img태그로 바꿔서 이미지 삽입 -->
+                                <span class="vs_img"></span>
+                                <span class="vs_img"></span>
+                                <div class="score_sec">
+                                    <span class="vs_score">1</span>
+                                    <span class="vs_score">0</span>
+                                </div>
+                                <a href="#">
+                                    <input type="button" value="상세보기" class="vs_btn">
+                                </a>
+                            </div>
+                            <div class="vs_area">
+                                <!-- img태그로 바꿔서 이미지 삽입 -->
+                                <span class="vs_img"></span>
+                                <span class="vs_img"></span>
+                            </div>
+                            <div class="vs_area">
+                                <!-- img태그로 바꿔서 이미지 삽입 -->
+                                <span class="vs_img"></span>
+                                <span class="vs_img"></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="content_right"></div>
+                <!-- content_right -->
+                <div class="content_right">
+                    <div class="notice">
+                        <a href="#" class="more">+ more</a>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- footer -->

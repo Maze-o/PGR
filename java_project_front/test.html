@@ -10,48 +10,32 @@
     <script type="text/javascript" src="js/fullpage.js"></script>
     <link rel="stylesheet" type="text/css" href="css/fullpage.css">
 </head>
+<style type="text/css">
+    
+    table {
+        width: 50vw;
+        height: 50vw
+    }
+
+    table,th,tr {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+    }
+</style>
 
 <body>
-	  <div>
-        <input type="text" id="emailId" value="" placeholder="이메일 입력"> 
- <span>@</span>
- <input id="textEmail" disabled="true" placeholder="이메일을 선택하세요."> 
- <select id="select" required>
-            <option value="">E-Mail 선택</option>
-            <option value="naver.com" id="naver.com">naver.com</option>
-            <option value="hanmail.net" id="hanmail.net">hanmail.net</option>
-            <option value="gmail.com" id="gmail.com">gmail.com</option>
-            <option value="nate.com" id="nate.com">nate.com</option>
-            <option value="directly" >직접 입력하기</option>
-        </select>
-    </div>
-
-<script>
-    // $(function() {
-    //     $('#select').change(function() {
-    //         if ($('#select').val() == 'directly') {
-    //             $('#textEmail').attr("disabled", false);
-    //             $('#textEmail').val("");
-    //             $('#textEmail').focus();
-    //         } else {
-    //             $('#textEmail').val($('#select').val());
-    //         }
-    //     })
-    // });
-
-    select.addEventListener('change', function() {
-        if(this.value == 'directly') {
-            textEmail.disabled = false
-            textEmail.value = null
-            textEmail.focus()
-        } else {
-            textEmail.disabled = true
-            textEmail.value = select.value
-        }
-            
-    })
-</script>
-
+    <table>
+        <th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </th>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
 </body>
 
 </html>

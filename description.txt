@@ -64,8 +64,10 @@ CREATE TABLE `rmatch` (
 `id` INT UNSIGNED NOT NULL,
 `date` VARCHAR(100) NOT NULL,
 `lteam` VARCHAR(100) NOT NULL,
+`lid` INT UNSIGNED NOT NULL,
 `lscore` INT UNSIGNED,
 `rteam` VARCHAR(100) NOT NULL,
+`rid` INT UNSIGNED NOT NULL,
 `rscore` INT UNSIGNED,
 `completed` boolean NULL);
 

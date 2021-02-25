@@ -7,8 +7,23 @@ public class RecentEntity {
 	private String lteam;
 	private String rteam;
 	private int lscore;
+	private int lid;
 	private int rscore;
+	private int rid;
 	private Boolean completed;
+	
+	public int getLid() {
+		return lid;
+	}
+	public void setLid(int lid) {
+		this.lid = lid;
+	}
+	public int getRid() {
+		return rid;
+	}
+	public void setRid(int rid) {
+		this.rid = rid;
+	}
 	public int getId() {
 		return id;
 	}

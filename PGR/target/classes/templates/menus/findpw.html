@@ -8,20 +8,29 @@ layout:decorator="~{layout/layout_default}">
 	<title>Find password</title>
 </head>
 
+<th:block layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="css/user/sign.css">
+</th:block>
+
 <th:block layout:fragment="script">
 	<script defer type="text/javascript" th:src="@{js/user/findPw.js}"></script>
 </th:block>
 
-<div layout:fragment="content">
-	<form id="form">
-		<div><input type="text" name="userEmail" id="userEmail" placeholder="가입시 등록한 이메일을 입력하세요."></div>
-		<div><input type="text" name="nickname" id="nickname" placeholder="가입시 등록한 닉네임을 입력하세요."></div>
-		<input type="button" id="findPw" value="Confirm">
-	</form>
-
-	<div id="checkMsg" style="color: red"></div>
+<div class="find_wrap" layout:fragment="content">
+	<div class="find_form">
+		<span>find password</span>
+			<form id="findFrm" method="post">
+				<div class="txt_field">
+					<input type="text" name="ID" required>
+					<label>ID (e-mail)</label>
+				</div>
+				<div class="txt_field">
+					<input type="text" name="nickname" required>
+					<label>Nickname</label>
+				</div>
+					<input type="button" name="find" value="confirm">
+			</form>
+	</div>
 </div>
-
-<script src="js/user/findPw.js"></script>
 
 </html>

@@ -12,8 +12,17 @@ public class TeamService {
 	@Autowired
 	TeamMapper mapper;
 	
-	public int insTeam(List<TeamEntity> p) {
-		return mapper.insTeam(p);
+	public int insTeam(List<TeamEntity> list) {
+		int count = 0;
+		if(selTeamList().isEmpty()) { // 팀데이터가 아예 비어있을때
+			return mapper.insTeam(list);
+		} else { // 비어있지 않다면 값이 있는거니까 UPDATE를 한다.
+			for(TeamEntity temp : list ) {
+				updTeam(temp);
+				count++;
+			}
+		}
+		return count;
 	}
 	
 	public List<TeamEntity> selTeamList() {

@@ -1,9 +1,9 @@
-
-var findPwButton = document.querySelector('#findPw')
+console.log('test')
+var findPwButton = document.querySelector('#find')
 
 if (findPwButton) {
-	var formElem = document.querySelector('#form')
-	var userEmailElem = document.querySelector('#userEmail')
+	var formElem = document.querySelector('#findFrm)
+	var userEmailElem = document.querySelector('#ID')
 	var nicknameElem = document.querySelector('#nickname')
 
 

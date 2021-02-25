@@ -9,7 +9,7 @@ window.onload = function() {
     history.scrollRestoration = "manual"
 
     // news slide
-    new Swiper('.sw_news', {
+    const sw_news = new Swiper('.sw_news', {
         loop: true,
         autoplay: {
             delay: 3000,
@@ -26,19 +26,23 @@ window.onload = function() {
         },
     });
 
-     // swiper 일시멈춤/재생 기능
-    const pause = document.getElementByClassName('.sw_pause')
-    pause.click(function() {
-        var state = $(this).hasClass('bt_play');
-        if (state == false) {
-            sw_24.autoplay.stop();
-            $(this).addClass('bt_play');
-        } else {
-            sw_24.autoplay.start();
-            $(this).removeClass('bt_play');
-        }
+    // play_list slide
+    const sw_pl = new Swiper('.sw_pl', {
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            prevEl: '.pl_slide .sw_prev',
+            nextEl: '.pl_slide .sw_next',
+        },
+        pagination: {
+            el: '.pl_slide .sw_pg',
+            type: 'bullets',
+            // clickable: true,
+        },
     });
-
 }
 
 // $(document).ready(function() {

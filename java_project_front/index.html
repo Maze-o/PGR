@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- js -->
     <script type="text/javascript" src="js/modal.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script defer type="text/javascript" src="js/script.js"></script>
 </head>
 
 <body>
@@ -81,6 +81,45 @@
                 <div class="content_left">
                     <div class="play_list">
                         <a href="#" class="more">+ more</a>
+                        <!-- swiper 배치 -->
+                        <div class="pl_slide">
+                            <!-- swiper button -->
+                            <div class="sw_prev"><img src="asset/sw_prev.png"></div>
+                            <div class="sw_next"><img src="asset/sw_next.png"></div>
+                            <!-- pagination -->
+                            <div class="sw_pg"></div>
+                            <div class="swiper-container sw_pl">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="state_cont">
+                                            <span class="state cancel"></span>
+                                        </div>
+                                        <div class="pl_profile">
+                                            <span class="pl_img"></span>
+                                            <span class="pl_img"></span>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="state_cont">
+                                            <span class="state play"></span>
+                                        </div>
+                                         <div class="pl_profile">
+                                            <span class="pl_img"></span>
+                                            <span class="pl_img"></span>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="state_cont">
+                                            <span class="state expected"></span>
+                                        </div>
+                                         <div class="pl_profile">
+                                            <span class="pl_img"></span>
+                                            <span class="pl_img"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="rank_chart">
                         <a href="#" class="more">+ more</a>
@@ -116,7 +155,6 @@
                             <!-- swiper button -->
                             <div class="sw_prev"><img src="asset/sw_prev.png"></div>
                             <div class="sw_next"><img src="asset/sw_next.png"></div>
-                            <div class="sw_pause"></div>
                             <!-- pagination -->
                             <div class="sw_pg"></div>
                             <div class="swiper-container sw_news">

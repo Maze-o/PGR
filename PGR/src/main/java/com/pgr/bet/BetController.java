@@ -10,4 +10,9 @@ public class BetController {
 	public String betting() {
 		return "menus/betlist";
 	}
+	
+	@GetMapping("/bettingroom")
+	public String bettingroom() {
+		return "menus/bettingroom";
+	}
 }

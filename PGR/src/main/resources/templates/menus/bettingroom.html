@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="~{layout/layout_default}">
+
+<th:block layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="css/bettingroom.css">
+</th:block>
+
+<div layout:fragment="content" class="pagew">
+	<div class="container">
+		<div class="leftContainer">lteam
+			<div class="lTeam"></div>
+			<div class="recent-history">최근전적</div>
+		</div>
+		<div class="empty">vs</div>
+		<div class="rightContainer">rteam
+			<div class="rTeam"></div>
+			<div class="recent-history">최근전적</div>
+		</div>
+	</div>
+</div>
+</html>

@@ -1,0 +1,74 @@
+.pagew {
+	position: relative;
+	display: block;
+	flex: 1;
+	width: 1600px;
+	margin: 0 auto;
+}
+
+.container {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	height: 650px;
+	border: 1px solid #ccc;
+	display: flex;
+	flex-direction: row;
+}
+
+.container .leftContainer {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 4;
+	border: 1px solid #ccc;
+	font-size: 40px;
+}
+
+.container .leftContainer .lTeam {
+	display: flex;
+	flex-direction: row;
+	border: 1px solid #ccc;
+	flex-grow: 4;
+}
+
+.container .leftContainer .recent-history {
+	display:flex;
+	flex-direction: row;
+	border: 1px solid #ccc;
+	flex-grow: 1;
+}
+.container .empty {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	border: 1px solid #ccc;
+	text-align: center;
+	font-size: 40px;
+	line-height: 648px;
+}
+
+.container .rightContainer {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 4;
+	font-size: 40px;
+	border: 1px solid #ccc;
+}
+
+.container .rightContainer .rTeam {
+	display: flex;
+	flex-direction: row;
+	border: 1px solid #ccc;
+	flex-grow: 4;
+}
+
+.container .rightContainer .recent-history {
+	display:flex;
+	flex-direction: row;
+	border: 1px solid #ccc;
+	flex-grow: 1;
+}
+
+

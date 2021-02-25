@@ -6,12 +6,47 @@
 	margin: 0 auto;
 }
 
-.box {
+.container {
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	width:90%;
-	height:600px;
+	width: 65%;
+	height: 600px;
 	border: 1px solid #ccc;
+}
+
+.container .Schedule-notification {
+	border: 1px solid #ccc;
+	height: 75px;
+	width: 100%;
+}
+
+.container .box {
+	border: 1px solid #ccc;
+	height: 150px;
+	width: 100%;
+	margin-top: 20px;
+	text-align: center;
+	margin: auto;
+	font-size: 40px;
+	line-height:150px;
+
+}
+
+.container .box .lTeam {
+	width: 40%;
+	height: 100%;
+	border: 1px solid #ccc;
+	float: left;
+
+}
+
+.container .box .rTeam {
+	width: 40%;
+	height: 100%;
+	border: 1px solid #ccc;
+	float: right;
+
+}
 }

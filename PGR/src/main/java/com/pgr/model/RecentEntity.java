@@ -11,7 +11,14 @@ public class RecentEntity {
 	private int rscore;
 	private int rid;
 	private Boolean completed;
-	
+	private String venue;
+
+	public String getVenue() {
+		return venue;
+	}
+	public void setVenue(String venue) {
+		this.venue = venue;
+	}
 	public int getLid() {
 		return lid;
 	}

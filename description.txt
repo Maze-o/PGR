@@ -20,11 +20,16 @@ api document
 https://www.kryogenix.org/code/browser/sorttable/
 sort table JS 라이브러리
 
+할것: 소스코드 정리 및 간단한 경기내용 추가
 
-NEED
-팀 순위
-팀 통계
-경기 통계
+// 경기 ID
+events -> competitions -> venue -> fullName -> // 경기장
+events -> competitions -> competitors -> statistics -> [1] foulsCommitted // 파울
+events -> competitions -> competitors -> statistics -> [2] wonCorners // 코너킥
+events -> competitions -> competitors -> statistics -> [4] possessionPct // 점유율
+events -> competitions -> competitors -> statistics -> [6] shotsOnTarget // 유효슈팅
+events -> competitions -> competitors -> statistics -> [7] totalGoals // 골넣은 횟수(점수)
+events -> competitions -> competitors -> statistics -> [8] totalShots // 슈팅
 
 ING
 곧 시작할 경기들(베팅관련)
@@ -58,18 +63,32 @@ id uid date name shortname completed // C
 T = table
 c = column
 
-//RECENT MATCHS create 쿼리문
-CREATE TABLE `rmatch` (
-`pkid` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-`id` INT UNSIGNED NOT NULL,
-`date` VARCHAR(100) NOT NULL,
-`lteam` VARCHAR(100) NOT NULL,
-`lid` INT UNSIGNED NOT NULL,
-`lscore` INT UNSIGNED,
-`rteam` VARCHAR(100) NOT NULL,
-`rid` INT UNSIGNED NOT NULL,
-`rscore` INT UNSIGNED,
-`completed` boolean NULL);
+//RECENT MATCH
+CREATE TABLE rmatch (
+pkid INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+id INT UNSIGNED NOT NULL,
+date VARCHAR(100) NOT NULL,
+venue VARCHAR(50) NOT NULL,
+lteam VARCHAR(100) NOT NULL,
+lid INT UNSIGNED NOT NULL,
+lscore INT UNSIGNED NOT NULL,
+lfoulsCommitted INT UNSIGNED NOT NULL,
+lwonCorners INT UNSIGNED NOT NULL,
+lpossessionPct DOUBLE UNSIGNED NOT NULL,
+lshotsontarget INT UNSIGNED NOT NULL,
+ltotalgoals INT UNSIGNED NOT NULL,
+ltotalshots INT UNSIGNED NOT NULL,
+rteam VARCHAR(100) NOT NULL,
+rid INT UNSIGNED NOT NULL,
+rscore INT UNSIGNED NOT NULL,
+rfoulsCommitted INT UNSIGNED NOT NULL,
+rwonCorners INT UNSIGNED NOT NULL,
+rpossessionPct DOUBLE UNSIGNED NOT NULL,
+rshotsontarget INT UNSIGNED NOT NULL,
+rtotalgoals INT UNSIGNED NOT NULL,
+rtotalshots INT UNSIGNED NOT NULL,
+completed boolean NULL
+);
 
 
 //TEAMS create 쿼리문

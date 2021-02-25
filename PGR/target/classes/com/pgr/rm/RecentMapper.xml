@@ -5,10 +5,10 @@
 <mapper namespace="com.pgr.rm.RecentMapper">
 	<insert id="insRecentMatch">
 		INSERT INTO rmatch
-		( id, date, lteam, lid, lscore, rteam, rid, rscore, completed )
+		( id, date, lteam, lid, lscore, rteam, rid, rscore, completed, venue )
 		VALUES
 		<foreach collection="list" item="item" separator=" , ">
-		( #{item.id}, #{item.date}, #{item.lteam}, #{item.lid}, #{item.lscore}, #{item.rteam}, #{item.rid}, #{item.rscore}, #{item.completed} )
+		( #{item.id}, #{item.date}, #{item.lteam}, #{item.lid}, #{item.lscore}, #{item.rteam}, #{item.rid}, #{item.rscore}, #{item.completed}, #{item.venue} )
 		</foreach>
 	</insert>
 	<select id="selRecentMatch" resultType="com.pgr.model.RecentEntity">

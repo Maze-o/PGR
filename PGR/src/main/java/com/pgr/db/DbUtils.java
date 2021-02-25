@@ -18,9 +18,37 @@ import com.pgr.model.RecentEntity;
 import com.pgr.model.TeamEntity;
 
 public class DbUtils {
+	
+	// 경기 일정 가져오는 함수
+	public static List<String> getDateList() {
+		String url = Const.RECENT_MATCHES;
+		String teamData = getData(url);
+		
+		JSONParser parser = new JSONParser();
+		JSONObject obj = null;
+		JSONArray arr = null;
+		
+		List<String> list = new ArrayList<>();
+		
+		try {
+			obj = (JSONObject)parser.parse(teamData);
+			JSONArray leagues = (JSONArray)obj.get("leagues");
+			obj = (JSONObject)leagues.get(0);
+			arr = (JSONArray)obj.get("calendar");
+			
+			for(int i=0;i<arr.size();i++) {
+				String temp = (String)arr.get(i);
+				temp = temp.substring(0, 4) + temp.substring(5, 7) + temp.substring(8, 10);
+				list.add(temp);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 
-	public static List<RecentEntity> getRmList() {
-		String url = Const.RECENT_MATCHES; // API URL
+	public static List<RecentEntity> getRmList(String addUrl) {
+		String url = Const.RECENT_MATCHES + addUrl; // API URL
 		String teamData = getData(url);
 		
 		JSONParser parser = new JSONParser();
@@ -48,16 +76,23 @@ public class DbUtils {
 				
 				arr = (JSONArray)obj.get("competitions");
 				obj = (JSONObject)arr.get(0);
+				
+				obj = (JSONObject)obj.get("venue");
+				re.setVenue((String)obj.get("fullName"));
+				
+				obj = (JSONObject)arr.get(0);
 				arr = (JSONArray)obj.get("competitors");
 				
 				obj = (JSONObject)arr.get(0);
 				re.setLscore(Integer.parseInt((String)obj.get("score")));
+				
 				obj = (JSONObject)obj.get("team");
 				re.setLteam((String)obj.get("name"));
 				re.setLid(Integer.parseInt((String)obj.get("id")));
 				
 				obj = (JSONObject)arr.get(1);
 				re.setRscore(Integer.parseInt((String)obj.get("score")));
+				
 				obj = (JSONObject)obj.get("team");
 				re.setRteam((String)obj.get("name"));
 				re.setRid(Integer.parseInt((String)obj.get("id")));

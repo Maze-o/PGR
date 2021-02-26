@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="~{layout/layout_default}">
+
+<th:block layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="css/endbettingroom.css">
+</th:block>
+
+<div layout:fragment="content" class="pagew">
+	<div class="container">
+		<div class="playcontainer">
+		<div class="date">2021-02-26</div>
+		<div class="stadium">Craven Cottage</div>
+		<div class="minicontainer">
+			<div class="left-information">
+				<ul>
+					<li>슈팅 : 20</li>
+					<li>점유율 : 50%</li>
+					<li>패스횟수 : 32</li>
+					<li>파울 : 13</li>
+					<li>코너킥 : 6</li>
+				</ul>
+			</div>
+			<div class="leftContainer">lteam</div>
+			<div class="lscore">1</div>
+			<div class="semicolon">:</div>
+			<div class="rscore">0</div>
+			<div class="rightContainer">rteam</div>
+			<div class="right-information">
+				<ul>
+					<li>슈팅 : 20</li>
+					<li>점유율 : 50%</li>
+					<li>패스횟수 : 32</li>
+					<li>파울 : 13</li>
+					<li>코너킥 : 6</li>
+				</ul>
+			</div>
+		</div>
+		</div>
+		<div class="betcontainer"></div>
+	</div>
+</div>
+</html>

@@ -9,18 +9,29 @@
 </th:block>
 
 <div layout:fragment="content" class="pagew">
-	<div class="box">
-		<div class="Schedule-notification"></div>
-		<div class="box-1"> vs
+	<div class="container">
+		<div class="Schedule-notification">
+			<div class="stream">
+				<a href="/betting">진행</a>
+			</div>
+			<div class="finish">
+				<a href="/endbetting">종료</a>
+			</div>
+		</div>
+		<a href="/endbettingroom">
+			<div class="box">
+				종료
+				<div class="lTeam">Lteam</div>
+				<div class="rTeam">Rteam</div>
+			</div>
+		</a>
+		<div class="box">
+			vs
 			<div class="lTeam">Lteam</div>
 			<div class="rTeam">Rteam</div>
-			<div>종료</div>
 		</div>
-		<div class="box-1"> vs
-			<div class="lTeam">Lteam</div>
-			<div class="rTeam">Rteam</div>
-		</div>
-		<div class="box-1"> vs
+		<div class="box">
+			vs
 			<div class="lTeam">Lteam</div>
 			<div class="rTeam">Rteam</div>
 		</div>

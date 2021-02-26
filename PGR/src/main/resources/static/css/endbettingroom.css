@@ -1,0 +1,138 @@
+.pagew {
+	position: relative;
+	display: block;
+	flex: 1;
+	width: 1600px;
+	margin: 0 auto;
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	display: flex;
+}
+
+.playcontainer {
+	margin: 30px 0 20px 0;
+	flex: 2;
+}
+.container .date {
+	flex-grow: 1;
+	border: 1px solid #ccc;
+	display: flex;
+	font-size: 15px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.container .stadium {
+	flex-grow: 1;
+	border: 1px solid #ccc;
+	display: flex;
+	font-size: 15px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.container .minicontainer {
+	flex-grow: 16;
+	display: flex;
+	flex-direction: row;
+}
+
+.container .minicontainer .left-information {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 2;
+	border: 1px solid #ccc;
+	font-size: 10px;
+}
+
+.container .minicontainer .leftContainer {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	border: 1px solid #ccc;
+	font-size: 40px;
+}
+
+.container .minicontainer .lscore {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	border: 1px solid #ccc;
+	font-size: 80px;
+	justify-content: center;
+	align-items: center;
+}
+
+.container .minicontainer .semicolon {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	font-size: 30px;
+	justify-content: center;
+	align-items: center;
+}
+
+.container .minicontainer .rscore {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	border: 1px solid #ccc;
+	font-size: 80px;
+	justify-content: center;
+	align-items: center;
+}
+
+.container .minicontainer .rightContainer {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	font-size: 40px;
+	border: 1px solid #ccc;
+}
+
+.container .minicontainer .right-information {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 2;
+	border: 1px solid #ccc;
+	font-size: 10px;
+	justify-content: center;
+	align-items: center;
+}
+
+.container .minicontainer .right-information ul {
+	height: 100%;
+	width: 100%;
+	font-size: 30px;
+	text-align: center;
+}
+
+.container .minicontainer .right-information li {
+	height: 15%;
+	width: 100%;
+}
+
+.container .minicontainer .left-information ul {
+	height: 100%;
+	width: 100%;
+	font-size: 30px;
+	text-align: center;
+}
+
+.container .minicontainer .left-information li {
+	height: 15%;
+	width: 100%;
+}
+
+.betcontainer {
+	margin-bottom: 30px;
+	border: 1px solid #ccc;
+	flex: 1;
+}

@@ -31,14 +31,6 @@
 	line-height: 75px;
 }
 
-.stream a,
-.finish a {
-	position:relative;
-	display:block;
-	width:100%;
-	height:100%;
-}
-
 .container .Schedule-notification .finish {
 	border: 1px solid #ccc;
 	height: 100%;

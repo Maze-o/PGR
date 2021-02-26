@@ -8,41 +8,6 @@ window.onload = function() {
     // 새로고침시 스크롤 상단위치
     history.scrollRestoration = "manual"
 
-    // news slide
-    const sw_news = new Swiper('.sw_news', {
-        loop: true,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            prevEl: '.news_slide .sw_prev',
-            nextEl: '.news_slide .sw_next',
-        },
-        pagination: {
-            el: '.news_slide .sw_pg',
-            type: 'bullets',
-            // clickable: true,
-        },
-    });
-
-    // play_list slide
-    const sw_pl = new Swiper('.sw_pl', {
-        loop: true,
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            prevEl: '.pl_slide .sw_prev',
-            nextEl: '.pl_slide .sw_next',
-        },
-        pagination: {
-            el: '.pl_slide .sw_pg',
-            type: 'bullets',
-            // clickable: true,
-        },
-    });
 }
 
 // $(document).ready(function() {

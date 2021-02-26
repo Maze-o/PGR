@@ -9,8 +9,8 @@ layout:decorator="~{layout/layout_default}">
 </head>
 
 <th:block layout:fragment="css">
-	<link rel="stylesheet"  th:href="@{js/swiper/swiper.min.css}">
-	<link rel="stylesheet"  th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css}" />
+	<link rel="stylesheet" th:href="@{js/swiper/swiper.min.css}">
+	<link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css}" />
 </th:block>
 
 <th:block layout:fragment="script">
@@ -31,8 +31,8 @@ layout:decorator="~{layout/layout_default}">
                 <!-- swiper 배치 -->
                 <div class="pl_slide">
                     <!-- swiper button -->
-                    <div class="sw_prev"><img src="asset/sw_prev.png"></div>
-                    <div class="sw_next"><img src="asset/sw_next.png"></div>
+                    <div class="sw_prev"><img th:src="@{asset/sw_prev.png}"></div>
+                    <div class="sw_next"><img th:src="@{asset/sw_next.png}"></div>
                     <!-- pagination -->
                     <div class="sw_pg"></div>
                     <div class="swiper-container sw_pl">
@@ -69,50 +69,42 @@ layout:decorator="~{layout/layout_default}">
                 </div>
             </div>
             <div class="rank_chart">
-                <a href="#" class="more">+ more</a>
+                <a href="/teams" class="more">+ more</a>
                 <div class="rank_table">
                     <div class="rank_title">
                         <span>순위</span>
-                        <span>팀이름</span>
+                        <span></span>
                         <span>승점</span>
                     </div>
                     <div class="rank_box_cont">
                         <!-- 랭킹은 4개까지만 -->
-                        <div class="rank_box">
+                        <!--<div class="rank_box">
                             <div class="overlay"></div>
                             <span>1</span>
-                            <span>맨유</span>
+                            <span><img id="teamlogo" th:src="@{img/teamlogo/362.png}"></span>
                             <span>50</span>
-                        </div>
-                        <div class="rank_box">
-                            <div class="overlay"></div>
-                            <span>1</span>
-                            <span>맨유</span>
-                            <span>50</span>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
         </div>
         <!-- content_middle -->
         <div class="content_middle">
-            <div class="main_news">
-                <!-- swiper 배치 -->
-                <div class="news_slide">
-                    <!-- swiper button -->
-                    <div class="sw_prev"><img src="asset/sw_prev.png"></div>
-                    <div class="sw_next"><img src="asset/sw_next.png"></div>
-                    <!-- pagination -->
-                    <div class="sw_pg"></div>
-                    <div class="swiper-container sw_news">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide" style="background: rgba(0,0,0,0.2);"></div>
-                            <div class="swiper-slide" style="background: rgba(0,0,0,0.4);"></div>
-                            <div class="swiper-slide" style="background: rgba(0,0,0,0.6);"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           <div class="main_news">
+               <!-- swiper 배치 -->
+               <div class="news_slide">
+                   <!-- swiper button -->
+                   <div class="sw_prev"><img src="asset/sw_prev.png"></div>
+                   <div class="sw_next"><img src="asset/sw_next.png"></div>
+                   <!-- pagination -->
+                   <div class="sw_pg"></div>
+                   <div class="swiper-container sw_news">
+                       <div class="swiper-wrapper" id="newsPrint">
+
+                       </div>
+                   </div>
+               </div>
+           </div>
             <div class="before_game">
                 <a href="#" class="more">+ more</a>
                 <div class="bf_list">

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="~{layout/layout_index}">
+
+<head>
+    <title>PGR</title>
+</head>
+
+<th:block layout:fragment="script">
+	<script defer type="text/javascript" th:src="@{js/recentmatch.js}"></script>
+</th:block>
+
+<div layout:fragment="content">
+    <!-- show chat -->
+    <button id="show_chat">+</button>
+    <!-- modal chat -->
+    <div class="chat_container">
+        <div class="chat_con">
+            <div class="titlebox">
+                <div class="close_icon">
+                    <i class="far fa-times-circle fa-3x" id="close_chat"></i>
+                </div>
+                <span>chatting room</span>
+            </div>
+            <div class="chatbox">
+                <div class="chatlogs">
+                    <div class="chat me">
+                        <div class="profile"></div>
+                        <p class="chat_message">
+                        	욕설 및 타인 비방을 자제해주세요.
+                        </p>
+                    </div>
+                    <!-- <div class="chat others">
+                    	<div class="profile"></div>
+                    	<p class="chat_message">
+                    	hi!
+                    	</p>
+                    </div> -->
+                </div>
+                <div class="chat_form">
+                    <textarea id="chatting"></textarea>
+                    <button id="sendBtn">send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrap" id="fullpage">
+        <!-- visual -->
+        <div class="visual section">
+            <!-- visual_slide -->
+            <div class="slide" style="background: rgba(0,0,0,0.1);"></div>
+            <div class="slide" style="background: rgba(0,0,0,0.3);"></div>
+            <div class="slide" style="background: rgba(0,0,0,0.5);"></div>
+            <div class="slide" style="background: rgba(0,0,0,0.7);"></div>
+        </div>
+        <!-- content -->
+        <div class="content section">
+            <!-- main -->
+            <div class="main">
+                <div class="main_left">
+                </div>
+                <div class="main_mid">
+                </div>
+                <div class="main_right">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

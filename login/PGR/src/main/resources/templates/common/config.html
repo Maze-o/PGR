@@ -1,0 +1,30 @@
+<html lang="ko" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+    <th:block th:fragment="configFragment">
+
+	    <!-- jquery -->
+	    <script th:src="@{js/jquery.min.js}"></script>
+	    <!-- fullpage -->
+	    <link rel="stylesheet" type="text/css" th:href="@{css/fullpage.css}">
+	    <script type="text/javascript" th:src="@{js/fullpage.js}"></script>
+	    <!-- font awesome -->
+	    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css}" />
+	    <!-- css -->
+	    <link rel="stylesheet" type="text/css" th:href="@{css/main.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{css/header.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{css/footer.css}">
+	    <!-- js -->
+	    <script type="text/javascript" th:src="@{js/modal.js}"></script>
+	    <script type="text/javascript" th:src="@{js/script.js}"></script>
+	    <script defer type="text/javascript" th:src="@{js/chat.js}"></script>
+
+        <!-- Content Page의 CSS fragment 삽입 -->
+        <th:block layout:fragment="css"></th:block>
+
+        <!-- Content Page의 script fragment 삽입 -->
+        <th:block layout:fragment="script"></th:block>
+        
+    </th:block>
+</html>

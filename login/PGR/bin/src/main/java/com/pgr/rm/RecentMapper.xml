@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pgr.rm.RecentMapper">
+	<insert id="insRecentMatch">
+		INSERT INTO rmatch
+		( id, date, lteam, lscore, rteam, rscore, completed )
+		VALUES
+		<foreach collection="list" item="item" separator=" , ">
+		( #{item.id}, #{item.date}, #{item.lteam}, #{item.lscore}, #{item.rteam}, #{item.rscore}, #{item.completed} )
+		</foreach>
+	</insert>
+	<select id="selRecentMatch" resultType="com.pgr.model.RecentEntity">
+		SELECT * FROM rmatch
+		WHERE id = #{id}
+		LIMIT 10;
+	</select>
+	<update id="updRecentMatch">
+		UPDATE rmatch
+		SET lscore = #{lscore},
+		rscore = #{rscore},
+		completed = #{completed}
+		WHERE id = #{id}
+	</update>
+</mapper>

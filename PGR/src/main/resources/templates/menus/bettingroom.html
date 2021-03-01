@@ -10,14 +10,49 @@
 
 <div layout:fragment="content" class="pagew">
 	<div class="container">
+		<div class="matchcontainer">
 		<div class="leftContainer">lteam
 			<div class="lTeam"></div>
-			<div class="recent-history">최근전적</div>
+			<div class="recent-history">
+				<div class="recent-title">최근전적</div>
+				<div class="recent-record">
+					<div class="record">W</div>
+					<div class="record">L</div>
+					<div class="record">D</div>
+					<div class="record">L</div>
+					<div class="record">W</div>
+				</div>
+			</div>
 		</div>
-		<div class="empty">vs</div>
+		<div class="empty">
+			<span>2021-03-01</span>
+			<span>st.louis</span>
+			<span>vs</span>
+		</div>
 		<div class="rightContainer">rteam
 			<div class="rTeam"></div>
-			<div class="recent-history">최근전적</div>
+			<div class="recent-history">
+				<div class="recent-title">최근전적</div>
+				<div class="recent-record">
+					<!-- w는 파랑, l은 빨강, d는 회색 -->
+					<div class="record">W</div>
+					<div class="record">W</div>
+					<div class="record">W</div>
+					<div class="record">W</div>
+					<div class="record">L</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="betstatus">
+			<!-- 위치를 예쁘게 만들고 수정해야함 -->
+			<form>
+				<input class="betchoice" type="radio" name="chk_info" value="win">승(1.66)
+				<input class="betchoice" type="radio" name="chk_info" value="draw">무(2.50)
+				<input class="betchoice" type="radio" name="chk_info" value="lose">패(5.00)
+   				<input type="text" name="memberName">
+   				<input type="button" value="베팅하기">
+   			</form>
 		</div>
 	</div>
 </div>

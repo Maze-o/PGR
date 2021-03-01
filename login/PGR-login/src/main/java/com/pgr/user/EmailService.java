@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import com.pgr.Const;
 
 @Service
-public class EmailServiceImpl {
+public class EmailService {
 
 	@Autowired
 	private JavaMailSender emailSender;
@@ -42,8 +42,8 @@ public class EmailServiceImpl {
 		msgg += ePw + "</strong><div><br/> ";
 		msgg += "</div>";
 		message.setText(msgg, "utf-8", "html");// 내용
-//		message.setFrom(new InternetAddress("properties에 작성한 이메일", "PGR"));// 보내는 사람
 		message.setFrom(new InternetAddress(Const.FROM_ADDRESS));
+		System.out.println("인증번호 : " + ePw);
 		return message;
 	}
 
@@ -52,23 +52,9 @@ public class EmailServiceImpl {
 		StringBuffer key = new StringBuffer();
 		Random rnd = new Random();
 
-		for (int i = 0; i < 8; i++) { // 인증코드 8자리
-			int index = rnd.nextInt(3); // 0~2 까지 랜덤
-
-			switch (index) {
-			case 0:
-				key.append((char) ((int) (rnd.nextInt(26)) + 97));
-				// a~z (ex. 1+97=98 => (char)98 = 'b')
-				break;
-			case 1:
-				key.append((char) ((int) (rnd.nextInt(26)) + 65));
-				// A~Z
-				break;
-			case 2:
-				key.append((rnd.nextInt(10)));
+		for (int i = 0; i < 6; i++) { // 인증코드 6자리
+			key.append((rnd.nextInt(10)));
 				// 0~9
-				break;
-			}
 		}
 
 		return key.toString();

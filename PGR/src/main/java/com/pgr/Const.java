@@ -7,8 +7,7 @@ public class Const {
 	
 	// USER관련 상수
 	public static final String KEY_LOGINUSER = "loginUser";
-	public static final String KEY_LIST = "list";
-	public static final String KEY_DATA = "data";
 	public static final String KEY_MENULIST = "menuList";
+	public static final String KEY_RESULT = "result";
 	public static final String FROM_ADDRESS = "handcodingtest@gmail.com";
 }

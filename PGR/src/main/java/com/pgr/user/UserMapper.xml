@@ -24,6 +24,5 @@
 		SELECT userEmail, nickname FROM pgrUser
 		WHERE userEmail = #{userEmail}
 	</select>
-	
-	
+
 </mapper>

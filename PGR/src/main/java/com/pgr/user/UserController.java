@@ -2,23 +2,17 @@ package com.pgr.user;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.pgr.model.MailDTO;
+import com.pgr.Const;
 import com.pgr.model.UserEntity;
 
 @Controller
@@ -36,7 +30,7 @@ public class UserController {
 	@PostMapping("/join") // 회원가입 정보 DB 전달
 	public Map<String, Object> join(@RequestBody UserEntity p) {
 		Map<String, Object> map = new HashMap<>();
-		map.put("result", service.join(p));
+		map.put(Const.KEY_RESULT, service.join(p));
 
 		return map;
 	}
@@ -51,7 +45,7 @@ public class UserController {
 	public Map<String, Object> login(@RequestBody UserEntity p, HttpSession hs) {
 
 		Map<String, Object> map = new HashMap<>();
-		map.put("result", service.login(p, hs));
+		map.put(Const.KEY_RESULT, service.login(p, hs));
 
 		return map;
 	}
@@ -59,7 +53,7 @@ public class UserController {
 	@GetMapping("/logout")
 	public String logout(HttpSession hs) {
 		hs.invalidate();
-		return "redirect:/login";
+		return "redirect:/";
 	}
 
 	@GetMapping("/findpw")
@@ -71,7 +65,7 @@ public class UserController {
 	@PostMapping("/findpw")
 	public Map<String, Object> findPw(@RequestBody UserEntity p) throws Exception {
 		Map<String, Object> map = new HashMap<>();
-		map.put("result", service.findPw(p));
+		map.put(Const.KEY_RESULT, service.findPw(p));
 		return map;
 	}
 

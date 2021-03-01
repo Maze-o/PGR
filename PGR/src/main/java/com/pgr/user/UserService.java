@@ -40,23 +40,26 @@ public class UserService {
 		if (check != null) { // 이미 있는 아이디(이메일)이면 1을 리턴
 			return 1;
 		}
-		if (p.getUserPw().equals("")) { // 비밀번호 칸이 비어 있으면 2을 리턴
+//		if (p.getEmailchk().equals("")) { // 이메일 인증 칸이 비어 있으면 2를 리턴
+//			return 2;
+//		}
+		if (p.getUserPw().equals("")) { // 비밀번호 칸이 비어 있으면 3을 리턴
 			return 2;
 		}
-		if (p.getUserPwRe().equals("")) { // 비밀번호 확인 칸이 비어 있으면 3을 리턴
+		if (p.getUserPwRe().equals("")) { // 비밀번호 확인 칸이 비어 있으면 4을 리턴
 			return 3;
 		}
-		if (p.getNickname().equals("")) { // 닉네임 칸이 비어 있으면 4를 리턴
+		if (p.getNickname().equals("")) { // 닉네임 칸이 비어 있으면 5를 리턴
 			return 4;
 		}
-		if (!p.getUserPw().equals(p.getUserPwRe())) { // 비밀번호와 비밀번호 확인 칸의 값이 다르면 5를 리턴
+		if (!p.getUserPw().equals(p.getUserPwRe())) { // 비밀번호와 비밀번호 확인 칸의 값이 다르면 6를 리턴
 			return 5;
 		}
 		p.setUserPw(hashPw);
 
 		mapper.insUser(p); // if문에서 하나도 안걸리면 정보를 입력
 
-		return 6; // 회원가입이 성공하면 6를 리턴
+		return 6; // 회원가입이 성공하면 7를 리턴
 	}
 
 	// 1: 로그인 성공, 2: 아이디 없음, 3: 비밀번호가 틀림, 0: 에러
@@ -116,6 +119,7 @@ public class UserService {
 			}
 
 			// 비밀번호 변경
+			System.out.println("변경 비밀번호  : " + pw);
 			p.setUserPw(pw);
 			mapper.updateUserPassword(p);
 
@@ -143,6 +147,10 @@ public class UserService {
 			throw new IllegalArgumentException();
 		}
 
+	}
+	
+	public UserEntity selUser(UserEntity p) {
+		return mapper.selUser(p);
 	}
 
 }

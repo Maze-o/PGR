@@ -84,3 +84,19 @@ CREATE TABLE pgrUser(
 	myProperty INT unsigned DEFAULT 10000 NOT null,
 	PRIMARY KEY (userPk)
 );
+
+//betting CREATE TABLE 
+CREATE TABLE b_user (
+	userPk INT UNSIGNED,
+	property INT UNSIGNED NOT NULL,
+	id INT UNSIGNED NOT NULL,
+	myProperty INT UNSIGNED NOT NULL,
+	team INT UNSIGNED NOT NULL,
+	bResult INT SIGNED NOT NULL,
+	success INT UNSIGNED NOT NULL,
+	win INT UNSIGNED,
+	lose INT UNSIGNED,
+	draw INT UNSIGNED,
+	cTeam INT UNSIGNED,
+	PRIMARY KEY (userPk,id)
+);

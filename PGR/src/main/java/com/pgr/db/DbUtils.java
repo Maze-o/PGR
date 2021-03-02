@@ -38,7 +38,7 @@ public class DbUtils {
 			
 			for(int i=0;i<arr.size();i++) {
 				String temp = (String)arr.get(i);
-				temp = temp.substring(0, 4) + temp.substring(5, 7) + temp.substring(8, 10);
+				temp = temp.substring(0, 4) + temp.substring(5, 7) + temp.substring(8, 10); // 년, 월, 일만 가져와서 String형으로 합친다.
 				list.add(temp);
 			}
 		} catch(Exception e) {

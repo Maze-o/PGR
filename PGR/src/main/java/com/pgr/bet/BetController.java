@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.pgr.model.RecentEntity;
+import com.pgr.rm.RecentService;
 
 @Controller
 public class BetController {
@@ -15,13 +17,16 @@ public class BetController {
 	@Autowired
 	private BetService bService;
 	
+	@Autowired
+	private RecentService rService;
+	
 	@GetMapping("/betting")
 	public String betting() {
 		return "menus/bet/betlist";
 	}
 	
 	@GetMapping("/bettingroom")
-	public String bettingroom() {
+	public String bettingroom(RecentEntity data) {
 		return "menus/bet/bettingroom";
 	}
 	

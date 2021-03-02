@@ -5,13 +5,17 @@
 	layout:decorator="~{layout/layout_default}">
 
 <th:block layout:fragment="css">
-	<link rel="stylesheet" type="text/css" href="css/bet/bettingroom.css">
+	<link rel="stylesheet" type="text/css" th:href="@{css/bet/bettingroom.css}">
+</th:block>
+
+<th:block layout:fragment="script">
+	<script defer type="text/javascript" th:src="@{js/bet/bettingroom.js}"></script>
 </th:block>
 
 <div layout:fragment="content" class="pagew">
-	<div class="bettingroom_container">
+	<div th:value="${param.id}" class="bettingroom_container">
 		<div class="matchcontainer">
-		<div class="leftContainer">lteam
+		<div class="leftContainer" >
 			<div class="lTeam"></div>
 			<div class="recent-history">
 				<div class="recent-title">최근전적</div>
@@ -25,11 +29,8 @@
 			</div>
 		</div>
 		<div class="empty">
-			<span>2021-03-01</span>
-			<span>st.louis</span>
-			<span>vs</span>
 		</div>
-		<div class="rightContainer">rteam
+		<div class="rightContainer">
 			<div class="rTeam"></div>
 			<div class="recent-history">
 				<div class="recent-title">최근전적</div>

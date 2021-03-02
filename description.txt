@@ -20,18 +20,10 @@ api document
 https://www.kryogenix.org/code/browser/sorttable/
 sort table JS 라이브러리
 
-// 경기 ID
-events -> competitions -> competitors -> statistics -> [1] foulsCommitted // 파울
-events -> competitions -> competitors -> statistics -> [2] wonCorners // 코너킥
-events -> competitions -> competitors -> statistics -> [4] possessionPct // 점유율
-events -> competitions -> competitors -> statistics -> [6] shotsOnTarget // 유효슈팅
-events -> competitions -> competitors -> statistics -> [7] totalGoals // 골넣은 횟수(점수)
-events -> competitions -> competitors -> statistics -> [8] totalShots // 슈팅
-
 //RECENT MATCH
 CREATE TABLE rmatch (
 pkid INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-id INT UNSIGNED NOT NULL,
+id INT UNSIGNED NOT NULL UNIQUE,
 date VARCHAR(100) NOT NULL,
 venue VARCHAR(50) NOT NULL,
 lteam VARCHAR(100) NOT NULL,
@@ -41,6 +33,22 @@ rteam VARCHAR(100) NOT NULL,
 rid INT UNSIGNED NOT NULL,
 rscore INT UNSIGNED NOT NULL,
 completed boolean NULL
+);
+
+//Match Record
+CREATE TABLE matchrecord (
+pkid INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+id INT UNSIGNED NOT NULL UNIQUE,
+lfoulsCommitted INT UNSIGNED,
+lwonCorners INT UNSIGNED,
+lpossessionPct INT UNSIGNED,
+lshotsOnTarget INT UNSIGNED,
+ltotalShots INT UNSIGNED,
+rfoulsCommitted INT UNSIGNED,
+rwonCorners INT UNSIGNED,
+rpossessionPct INT UNSIGNED,
+rshotsOnTarget INT UNSIGNED,
+rtotalShots INT UNSIGNED
 );
 
 //TEAMS create 쿼리문

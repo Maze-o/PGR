@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pgr.matchrecord.MatchRecordMapper">
+	<insert id="insMatchRecordList">
+		INSERT INTO matchrecord
+		( id, lfoulsCommitted, lwonCorners, lpossessionPct, lshotsOnTarget, ltotalShots, rfoulsCommitted, rwonCorners, rpossessionPct, rshotsOnTarget, rtotalShots )
+		VALUES
+		<foreach collection="list" item="item" separator=" , ">
+		( #{item.id}, #{item.lfoulsCommitted}, #{item.lwonCorners}, #{item.lpossessionPct}, #{item.lshotsOnTarget}, #{item.ltotalShots}, #{item.rfoulsCommitted}, #{item.rwonCorners}, #{item.rpossessionPct}, #{item.rshotsOnTarget}, #{item.rtotalShots} )
+		</foreach>
+	</insert>
+	<select id="selMatchRecord" resultType="com.pgr.model.MatchRecordEntity">
+		SELECT * FROM matchrecord
+		WHERE id = #{id}
+	</select>
+	<update id="updMatchRecord">
+		UPDATE matchrecord
+		SET lfoulsCommitted = #{lfoulsCommitted},
+		lwonCorners = #{lwonCorners},
+		lpossessionPct = #{lpossessionPct},
+		lshotsOnTarget = #{lshotsOnTarget},
+		ltotalShots = #{ltotalShots},
+		rfoulsCommitted = #{rfoulsCommitted},
+		rwonCorners = #{rwonCorners},
+		rpossessionPct = #{rpossessionPct},
+		rshotsOnTarget = #{rshotsOnTarget},
+		rtotalShots = #{rtotalShots}
+		WHERE id = #{id}
+	</update>
+</mapper>

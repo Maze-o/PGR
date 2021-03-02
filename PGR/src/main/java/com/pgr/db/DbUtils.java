@@ -14,6 +14,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import com.pgr.Const;
+import com.pgr.model.MatchRecordEntity;
 import com.pgr.model.RecentEntity;
 import com.pgr.model.TeamEntity;
 
@@ -46,7 +47,74 @@ public class DbUtils {
 		}
 		return list;
 	}
+	
+	//경기의 상세 레코드 가져오는 함수
+	public static List<MatchRecordEntity> getMrList(String addUrl) {
+		String url = Const.RECENT_MATCHES + addUrl; // API URL
+		String teamData = getData(url);
+		
+		JSONParser parser = new JSONParser();
+		JSONObject obj = null;
+		JSONArray arr = null;
+		
+		List<MatchRecordEntity> list = new ArrayList<>();
+		
+		try {
+			obj = (JSONObject)parser.parse(teamData);
+			JSONArray event = (JSONArray)obj.get("events");
+			
+			for(int i=0;i<event.size();i++) {
+				MatchRecordEntity re = new MatchRecordEntity();
+				
+				obj = (JSONObject)event.get(i);
+				re.setId(Integer.parseInt((String)obj.get("id")));
+				
+				obj = (JSONObject)event.get(i);
+				
+				arr = (JSONArray)obj.get("competitions");
+				
+				obj = (JSONObject)arr.get(0);
+				arr = (JSONArray)obj.get("competitors");
+				
+				obj = (JSONObject)arr.get(0);
+				JSONArray arr2 = (JSONArray)obj.get("statistics");
+				if(arr2 != null) { // NULL POINTER 방지
+					if(! arr2.isEmpty()) { // 이미 끝나서 데이터가 담겨져있는 경기들만
+						obj = (JSONObject)arr2.get(1);
+						re.setLfoulsCommitted(Integer.parseInt((String)obj.get("displayValue")));
+						obj = (JSONObject)arr2.get(2);
+						re.setLwonCorners(Integer.parseInt((String)obj.get("displayValue")));
+						obj = (JSONObject)arr2.get(4);
+						re.setLpossessionPct(Double.parseDouble((String)obj.get("displayValue")));
+						obj = (JSONObject)arr2.get(6);
+						re.setLshotsOnTarget(Integer.parseInt((String)obj.get("displayValue")));
+						obj = (JSONObject)arr2.get(8);
+						re.setLtotalShots(Integer.parseInt((String)obj.get("displayValue")));
+						
+						obj = (JSONObject)arr.get(1);
+						arr2 = (JSONArray)obj.get("statistics");
+						obj = (JSONObject)arr2.get(1);
+						re.setRfoulsCommitted(Integer.parseInt((String)obj.get("displayValue")));
+						obj = (JSONObject)arr2.get(2);
+						re.setRwonCorners(Integer.parseInt((String)obj.get("displayValue")));
+						obj = (JSONObject)arr2.get(4);
+						re.setRpossessionPct(Double.parseDouble((String)obj.get("displayValue")));
+						obj = (JSONObject)arr2.get(6);
+						re.setRshotsOnTarget(Integer.parseInt((String)obj.get("displayValue")));
+						obj = (JSONObject)arr2.get(8);
+						re.setRtotalShots(Integer.parseInt((String)obj.get("displayValue")));
+					}
+				}
+				list.add(re);
+			}
+		} catch(Exception e) {
+			System.out.println("!!!!!!!!!! cant parse !!!!!!!!!!");
+			e.printStackTrace();
+		}
+		return list;
+	}
 
+	//경기의 데이터 가져오는 함수
 	public static List<RecentEntity> getRmList(String addUrl) {
 		String url = Const.RECENT_MATCHES + addUrl; // API URL
 		String teamData = getData(url);

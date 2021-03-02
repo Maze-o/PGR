@@ -9,8 +9,9 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.pgr.MatchPull;
-import com.pgr.bet.BetService;
 import com.pgr.db.DbUtils;
+import com.pgr.matchrecord.MatchRecordService;
+import com.pgr.model.MatchRecordEntity;
 import com.pgr.model.RecentEntity;
 import com.pgr.model.TeamEntity;
 import com.pgr.rm.RecentService;
@@ -27,7 +28,10 @@ public class Cron {
 	@Autowired
 	TeamService tService;
 	
-	@Scheduled(cron = "*/10 * * * * *") // 매분 0초마다 실행한다.
+	@Autowired
+	MatchRecordService mService;
+	
+	@Scheduled(cron = "0 * * * * *") // 매분 0초마다 실행한다.
 	public void RecentMatchs() { // 최근 경기를 가져온다.
 		if(MatchPull.tempThread == false) { // 모든 경기를 가져오는 작업이 다 끝낫을때 실행
 			List<RecentEntity> list = DbUtils.getRmList("");
@@ -36,8 +40,17 @@ public class Cron {
 	}
 	
 	@Scheduled(cron = "0 * * * * *") // 매분 0초마다 실행한다.
+	public void MatchRecord() {
+		if(MatchPull.tempThread == false) {
+			List<MatchRecordEntity> list = DbUtils.getMrList("");
+			mService.insMatchRecordList(list);
+		}
+	}
+	
+	@Scheduled(cron = "0 0 * * * *") // 매시간 0분마다 실행한다.
 	public void TeamsStat() { // 최근 팀 통계를 가져온다.
 		List<TeamEntity> list = DbUtils.getTeamsList();
 		logger.info("Teams Stat Updated: " + tService.insTeam(list));
 	}
+
 }

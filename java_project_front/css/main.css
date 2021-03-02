@@ -33,12 +33,27 @@ html {
 
 body {
     font-family: 'IBM Plex Serif', serif;
+    overflow-x: hidden;
 }
 
-.hidden {
+/*레이아웃 공통사항*/
+.pagew {
+    position: relative;
+    display: block;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.pagew_1600 {
+    position: relative;
+    display: flex;
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.swiper-container {
+    width: 100%;
     height: 100%;
-    min-height: 100%;
-    overflow: hidden !important;
 }
 
 /*show chat*/
@@ -230,19 +245,6 @@ body {
 }
 
 
-/*레이아웃 공통사항*/
-.pagew {
-    position: relative;
-    display: block;
-    width: 1600px;
-    margin: 0 auto;
-    flex: 1;
-}
-
-.swiper-container {
-    width: 100%;
-    height: 100%;
-}
 
 /*wrap*/
 .wrap {
@@ -250,6 +252,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    width: 100vw;
 }
 
 /*content*/
@@ -258,6 +261,7 @@ body {
     display: flex;
     width: 100%;
     height: 100%;
+    flex: 1;
 }
 
 /*content 공통*/
@@ -274,8 +278,9 @@ body {
 .play_list,
 .rank_chart,
 .main_news,
-.before_game,
-.notice {
+.end_game,
+.notice,
+.user_rank {
     position: relative;
     display: block;
     width: 100%;
@@ -467,6 +472,7 @@ body {
     height: 100%;
     border-radius: 5px;
     transition: all 0.6s;
+    background: #333;
 }
 
 .rank_box:hover {
@@ -476,7 +482,6 @@ body {
 
 .rank_box:hover .overlay {
     width: 100%;
-    background: #333;
 }
 
 .rank_box span {
@@ -522,6 +527,7 @@ body {
     left: 50%;
     top: 20px;
     transform: translateX(-50%);
+    z-index: 99999;
 }
 
 .sw_text {
@@ -533,6 +539,7 @@ body {
     height: 50px;
     z-index: 99999;
     border-radius: 0 0 5px 5px;
+    border-top: 1px solid #333;
 }
 
 .sw_text span {
@@ -540,7 +547,7 @@ body {
     display: block;
     text-align: center;
     line-height: 50px;
-    width: 700px;
+    width: 100%;
     height: 50px;
     margin: 0 auto;
     font-size: 20px;
@@ -548,15 +555,16 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
     letter-spacing: 1px;
+    padding: 0 10px;
 }
 
 
-.before_game {
+.end_game {
     padding: 20px 0;
     flex: 1;
 }
 
-.bf_list {
+.eg_list {
     position: relative;
     display: inline-block;
     width: 100%;
@@ -587,6 +595,7 @@ body {
 .vs_area:first-child::after {
     content: none;
 }
+
 .vs_area::before {
     content: 'VS';
     position: absolute;
@@ -657,7 +666,8 @@ body {
 }
 
 .notice {
-    height: 100%;
+    flex: 1;
+    margin-bottom: 20px;
 }
 
 .notice_list {
@@ -691,6 +701,67 @@ body {
 
 .notice_list ul li:hover {
     border-bottom-color: #333;
+}
+
+.user_rank {
+    padding: 20px;
+    flex: 1;
+}
+
+.user_rank_cont {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.user_box {
+    position: relative;
+    display: block;
+    height: 60px;
+    background: #fff;
+    box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    transition: all 0.7s;
+    margin-bottom: 30px;
+}
+
+.user_box:last-child {
+    margin: 0;
+}
+
+.user_box:hover .overlay {
+    width: 30%;
+}
+
+.gold_medal {
+    background: #f9ad0e;
+}
+
+.silver_medal {
+    background: #d1d7da;
+}
+
+.bronze_medal {
+    background: #df7e08;
+}
+
+.medal_icon_cont {
+    position: relative;
+    display: block;
+    width: 30%;
+    height: 100%;
+}
+
+.medal_icon {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
 }
 
 /* 반응형 코드 */

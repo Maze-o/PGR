@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorator="~{layout/layout_default_nowrap}">
+	layout:decorator="~{layout/layout_default}">
 
 <th:block layout:fragment="css">
 	<link rel="stylesheet" type="text/css" href="css/bet/bettingroom.css">
 </th:block>
 
 <div layout:fragment="content" class="pagew">
-	<div class="container">
+	<div class="bettingroom_container">
 		<div class="matchcontainer">
 		<div class="leftContainer">lteam
 			<div class="lTeam"></div>
@@ -47,6 +47,7 @@
 		<div class="betstatus">
 			<!-- 위치를 예쁘게 만들고 수정해야함 -->
 			<form id="betFrm">
+				<div class="betmanage">
 				<div class="betchoice_box">
 				<span><input class="betchoice" type="radio" name="chk_info" value="win">승(1.66)</span>
 				<span><input class="betchoice" type="radio" name="chk_info" value="draw">무(2.50)</span>
@@ -54,6 +55,7 @@
    				</div>
    				<input class="dobetting" type="text" name="property">
    				<input type="button" value="베팅하기">
+   				</div>
    			</form>
 		</div>
 	</div>

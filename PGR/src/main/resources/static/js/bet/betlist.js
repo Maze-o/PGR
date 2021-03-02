@@ -1,3 +1,4 @@
+window.onload = function(){
 const containerElem = document.querySelector('.bet_container')
 if(containerElem) {
 	fetch('/betroomlist')
@@ -50,4 +51,4 @@ if(containerElem) {
 		}
 	}
 }
-
+}

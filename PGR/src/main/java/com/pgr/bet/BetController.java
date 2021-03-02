@@ -41,4 +41,9 @@ public class BetController {
 		return bService.selBettingRoomList();
 	}
 	
+	@ResponseBody
+	@GetMapping("/endbetroomlist")
+	public List<RecentEntity> endbetroomlist() {
+		return bService.selEndBettingroomList();
+	}
 }

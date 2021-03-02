@@ -1,6 +1,6 @@
 const containerElem = document.querySelector('.bet_container')
 if(containerElem) {
-	fetch('/betroomlist')
+	fetch('/endbetroomlist')
 	.then(res => res.json())
 	.then(myJson => {
 		createTable(myJson)
@@ -24,7 +24,7 @@ if(containerElem) {
 			limg.src = lString
 			rimg.src = rString
 			
-			ahref.href = `/bettingroom?id=${myJson[i].id}`
+			ahref.href = `/endbettingroom?id=${myJson[i].id}`
 			div.className = 'box'
 			lteam.className = 'lTeam'
 			lteamlogo.className = 'lTeamlogo'
@@ -33,7 +33,7 @@ if(containerElem) {
 			limg.className = 'teamlogo'
 			rimg.className = 'teamlogo'
 			
-			span.innerText = 'vs'
+			span.innerText = myJson[i].lscore + ':' + myJson[i].rscore
 			lteam.innerText = myJson[i].lteam
 			rteam.innerText = myJson[i].rteam
 			
@@ -50,4 +50,3 @@ if(containerElem) {
 		}
 	}
 }
-

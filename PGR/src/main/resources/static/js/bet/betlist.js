@@ -11,7 +11,9 @@ if(containerElem) {
 		for(var i=0;i<myJson.length;i++) {
 			var ahref = document.createElement('a')
 			var div = document.createElement('div')
+			var lteamlogo = document.createElement('div')
 			var lteam = document.createElement('div')
+			var rteamlogo = document.createElement('div')
 			var rteam = document.createElement('div')
 			var span = document.createElement('span')
 			var limg = document.createElement('img')
@@ -25,7 +27,9 @@ if(containerElem) {
 			ahref.href = `/bettingroom?id=${myJson[i].id}`
 			div.className = 'box'
 			lteam.className = 'lTeam'
+			lteamlogo.className = 'lTeamlogo'
 			rteam.className = 'rTeam'
+			rteamlogo.className = 'rTeamlogo'
 			limg.className = 'teamlogo'
 			rimg.className = 'teamlogo'
 			
@@ -33,12 +37,14 @@ if(containerElem) {
 			lteam.innerText = myJson[i].lteam
 			rteam.innerText = myJson[i].rteam
 			
-			lteam.append(limg)
-			rteam.append(rimg)
+			lteamlogo.append(limg)
+			rteamlogo.append(rimg)
 			
 			div.append(ahref)
+			ahref.append(lteamlogo)
 			ahref.append(lteam)
 			ahref.append(span)
+			ahref.append(rteamlogo)
 			ahref.append(rteam)
 			containerElem.append(div)
 		}

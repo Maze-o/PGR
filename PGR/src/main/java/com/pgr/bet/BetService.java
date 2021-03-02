@@ -51,4 +51,8 @@ public class BetService {
 	public List<RecentEntity> selBettingRoomList() {
 		return mapper.selBettingRoomList();
 	}
+	
+	public List<RecentEntity> selEndBettingroomList() {
+		return mapper.selEndBettingRoomList();
+	}
 }

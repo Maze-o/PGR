@@ -37,7 +37,7 @@ function chkSign() {
 	// 이메일 앞쪽 ( @포함 )
 	const signupFrm = document.getElementById('signupFrm')
 	const emailVal = signupFrm.email.value
-	const emailChk = /^[\w.\-_]+@$/i
+	const emailChk = /^[\w.\-_]+$/i
 
 	// 이메일 뒷쪽 (도메인)
 	const textEmailVal = signupFrm.textEmail.value

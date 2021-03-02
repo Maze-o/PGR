@@ -39,7 +39,6 @@
     font-family: 'Noto Serif KR', serif;
 }
 
-
 /*wrap*/
 .login_wrap,
 .signup_wrap,
@@ -116,9 +115,14 @@
 }
 
 .txt_field input[name=email],
-.txt_field input[id=textEmail] {
+#textEmail {
     display: inline-block;
-    width: 40%;
+    width: 35%;
+}
+
+#anno {
+    display: inline-block;
+    width: 10%;
 }
 
 /*유효하다면 올라감*/
@@ -195,8 +199,8 @@
 
 #emailchkbtn {
     position: absolute;
-    right: 25px;
-    top: 145px;
+    right: 2%;
+    bottom: 10%;
 }
 
 /*find password*/

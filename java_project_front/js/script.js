@@ -1,5 +1,5 @@
 window.onload = function() {
-	// sticky header 스크롤 관련
+    // sticky header 스크롤 관련
     // window.addEventListener("scroll", function() {
     //     const header = document.querySelector(".header");
     //     header.classList.toggle("sticky", window.scrollY > 0);
@@ -44,6 +44,14 @@ window.onload = function() {
         },
     });
 }
+
+$(document).ready(function() {
+    $('.gotop').click(function() {
+        $('html').animate({
+            scrollTop: 0
+        }, 600);
+    })
+})
 
 // $(document).ready(function() {
 //     $('#fullpage').fullpage({

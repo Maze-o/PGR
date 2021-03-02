@@ -16,33 +16,26 @@
 	<script defer type="text/javascript" th:src="@{js/user/login.js}"></script>
 </th:block>
 
-<div layout:fragment="content">
-	<div th:if="${session.loginUser == null}">
-		<!-- wrap -->
-		<div class="wrap">
-			<!-- login -->
-			<div class="login_wrap">
-				<div class="login_form">
-					<span>login</span>
-					<form id="form">
-						<div class="txt_field">
-							<input type="text" name="userEmail" required> <label>ID
-								(e-mail)</label>
-						</div>
-						<div class="txt_field">
-							<input type="password" name="userPw" required> <label>Password</label>
-						</div>
-						<input type="button" name="signIn" value="login" id="loginBtn">
-						<div class="fg_pw">
-							<a href="/findpw">Forgot your password?</a>
-						</div>
-						<div class="signup_link">
-							Not a member?<a href="/join">Sign Up</a>
-						</div>
-					</form>
-				</div>
+<!-- login -->
+<div class="login_wrap" layout:fragment="content" th:if="${session.loginUser == null}">
+	<div class="login_form">
+		<span>login</span>
+		<form id="form">
+			<div class="txt_field">
+				<input type="text" name="userEmail" required> <label>ID
+					(e-mail)</label>
 			</div>
-		</div>
+			<div class="txt_field">
+				<input type="password" name="userPw" required> <label>Password</label>
+			</div>
+			<input type="button" name="signIn" value="login" id="loginBtn">
+			<div class="fg_pw">
+				<a href="/findpw">Forgot your password?</a>
+			</div>
+			<div class="signup_link">
+				Not a member?<a href="/join">Sign Up</a>
+			</div>
+		</form>
 	</div>
 </div>
 

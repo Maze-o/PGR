@@ -193,8 +193,8 @@
 
 #emailchkbtn {
     position: absolute;
-    right: 25px;
-    top: 235px;
+    right: 0;
+    bottom: 10%;
 }
 
 .confirm_btn {

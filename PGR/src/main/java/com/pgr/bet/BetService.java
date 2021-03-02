@@ -47,4 +47,8 @@ public class BetService {
 		}
 		return bMapper.updBetSuccess(bp);
 	}
+	
+	public List<RecentEntity> selBettingRoomList() {
+		return mapper.selBettingRoomList();
+	}
 }

@@ -21,6 +21,11 @@
 		ORDER BY pkid DESC
 		LIMIT 5
 	</select>
+	<select id="selBettingRoomList" resultType="com.pgr.model.RecentEntity">
+		SELECT * FROM rmatch
+		WHERE completed = FALSE
+		AND DATE_FORMAT(date, '%Y-%m-%d') &lt; DATE_ADD(NOW(), INTERVAL +4 DAY)
+	</select>
 	<update id="updRecentMatch">
 		UPDATE rmatch
 		SET lscore = #{lscore},

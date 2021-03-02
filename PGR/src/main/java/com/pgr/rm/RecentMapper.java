@@ -12,4 +12,5 @@ public interface RecentMapper {
 	int updRecentMatch(RecentEntity data);
 	RecentEntity selRecentMatch(RecentEntity data);
 	List<RecentEntity> selListRecentMatch();
+	List<RecentEntity> selBettingRoomList();
 }

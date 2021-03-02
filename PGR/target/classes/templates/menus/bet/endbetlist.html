@@ -2,24 +2,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorator="~{layout/layout_default}">
+	layout:decorator="~{layout/layout_default_nowrap}">
 
 <th:block layout:fragment="css">
-	<link rel="stylesheet" type="text/css" href="css/betlist.css">
+	<link rel="stylesheet" type="text/css" href="css/bet/betlist.css">
 </th:block>
 
 <div layout:fragment="content" class="pagew">
 	<div class="container">
 		<div class="Schedule-notification">
-			<div class="stream"><a href="/betting">진행</a></div>
-			<div class="finish"><a href="/endbetting">종료</a></div>
+			<div class="stream">
+				<a href="/betting">진행</a>
+			</div>
+			<div class="finish">
+				<a href="/endbetting">종료</a>
+			</div>
 		</div>
-		<a href="/bettingroom">
-				<div class="box">
-					vs
-					<div class="lTeam">Lteam</div>
-					<div class="rTeam">Rteam</div>
-				</div>
+		<a href="/endbettingroom">
+			<div class="box">
+				종료
+				<div class="lTeam">Lteam</div>
+				<div class="rTeam">Rteam</div>
+			</div>
 		</a>
 		<div class="box">
 			vs

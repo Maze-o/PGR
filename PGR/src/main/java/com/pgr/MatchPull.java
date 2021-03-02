@@ -24,7 +24,7 @@ public class MatchPull implements ApplicationRunner { // 서버 가동시 실행
 		 List<String> length = DbUtils.getDateList(); // 일정 년월일을 list로 String으로 가져옴
 		 
 		 for(int j=0;j<length.size();j++) {
-			 List<RecentEntity> list = DbUtils.getRmList("?dates=" + length.get(j));
+			List<RecentEntity> list = DbUtils.getRmList("?dates=" + length.get(j));
 			rService.insRecentMatch(list);;
 		 }
 		 tempThread = false; // 임시 쓰레드 역할을 하는 변수 false

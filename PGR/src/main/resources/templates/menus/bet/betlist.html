@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="~{layout/layout_default_nowrap}">
+
+<th:block layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="css/bet/betlist.css">
+</th:block>
+
+<th:block layout:fragment="script">
+	<script defer type="text/javascript" th:src="@{js/bet/betlist.js}"></script>
+</th:block>
+
+<div layout:fragment="content" class="pagew">
+    <div class="bet_container">
+        <div class="Schedule-notification">
+            <div class="stream"><a href="/betting">진행</a></div>
+            <div class="finish"><a href="/endbetting">종료</a></div>
+        </div>
+    </div>
+</div>
+</html>

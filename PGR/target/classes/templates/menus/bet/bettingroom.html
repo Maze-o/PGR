@@ -46,12 +46,14 @@
 		</div>
 		<div class="betstatus">
 			<!-- 위치를 예쁘게 만들고 수정해야함 -->
-			<form>
-				<input class="betchoice" type="radio" name="chk_info" value="win">승(1.66)
-				<input class="betchoice" type="radio" name="chk_info" value="draw">무(2.50)
-				<input class="betchoice" type="radio" name="chk_info" value="lose">패(5.00)
+			<form id="betFrm">
+				<div class="betchoice_box">
+				<span><input class="betchoice" type="radio" name="chk_info" value="win">승(1.66)</span>
+				<span><input class="betchoice" type="radio" name="chk_info" value="draw">무(2.50)</span>
+				<span><input class="betchoice" type="radio" name="chk_info" value="lose">패(5.00)</span>
+   				</div>
    				<input type="text" name="memberName">
-   				<input type="button" value="베팅하기">
+   				<input class="dobetting" type="button" value="베팅하기">
    			</form>
 		</div>
 	</div>

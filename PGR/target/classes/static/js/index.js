@@ -56,7 +56,6 @@ if(rankBoxCont) {
 //메인 뉴스 출력해주는 곳
 const swiperWrapper = document.querySelector('#newsPrint')
 if(swiperWrapper) {
-	console.log('asd')
 	fetch('http://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/news')
 	.then(res => res.json())
 	.then(myJson => {
@@ -128,6 +127,113 @@ if(swiperWrapper) {
 			});
 			
 			}
+		}
+	}
+}
+
+// 하단 중간 종료된 베팅리스트
+const bflist = document.querySelector('.bf_list')
+if(bflist) {
+	fetch('/endbetroomlist')
+	.then(res => res.json())
+	.then(myJson => {
+		createTable(myJson)
+	})
+	
+	function createTable(myJson) {
+		for(var i=0;i<3;i++) {
+			const vs_area = document.createElement('div')
+			const limg = document.createElement('img')
+			const rimg = document.createElement('img')
+			
+			const score_sec = document.createElement('div')
+			const lscore = document.createElement('span')
+			const rscore = document.createElement('span')
+			
+			const ahref = document.createElement('a')
+			
+			const lString = 'img/teamlogo/' + myJson[i].lid + '.png'
+			const rString = 'img/teamlogo/' + myJson[i].rid + '.png'
+			
+			vs_area.className = 'vs_area'
+			limg.className = 'vs_img'
+			rimg.className = 'vs_img'
+			score_sec.className = 'score_sec'
+			lscore.className = 'vs_score'
+			rscore.className = 'vs_score'
+			
+			limg.src = lString
+			rimg.src = rString
+			
+			ahref.href = '/endbettingroom?id=' + myJson[i].id
+			ahref.innerHTML = '<input type="button" value="상세보기" class="vs_btn">'
+			lscore.innerText = myJson[i].lscore
+			rscore.innerText = myJson[i].rscore
+			
+			vs_area.append(limg)
+			vs_area.append(rimg)
+			
+			score_sec.append(lscore)
+			score_sec.append(rscore)
+			
+			vs_area.append(score_sec)
+			vs_area.append(ahref)
+			
+			bflist.append(vs_area)
+		}
+	}
+}
+
+// 진행 예정인 베팅룸 리스트
+const recentBet = document.querySelector('#recentBet')
+if(recentBet) {
+	fetch('/betroomlist')
+	.then(res => res.json())
+	.then(myJson => {
+		createTable(myJson)
+	})
+	
+	function createTable(myJson) {
+		for(var i=0;i<3;i++) {
+			const swiper_slide = document.createElement('div')
+			const state_cont = document.createElement('div')
+			const pl_profile = document.createElement('div')
+			const state = document.createElement('span')
+			
+			const limg = document.createElement('img')
+			const rimg = document.createElement('img')
+			const lString = 'img/teamlogo/' + myJson[i].lid + '.png'
+			const rString = 'img/teamlogo/' + myJson[i].rid + '.png'
+			
+			const nowdate = new Date()
+			const matchdate = new Date(myJson[i].date)
+			
+			const dateHour = matchdate.getHours() >= 10 ? matchdate.getHours() : '0' + matchdate.getHours()
+			const dateMinutes = matchdate.getMinutes() >= 10 ? matchdate.getMinutes() : '0' + matchdate.getMinutes()
+			
+			console.log(nowdate > matchdate)
+			
+			limg.src = lString
+			rimg.src = rString
+			
+			swiper_slide.className = 'swiper-slide'
+			state_cont.className = 'state_cont'
+			pl_profile.className = 'pl_profile'
+			limg.className = 'pl_img'
+			rimg.className = 'pl_img'
+			state.className = nowdate > matchdate ? 'state play' : 'state expected'
+			
+			pl_profile.setAttribute("data-text", dateHour + ':' + dateMinutes)
+			
+			state_cont.append(state)
+			
+			pl_profile.append(limg)
+			pl_profile.append(rimg)
+			
+			swiper_slide.append(state_cont)
+			swiper_slide.append(pl_profile)
+			
+			recentBet.append(swiper_slide)
 		}
 	}
 }

@@ -9,12 +9,12 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import com.pgr.cron.Cron;
 import com.pgr.db.DbUtils;
 import com.pgr.matchrecord.MatchRecordService;
 import com.pgr.model.MatchRecordEntity;
 import com.pgr.model.RecentEntity;
 import com.pgr.rm.RecentService;
+import com.pgr.team.TeamService;
 
 @Component
 public class MatchPull implements ApplicationRunner { // 서버 가동시 실행
@@ -29,9 +29,13 @@ public class MatchPull implements ApplicationRunner { // 서버 가동시 실행
 	@Autowired
 	MatchRecordService mService;
 	
+	@Autowired
+	TeamService tService;
+	
 	 @Override
 	 public void run(ApplicationArguments args) throws Exception { // 일정에 있는 모든 날짜의 경기 기록들을 가져옴
 		 List<String> length = DbUtils.getDateList(); // 일정 년월일을 list로 String으로 가져옴
+		 tService.insTeam(DbUtils.getTeamsList());
 		 
 		 for(int j=0;j<length.size();j++) {
 			List<RecentEntity> list = DbUtils.getRmList("?dates=" + length.get(j));

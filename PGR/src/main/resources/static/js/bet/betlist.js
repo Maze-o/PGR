@@ -38,9 +38,10 @@ if(containerElem) {
 			limg.className = 'teamlogo'
 			rimg.className = 'teamlogo'
 			span.className = 'CenterSpan'
+			textspan.className = 'text'
 			
 			datespan.innerText = dates.toLocaleString()
-			textspan.innerText = 'vs'
+			textspan.innerText = 'VS'
 			lteam.innerText = myJson[i].lteam
 			rteam.innerText = myJson[i].rteam
 			

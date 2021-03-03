@@ -79,18 +79,31 @@
 	height: 70%;
 }
 
-.box a span {
+.CenterSpan {
 	position: relative;
-	display: block;
-	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around; 
+	flex: 3;
 	width: 100%;
-	height: 100%;
 	border-bottom: 1px solid #ccc;
+	font-size: 20px;
+	
 }
+
+.CenterSpan span {
+	display:inline;
+	line-height:normal;
+}
+
 .lTeamlogo,
 .rTeamlogo {
 	position :relative;
 	display: block;
 	flex:1;
 	border-bottom: 1px solid #ccc;
+}
+
+.text {
+	font-size: 40px;
 }

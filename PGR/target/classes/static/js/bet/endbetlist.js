@@ -16,7 +16,11 @@ if(containerElem) {
 			var lteam = document.createElement('div')
 			var rteamlogo = document.createElement('div')
 			var rteam = document.createElement('div')
-			var span = document.createElement('span')
+			var textspan = document.createElement('span')
+			var datespan = document.createElement('span')
+			var dates = new Date(myJson[i].date)
+			var span = document.createElement('div')
+			
 			var limg = document.createElement('img')
 			var rimg = document.createElement('img')
 			var lString = 'img/teamlogo/' + myJson[i].lid + '.png'
@@ -25,7 +29,7 @@ if(containerElem) {
 			limg.src = lString
 			rimg.src = rString
 			
-			ahref.href = `/endbettingroom?id=${myJson[i].id}`
+			ahref.href = `/bettingroom?id=${myJson[i].id}`
 			div.className = 'box'
 			lteam.className = 'lTeam'
 			lteamlogo.className = 'lTeamlogo'
@@ -33,13 +37,19 @@ if(containerElem) {
 			rteamlogo.className = 'rTeamlogo'
 			limg.className = 'teamlogo'
 			rimg.className = 'teamlogo'
+			span.className = 'CenterSpan'
+			textspan.className = 'text'
 			
-			span.innerText = myJson[i].lscore + ':' + myJson[i].rscore
+			datespan.innerText = dates.toLocaleString()
+			textspan.innerText = myJson[i].lscore + ':' + myJson[i].rscore
 			lteam.innerText = myJson[i].lteam
 			rteam.innerText = myJson[i].rteam
 			
+			
 			lteamlogo.append(limg)
 			rteamlogo.append(rimg)
+			span.append(datespan)
+			span.append(textspan)
 			
 			div.append(ahref)
 			ahref.append(lteamlogo)

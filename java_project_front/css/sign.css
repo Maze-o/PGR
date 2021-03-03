@@ -64,6 +64,10 @@
     border-radius: 5px;
 }
 
+.login_form {
+    height: 500px;
+}
+
 .login_form>span,
 .signup_form>span,
 .find_form>span {

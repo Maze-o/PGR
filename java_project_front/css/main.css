@@ -719,7 +719,7 @@ body {
 
 .user_box {
     position: relative;
-    display: block;
+    display: flex;
     height: 60px;
     background: #fff;
     box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.2);
@@ -764,6 +764,18 @@ body {
     z-index: 9999;
 }
 
+.user_info {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    font-size: 17px;
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #333;
+}
+
 /* 반응형 코드 */
 @media all and (max-width: 1024px) {
     .h_logo {
@@ -773,7 +785,8 @@ body {
 }
 
 @media all and (max-width: 960px) {
-    .header {
+    .h_list,
+    .h_login {
         padding-top: 25px;
     }
 

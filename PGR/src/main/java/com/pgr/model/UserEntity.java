@@ -7,6 +7,16 @@ public class UserEntity {
 	private String userPwRe;
 	private String nickname;
 	private String regDt;
+	private int myProperty;
+	
+
+	public int getMyProperty() {
+		return myProperty;
+	}
+
+	public void setMyProperty(int myProperty) {
+		this.myProperty = myProperty;
+	}
 
 	public String getUserPwRe() {
 		return userPwRe;

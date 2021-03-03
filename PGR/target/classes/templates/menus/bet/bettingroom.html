@@ -48,14 +48,16 @@
 		<div class="betstatus">
 			<!-- 위치를 예쁘게 만들고 수정해야함 -->
 			<form id="betFrm">
+				<input type="hidden" id="userp" th:if="${session.loginUser != null}" th:value="${session.loginUser.userPk}">
 				<div class="betmanage">
 				<div class="betchoice_box">
-				<span><input class="betchoice" type="radio" name="chk_info" value="win">승(1.66)</span>
-				<span><input class="betchoice" type="radio" name="chk_info" value="draw">무(2.50)</span>
-				<span><input class="betchoice" type="radio" name="chk_info" value="lose">패(5.00)</span>
+				<span><input class="betchoice" type="radio" name="chk_info" value="0">승(1.66)</span>
+				<span><input class="betchoice" type="radio" name="chk_info" value="1">무(2.50)</span>
+				<span><input class="betchoice" type="radio" name="chk_info" value="2">패(5.00)</span>
    				</div>
-   				<input class="dobetting" type="text" name="property">
-   				<input type="button" value="베팅하기">
+   				<input th:if="${session.loginUser != null}" class="dobetting" type="text" name="property">
+   				<input th:unless="${session.loginUser != null}" class="dobetting" type="text" name="property" readonly>
+   				<input id="buttons" type="button" value="베팅하기">
    				</div>
    			</form>
 		</div>

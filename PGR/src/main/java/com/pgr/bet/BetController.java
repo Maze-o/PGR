@@ -2,14 +2,19 @@ package com.pgr.bet;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
+import com.pgr.model.BetEntity;
 import com.pgr.model.RecentEntity;
 import com.pgr.rm.RecentService;
+import com.pgr.user.SecurityUtils;
 
 @Controller
 public class BetController {
@@ -19,6 +24,9 @@ public class BetController {
 	
 	@Autowired
 	private RecentService rService;
+	
+	@Autowired
+	SecurityUtils sUtils;
 	
 	@GetMapping("/betting")
 	public String betting() {
@@ -50,5 +58,12 @@ public class BetController {
 	@GetMapping("/endbetroomlist")
 	public List<RecentEntity> endbetroomlist() {
 		return bService.selEndBettingroomList();
+	}
+	
+	@ResponseBody
+	@PostMapping("/bet")
+	public int bet(@RequestBody BetEntity data, HttpSession hs) {
+		data.setMyProperty(sUtils.getLoginUser(hs).getMyProperty());
+		return bService.insBet(data);
 	}
 }

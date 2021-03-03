@@ -6,7 +6,6 @@ if(temps) {
 	.then(myJson => {
 		createText(myJson)
 	})
-	temps.removeAttribute('value')
 	
 	function createText(myJson) {
 		const lteam = document.querySelector('.leftContainer')
@@ -45,4 +44,46 @@ if(temps) {
 		empty.append(spanVenue)
 		empty.append(spanVs)
 	}
+}
+
+const betFrm = document.querySelector('#betFrm')
+if(betFrm) {
+	const buttons = document.querySelector('#buttons')
+	buttons.addEventListener('click', function() {
+		ajax()
+	})
+	
+	function ajax() {
+		const userp = document.querySelector('#userp')
+		
+		var param = {
+			userPk: userp.getAttribute('value'),
+			id: temps.getAttribute('value'),
+			property: betFrm.property.value,
+			team: value_check()
+		}
+		
+		fetch('/bet', {
+			method: 'post',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(param)
+		}).then(function(res) {
+			console.log(res)
+			return res.json()
+		}).then(function(myJson) {
+			console.log(myJson)
+		})
+	}
+	
+	    function value_check() {
+        var check_count = document.getElementsByName("chk_info").length;
+ 
+        for (var i=0; i<check_count; i++) {
+            if (document.getElementsByName("chk_info")[i].checked == true) {
+                return document.getElementsByName("chk_info")[i].value;
+            }
+        }
+    }
 }

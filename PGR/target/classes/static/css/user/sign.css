@@ -1,6 +1,5 @@
 @charset 'utf-8';
 
-
 /*모달*/
 .email_modal {
     display: none;
@@ -52,15 +51,21 @@
     height: 100%;
     flex: 1;
 }
+
 .login_form,
 .signup_form {
     position: relative;
     display: block;
     width: 500px;
-    height: 600px;
+    height: 550px;
     padding: 0 20px;
+    background: #fff;
     border: 1px solid #333;
     border-radius: 5px;
+}
+
+.login_form {
+    height: 500px;
 }
 
 .login_form>span,
@@ -114,9 +119,14 @@
 }
 
 .txt_field input[name=userEmail],
-.txt_field input[id=textEmail] {
+#textEmail {
     display: inline-block;
-    width: 40%;
+    width: 35%;
+}
+
+#anno {
+    display: inline-block;
+    width: 10%;
 }
 
 /*유효하다면 올라감*/
@@ -152,7 +162,6 @@
     text-decoration: underline;
 }
 
-
 #loginFrm>input[name=signIn],
 #signupFrm>input[name=signUp],
 #findFrm > input[name=find] {
@@ -181,8 +190,9 @@
 
 .cert {
     position: relative;
-    display: flex;
-    justify-content: space-between;
+    display: block;
+    font-family: 'Noto Serif KR', serif;
+    margin-top: 35px;
 }
 
 #emailsend  {
@@ -193,7 +203,7 @@
 
 #emailchkbtn {
     position: absolute;
-    right: 0;
+    right: 2%;
     bottom: 10%;
 }
 
@@ -208,6 +218,7 @@
 	background:#fff !important;
 	color:#333 !important;
 }
+
 
 /*find password*/
 .find_form {

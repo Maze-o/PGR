@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pgr.Const;
+import com.pgr.model.UserDomain;
 import com.pgr.model.UserEntity;
 
 @Controller
@@ -28,8 +29,9 @@ public class UserController {
 
 	@ResponseBody
 	@PostMapping("/join") // 회원가입 정보 DB 전달
-	public Map<String, Object> join(@RequestBody UserEntity p) {
+	public Map<String, Object> join(@RequestBody UserEntity p) throws Exception {
 		Map<String, Object> map = new HashMap<>();
+		System.out.println("DB EMAIL : " + p.getUserEmail());
 		map.put(Const.KEY_RESULT, service.join(p));
 
 		return map;
@@ -42,11 +44,10 @@ public class UserController {
 
 	@ResponseBody
 	@PostMapping("/login")
-	public Map<String, Object> login(@RequestBody UserEntity p, HttpSession hs) {
+	public Map<String, Object> login(@RequestBody UserEntity p, HttpSession hs) throws Exception {
 
 		Map<String, Object> map = new HashMap<>();
 		map.put(Const.KEY_RESULT, service.login(p, hs));
-
 		return map;
 	}
 
@@ -66,6 +67,24 @@ public class UserController {
 	public Map<String, Object> findPw(@RequestBody UserEntity p) throws Exception {
 		Map<String, Object> map = new HashMap<>();
 		map.put(Const.KEY_RESULT, service.findPw(p));
+		return map;
+	}
+	
+	@GetMapping("/mypage")
+	public String myPage() {
+		return "menus/mypage";
+	}
+	
+	@GetMapping("/pwchange")
+	public String pwChange() {
+		return "menus/pwchange";
+	}
+	
+	@ResponseBody
+	@PostMapping("/pwchange")
+	public Map<String, Object> pwChange(@RequestBody UserDomain p) throws Exception {
+		Map<String, Object> map = new HashMap<>();
+		map.put(Const.KEY_RESULT, service.pwChange(p));
 		return map;
 	}
 

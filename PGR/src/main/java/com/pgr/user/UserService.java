@@ -12,6 +12,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import com.pgr.Const;
+import com.pgr.model.UserDomain;
 import com.pgr.model.UserEntity;
 
 @Service
@@ -26,7 +27,7 @@ public class UserService {
 	@Autowired
 	private JavaMailSender emailSender;
 
-	public int join(UserEntity p) {
+	public int join(UserEntity p) throws Exception {
 		UserEntity check = mapper.selUser(p);
 
 		if (p.getUserEmail().equals("")) { // 아이디(이메일)칸이 비어 있으면 0을 리턴
@@ -40,30 +41,27 @@ public class UserService {
 		if (check != null) { // 이미 있는 아이디(이메일)이면 1을 리턴
 			return 1;
 		}
-//		if (p.getEmailchk().equals("")) { // 이메일 인증 칸이 비어 있으면 2를 리턴
-//			return 2;
-//		}
-		if (p.getUserPw().equals("")) { // 비밀번호 칸이 비어 있으면 3을 리턴
+		if (p.getUserPw().equals("")) { // 비밀번호 칸이 비어 있으면 2를 리턴
 			return 2;
 		}
-		if (p.getUserPwRe().equals("")) { // 비밀번호 확인 칸이 비어 있으면 4을 리턴
+		if (p.getUserPwRe().equals("")) { // 비밀번호 확인 칸이 비어 있으면 3을 리턴
 			return 3;
 		}
-		if (p.getNickname().equals("")) { // 닉네임 칸이 비어 있으면 5를 리턴
+		if (p.getNickname().equals("")) { // 닉네임 칸이 비어 있으면 4를 리턴
 			return 4;
 		}
-		if (!p.getUserPw().equals(p.getUserPwRe())) { // 비밀번호와 비밀번호 확인 칸의 값이 다르면 6를 리턴
+		if (!p.getUserPw().equals(p.getUserPwRe())) { // 비밀번호와 비밀번호 확인 칸의 값이 다르면 5를 리턴
 			return 5;
 		}
 		p.setUserPw(hashPw);
 
 		mapper.insUser(p); // if문에서 하나도 안걸리면 정보를 입력
 
-		return 6; // 회원가입이 성공하면 7를 리턴
+		return 6; // 회원가입이 성공하면 6를 리턴
 	}
 
 	// 1: 로그인 성공, 2: 아이디 없음, 3: 비밀번호가 틀림, 0: 에러
-	public int login(UserEntity p, HttpSession hs) {
+	public int login(UserEntity p, HttpSession hs) throws Exception {
 		UserEntity check = mapper.selUser(p);
 
 		if (check == null) {
@@ -75,7 +73,6 @@ public class UserService {
 		}
 
 		check.setUserPw(null);
-		check.setRegDt(null);
 		hs.setAttribute(Const.KEY_LOGINUSER, check);
 		return 1;
 	}
@@ -125,7 +122,7 @@ public class UserService {
 
 			// 비밀번호 변경 메일 발송
 			sendSimpleMessage(p);
-			
+
 			// 비밀번호 암호화 DB저장
 			String salt = sUtils.getSalt();
 			String hashPw = sUtils.getHashPw(pw, salt);
@@ -137,7 +134,7 @@ public class UserService {
 		}
 
 	}
-	
+
 	public void sendSimpleMessage(UserEntity p) throws Exception {
 		MimeMessage message = createMessage(p);
 		try {// 예외처리
@@ -148,9 +145,25 @@ public class UserService {
 		}
 
 	}
-	
-	public UserEntity selUser(UserEntity p) {
-		return mapper.selUser(p);
-	}
 
+	public int pwChange(UserDomain p) throws Exception {
+		UserEntity check = mapper.selUser(p);
+		if (!BCrypt.checkpw(p.getUserPw(), check.getUserPw())) {
+			return 0;
+		}
+		if (p.getUserNewPw().equals("")) {
+			return 1;
+		}
+		if (!p.getUserNewPw().equals(p.getUserPwRe())) {
+			return 2;
+		}
+
+		String salt = sUtils.getSalt();
+		String hashPw = sUtils.getHashPw(p.getUserNewPw(), salt);
+
+		p.setUserPw(hashPw);
+
+		mapper.pwChange(p);
+		return 3;
+	}
 }

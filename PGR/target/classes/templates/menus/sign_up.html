@@ -38,9 +38,10 @@
 
 			<div class="txt_field">
 				<input type="text" name="userEmail" id="email" required>
-				<input id="textEmail" name="textEmail" placeholder="select email"
-					required> <label>e-mail</label> <select name="domain"
-					id="domainSelect" onchange="changeDomain()">
+				<input type="text" name="anno" id="anno" value="@" readonly>
+				<input id="textEmail" name="textEmail" placeholder="select email" required>
+				<label>e-mail</label>
+				<select name="domain" id="domainSelect" onchange="changeDomain()">
 					<option value="direct">직접입력</option>
 					<option value="gmail.com">gmail.com</option>
 					<option value="naver.com">naver.com</option>
@@ -50,14 +51,16 @@
 				<input type="button" value="이메일인증" id="emailsend">
 			</div>
 			<div class="txt_field">
-				<input type="password" name="userPw" required> <label>Password</label>
+				<input type="password" name="userPw" required>
+				<label>Password</label>
 			</div>
 			<div class="txt_field">
-				<input type="password" name="userPwRe" required> <label>confirm
-					Password</label>
+				<input type="password" name="userPwRe" required>
+				<label>confirm Password</label>
 			</div>
 			<div class="txt_field">
-				<input type="text" name="nickname" required> <label>Nickname</label>
+				<input type="text" name="nickname" required>
+				<label>Nickname</label>
 			</div>
 			<input type="button" name="signUp" value="signup" id="joinButton">
 		</form>

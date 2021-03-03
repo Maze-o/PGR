@@ -404,7 +404,7 @@ body {
 }
 
 .pl_profile::before {
-    content: '18:00';
+    content: attr(data-text);
     position: absolute;
     left: 50%;
     top: 50%;

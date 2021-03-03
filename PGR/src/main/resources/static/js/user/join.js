@@ -19,13 +19,14 @@ var chkjoinButton = document.querySelector('#joinButton')
 
 if (chkjoinButton) {
 	var userEmailElem = formElem.userEmail
+	var anno = formElem.anno
 	var textEmailElem = formElem.textEmail
 	var userPwElem = formElem.userPw
 	var userPwReElem = formElem.userPwRe
 	var nicknameElem = formElem.nickname
 
 	function ajax() {
-		var userEmail = userEmailElem.value + textEmailElem.value
+		var userEmail = userEmailElem.value + anno.value + textEmailElem.value
 		var param = {
 			userEmail: userEmail,
 			userPw: userPwElem.value,
@@ -94,8 +95,9 @@ var anno = formElem.anno
 
 if (emailsendButton) {
 	function ajax() {
-		var param = email.value + anno.value +textEmail.value
-
+		var param = email.value + anno.value + textEmail.value
+		console.log('param : ' + param)
+		console.log('anno : ' + anno.value)
 		fetch('/email', {
 			method: 'post',
 			headers: {
@@ -213,14 +215,14 @@ function chkSign() {
 	// 이메일 앞쪽 ( @포함 )
 	const signupFrm = document.getElementById('form')
 	const emailVal = signupFrm.email.value
-	const emailChk = /^[\w.\-_]$/i
+	const emailChk = /^[\w.\-_]+$/i
 
 	// 이메일 뒷쪽 (도메인)
 	const textEmailVal = signupFrm.textEmail.value
 	const textEmailChk = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{3}$/i
 
 	if (!emailChk.test(emailVal)) {
-		alert('이메일을 확인해 주세요')
+		alert('이메일을 확인해 주세요')	
 		return false
 	} else if (!textEmailChk.test(textEmailVal)) {
 		alert('이메일을 확인해 주세요')

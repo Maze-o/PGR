@@ -16,7 +16,7 @@
 	<script defer type="text/javascript" th:src="@{js/user/findPw.js}"></script>
 </th:block>
 
-<div class="find_wrap" layout:fragment="content">
+<div class="find_wrap" layout:fragment="content" th:if="${session.loginUser == null}">
 	<div class="find_form">
 		<span>find password</span>
 		<form id="form">

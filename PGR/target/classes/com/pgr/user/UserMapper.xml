@@ -24,5 +24,11 @@
 		SELECT userEmail, nickname FROM pgrUser
 		WHERE userEmail = #{userEmail}
 	</select>
+	
+	<update id="pwChange">
+		UPDATE pgrUser
+		SET userPw = #{userPw}
+		WHERE userEmail = #{userEmail}
+	</update>
 
 </mapper>

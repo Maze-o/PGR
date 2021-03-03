@@ -108,3 +108,11 @@ CREATE TABLE b_user (
 	cTeam INT UNSIGNED,
 	PRIMARY KEY (userPk,id)
 );
+
+//notice CREATE TABLE
+CREATE TABLE `tb_board` (
+`idx` INT NOT NULL AUTO_INCREMENT,
+`title` VARCHAR(255) NULL,
+`contents` TEXT NULL,
+`image` VARCHAR(255) NULL,
+PRIMARY KEY (`idx`));

@@ -46,12 +46,31 @@
 	font-size: 10px;
 }
 
-.minicontainer .leftContainer {
-	display: flex;
+.leftContainer,
+.rightContainer {
+	position: relative;
+	display: block;
 	flex-direction: column;
 	flex-grow: 1;
 	border: 1px solid #ccc;
-	font-size: 40px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.leftContainer > span,
+.rightContainer > span {
+	display:block;
+	font-size:40px;
+}
+
+.leftContainer > img,
+.rightContainer > img {
+	position: relative;
+	display: inline-block;
+	top:50%;
+	transform: translateY(-50%);
+ 	width: 48%;
+ 	height: 60%;
 }
 
 .minicontainer .lscore {
@@ -81,14 +100,6 @@
 	font-size: 50px;
 	justify-content: center;
 	align-items: center;
-}
-
-.minicontainer .rightContainer {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
-	font-size: 40px;
-	border: 1px solid #ccc;
 }
 
 .minicontainer .right-information {

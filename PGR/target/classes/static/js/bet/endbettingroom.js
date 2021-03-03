@@ -75,8 +75,23 @@ if(container) {
 		const venue = document.querySelector('.stadium')
 		const dates = new Date(myJson.date)
 		
-		lteam.innerText = myJson.lteam
-		rteam.innerText = myJson.rteam
+		const lspan = document.createElement('span')
+		const rspan = document.createElement('span')
+		var limg = document.createElement('img')
+		var rimg = document.createElement('img')
+		
+		var lString = 'img/teamlogo/' + myJson.lid + '.png'
+		var rString = 'img/teamlogo/' + myJson.rid + '.png'
+			
+		limg.src = lString
+		rimg.src = rString
+		
+		lteam.append(lspan)
+		rteam.append(rspan)
+		lspan.innerText = myJson.lteam
+		rspan.innerText = myJson.rteam
+		lteam.append(limg)
+		rteam.append(rimg)
 		lscore.innerText = myJson.lscore
 		rscore.innerText = myJson.rscore
 		date.innerText = dates.toLocaleString()

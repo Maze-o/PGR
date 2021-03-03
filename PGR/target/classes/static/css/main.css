@@ -419,7 +419,6 @@ body {
     display: block;
     width: 90px;
     height: 90px;
-    background: grey;
     border-radius: 50%;
 }
 
@@ -621,7 +620,6 @@ body {
     display: inline-block;
     width: 30%;
     height: 35%;
-    background: grey;
     border-radius: 50%;
 }
 

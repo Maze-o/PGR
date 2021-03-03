@@ -211,7 +211,6 @@ if(recentBet) {
 			const dateHour = matchdate.getHours() >= 10 ? matchdate.getHours() : '0' + matchdate.getHours()
 			const dateMinutes = matchdate.getMinutes() >= 10 ? matchdate.getMinutes() : '0' + matchdate.getMinutes()
 			
-			console.log(nowdate > matchdate)
 			
 			limg.src = lString
 			rimg.src = rString

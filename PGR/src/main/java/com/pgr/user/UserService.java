@@ -146,24 +146,30 @@ public class UserService {
 
 	}
 
-	public int pwChange(UserDomain p) throws Exception {
+	public int profileChange(UserDomain p, HttpSession hs) throws Exception {
 		UserEntity check = mapper.selUser(p);
-		if (!BCrypt.checkpw(p.getUserPw(), check.getUserPw())) {
+		
+		if (p.getNickname().equals("")) {
 			return 0;
 		}
-		if (p.getUserNewPw().equals("")) {
+		if (!BCrypt.checkpw(p.getUserPw(), check.getUserPw())) {
 			return 1;
 		}
-		if (!p.getUserNewPw().equals(p.getUserPwRe())) {
+		if (p.getUserNewPw().equals("")) {
 			return 2;
+		}
+		if (!p.getUserNewPw().equals(p.getUserPwRe())) {
+			return 3;
 		}
 
 		String salt = sUtils.getSalt();
 		String hashPw = sUtils.getHashPw(p.getUserNewPw(), salt);
 
 		p.setUserPw(hashPw);
-
-		mapper.pwChange(p);
-		return 3;
+		
+		hs.setAttribute(Const.KEY_LOGINUSER, p);
+		
+		mapper.profileChange(p);
+		return 4;
 	}
 }

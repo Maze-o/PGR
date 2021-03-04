@@ -25,9 +25,9 @@
 		WHERE userEmail = #{userEmail}
 	</select>
 	
-	<update id="pwChange">
+	<update id="profileChange">
 		UPDATE pgrUser
-		SET userPw = #{userPw}
+		SET nickname = #{nickname}, userPw = #{userPw} 
 		WHERE userEmail = #{userEmail}
 	</update>
 

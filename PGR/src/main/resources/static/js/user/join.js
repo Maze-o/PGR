@@ -1,12 +1,12 @@
 var formElem = document.querySelector('#form')
 
 // 이메일 인증이 완료되기 전까지는 밑에 칸들을 입력할수없도록 막음
-closeElement()
+var userPw = formElem.userPw
+var userPwRe = formElem.userPwRe
+var nickname = formElem.nickname
 
+closeElement()
 function closeElement() {
-	var userPw = formElem.userPw
-	var userPwRe = formElem.userPwRe
-	var nickname = formElem.nickname
 
 	userPw.disabled = true
 	userPwRe.disabled = true
@@ -50,7 +50,11 @@ if (chkjoinButton) {
 			})
 
 		function proc(myJson) {
-			console.log(myJson.result)
+			console.log('비활성화 : ' + userPw.disabled)
+			if (userPw.disabled){
+				alert('이메일 인증을 완료해 주세요')
+				return
+			}
 			switch (myJson.result) {
 				case 0:
 					alert('아이디(이메일)을 확인해 주세요')
@@ -59,9 +63,6 @@ if (chkjoinButton) {
 					alert('이미 존재하는 아이디(이메일)입니다')
 					location.reload()
 					return
-				/*case 2:
-					alert('이메일 인증을 해 주세요')
-					return*/
 				case 2:
 					alert('비밀번호를 입력해 주세요')
 					return
@@ -95,9 +96,9 @@ var anno = formElem.anno
 
 if (emailsendButton) {
 	function ajax() {
+		
 		var param = email.value + anno.value + textEmail.value
-		console.log('param : ' + param)
-		console.log('anno : ' + anno.value)
+		
 		fetch('/email', {
 			method: 'post',
 			headers: {
@@ -156,9 +157,6 @@ if (emailchkbtn) {
 	function changeEmail() {
 		var temp = document.querySelector('#temp')
 		temp.innerHTML = `<input type="button" value="이메일 인증 완료" class="confirm_btn" disabled>`
-		var userPw = formElem.userPw
-		var userPwRe = formElem.userPwRe
-		var nickname = formElem.nickname
 
 		userPw.disabled = false
 		userPwRe.disabled = false

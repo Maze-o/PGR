@@ -19,11 +19,11 @@ public class EmailService {
 	@Autowired
 	private JavaMailSender emailSender;
 
-	public static final String ePw = createKey();
+	public static String ePw = createKey();
 
 	private MimeMessage createMessage(String to) throws Exception {
 		MimeMessage message = emailSender.createMimeMessage();
-
+		
 		message.addRecipients(RecipientType.TO, to);// 보내는 대상
 		message.setSubject("PGR 인증번호가 도착했습니다.");// 제목
 
@@ -52,7 +52,7 @@ public class EmailService {
 		StringBuffer key = new StringBuffer();
 		Random rnd = new Random();
 
-		for (int i = 0; i < 6; i++) { // 인증코드 6자리
+		for (int i = 0; i < 8; i++) { // 인증코드 6자리
 			key.append((rnd.nextInt(10)));
 				// 0~9
 		}

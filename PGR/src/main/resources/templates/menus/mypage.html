@@ -16,38 +16,27 @@
 	<script defer type="text/javascript" th:src="@{js/mypage.js}"></script>
 </th:block>
 
-<div class="tab_basic" layout:fragment="content" th:if="${session.loginUser != null}">
-	<div class="tab_list_wrap">
-		<div class="tab_list tab_active" data-tabnum="0">
-			<a href="#">베팅 내역</a>
-		</div>
-		<div class="tab_list" data-tabnum="1">
-			<a href="#">회원 정보</a>
-		</div>
-	</div>
-
-	<div class="tab_container">
-		<div class="tab_content">
-			<table>
-				<thead>
-					<tr>
-						<th>경기 날짜</th>
-						<th>베팅 결과</th>
-						<th>경기 결과</th>
-						<th>나의 선택</th>
-						<th>베팅 금액</th>
-					</tr>
-				</thead>
-			</table>
-		</div>
-	
-		<div class="tab_content">
-			<div>이메일 : <span th:text="${session.loginUser.userEmail}"></span></div>
-			<div>닉네임 : <span th:text="${session.loginUser.nickname}"></span></div>
-			<div>가입일 : <span th:text="${session.loginUser.regDt}"></span></div>
-			<a href="/pwchange">정보 수정하기</a>
-		</div>
-
-	</div>
-</div>
+<div class="user_profile" layout:fragment="content" th:if="${session.loginUser != null}">
+        <div class="pagew">
+            <div class="user_form">
+                <span class="userfrm_tit">profile</span>
+                <form id="userFrm">
+                    <span>E-mail</span>
+                    <input type="text" name="userEmail" th:value="${session.loginUser.userEmail}" disabled>
+                    <span>My point</span>
+                    <input type="text" name="myProperty" th:value="${session.loginUser.myProperty}" disabled>
+                    <span>Nickname</span>
+                    <input type="text" name="nickname" th:value="${session.loginUser.nickname}">
+                    <span class="changepw_tit">change password</span>
+                    <input type="password" name="userPw" id="nowPw" placeholder="현재 비밀번호">
+                    <input type="password" name="userNewPw" id="newPw" placeholder="새 비밀번호">
+                    <input type="password" name="userPwRe" id="newPwChk" placeholder="새 비밀번호 확인">
+                    <input type="button" id="changeProfileBtn" value="회원정보 수정">
+                </form>
+            </div>
+            <div class="bet_table">
+                <span class="bettable_tit">bet history</span>
+            </div>
+        </div>
+    </div>
 </html>

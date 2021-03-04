@@ -22,6 +22,7 @@ public class EmailController {
 	public void emailConfirm(@RequestBody String m, Model model) throws Exception {
 		logger.info("post emailConfirm");
 		System.out.println("전달 받은 이메일 : " + m);
+		EmailService.ePw = EmailService.createKey();
 		service.sendSimpleMessage(m);
 	}
 

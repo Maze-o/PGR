@@ -74,17 +74,12 @@ public class UserController {
 	public String myPage() {
 		return "menus/mypage";
 	}
-	
-	@GetMapping("/pwchange")
-	public String pwChange() {
-		return "menus/pwchange";
-	}
-	
+
 	@ResponseBody
-	@PostMapping("/pwchange")
-	public Map<String, Object> pwChange(@RequestBody UserDomain p) throws Exception {
+	@PostMapping("/mypage")
+	public Map<String, Object> pwChange(@RequestBody UserDomain p, HttpSession hs) throws Exception {
 		Map<String, Object> map = new HashMap<>();
-		map.put(Const.KEY_RESULT, service.pwChange(p));
+		map.put(Const.KEY_RESULT, service.profileChange(p, hs));
 		return map;
 	}
 

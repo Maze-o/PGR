@@ -11,5 +11,5 @@ public interface UserMapper {
 	public UserEntity selUser(UserEntity p);
 	public UserEntity findUserByUserId(UserEntity p);
 	public int updateUserPassword(UserEntity p);
-	public int pwChange(UserDomain p);
+	public int profileChange(UserDomain p);
 }

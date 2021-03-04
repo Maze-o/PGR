@@ -11,6 +11,7 @@ import com.pgr.model.RecentEntity;
 public interface BetMapper {
 	int insBet(BetEntity p);
 	List<BetEntity> selBetList(RecentEntity p);
+	BetEntity selBetUser(BetEntity p);
 	int updBetSuccess(BetEntity p);
 	int updBetUser(BetEntity p);
 }

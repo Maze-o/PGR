@@ -42,14 +42,15 @@
 				<input type="hidden" id="userp" th:if="${session.loginUser != null}" th:value="${session.loginUser.userPk}">
 				<div class="betmanage">
 				<div class="betchoice_box">
-				<span><input class="betchoice" type="radio" name="chk_info" value="0">승(1.66)</span>
-				<span><input class="betchoice" type="radio" name="chk_info" value="1">무(2.50)</span>
-				<span><input class="betchoice" type="radio" name="chk_info" value="2">패(5.00)</span>
+				<span><input th:if="${session.loginUser != null && bet == null}" class="betchoice" type="radio" name="chk_info" value="0">승(1.66)</span>
+				<span><input th:if="${session.loginUser != null && bet == null}" class="betchoice" type="radio" name="chk_info" value="1">무(2.50)</span>
+				<span><input th:if="${session.loginUser != null && bet == null}" class="betchoice" type="radio" name="chk_info" value="2">패(5.00)</span>
    				</div>
-   				<input th:if="${session.loginUser != null}" class="dobetting" type="text" name="property">
-   				<input th:unless="${session.loginUser != null}" class="dobetting" type="text" name="property" readonly>
-   				<input id="buttons" type="button" value="베팅하기">
+	   				<input th:if="${session.loginUser != null && bet == null}" class="dobetting" type="text" name="property">
+	   				<a href="/login" th:unless="${session.loginUser != null}"> 　　로그인 후 이용 가능합니다.</a>
+	   				<input th:if="${session.loginUser != null && bet == null}" id="buttons" type="button" value="베팅하기">
    				</div>
+   				<div>7000!!</div>
    			</form>
 		</div>
 	</div>

@@ -11,8 +11,14 @@
 	</insert>
 	<select id="selBetList" resultType="com.pgr.model.BetEntity">
 		SELECT * FROM b_user
-		WHERE id= #{id}
+		WHERE id = #{id}
 	</select>
+	<select id="selBetUser" resultType="com.pgr.model.BetEntity">
+		SELECT * FROM b_user
+		WHERE id = #{id}
+		AND userPk = #{userPk}
+	</select>
+	
 	<update id="updBetSuccess">
 		UPDATE b_user
 		<choose>

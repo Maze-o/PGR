@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,9 +24,6 @@ public class BetController {
 	private BetService bService;
 	
 	@Autowired
-	private RecentService rService;
-	
-	@Autowired
 	SecurityUtils sUtils;
 	
 	@GetMapping("/betting")
@@ -34,7 +32,15 @@ public class BetController {
 	}
 	
 	@GetMapping("/bettingroom")
-	public String bettingroom(RecentEntity data) {
+	public String bettingroom(Model model, HttpSession hs, BetEntity bet) {
+		
+		if(sUtils.getLoginUser(hs) != null) {
+			BetEntity temp = new BetEntity();
+			temp.setUserPk(sUtils.getLoginUser(hs).getUserPk());
+			temp.setId(bet.getId());
+			model.addAttribute("bet", bService.selBetUser(temp));
+		}
+
 		return "menus/bet/bettingroom";
 	}
 	

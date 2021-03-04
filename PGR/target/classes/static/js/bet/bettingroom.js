@@ -30,7 +30,6 @@ if(temps) {
 					var rform = myJson.events[i].competitions[0].competitors[1].form
 					
 					const recordiv1 = document.createElement('div')
-					recordiv1.className = 'record'
 					
 					const recordiv2 = recordiv1.cloneNode()
 					const recordiv3 = recordiv1.cloneNode()
@@ -55,6 +54,17 @@ if(temps) {
 					recordiv9.innerText = rform.charAt(3)
 					recordiv10.innerText = rform.charAt(4)
 					
+					changeClass(recordiv1)
+					changeClass(recordiv2)
+					changeClass(recordiv3)
+					changeClass(recordiv4)
+					changeClass(recordiv5)
+					changeClass(recordiv6)
+					changeClass(recordiv7)
+					changeClass(recordiv8)
+					changeClass(recordiv9)
+					changeClass(recordiv10)
+					
 					const lrecord = document.querySelector('#lrecord')
 					lrecord.append(recordiv1)
 					lrecord.append(recordiv2)
@@ -68,6 +78,10 @@ if(temps) {
 					rrecord.append(recordiv8)
 					rrecord.append(recordiv9)
 					rrecord.append(recordiv10)
+					
+					function changeClass(item) {
+						item.className = item.innerText
+					}
 				}
 			}
 		})

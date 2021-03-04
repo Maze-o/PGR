@@ -1,4 +1,5 @@
 const temps = document.querySelector('.bettingroom_container')
+let dates
 
 if(temps) {
 	fetch('/recentMatch?id=' + temps.getAttribute('value'))
@@ -16,7 +17,7 @@ if(temps) {
 		const spanDate = document.createElement('span')
 		const spanVenue = document.createElement('span')
 		const spanVs= document.createElement('span')
-		const dates = new Date(myJson.date)	
+		dates = new Date(myJson.date)
 		
 		var date_string = myJson.date
 		const apidate = date_string.substring(0, 4) + date_string.substring(5, 7) + date_string.substring(8, 10)
@@ -114,12 +115,34 @@ if(temps) {
 	}
 }
 
+const empty = document.querySelector('.empty')
+if(empty) {
+	const time = document.createElement('span')
+	empty.prepend(time)
+	setInterval("dpTime()", 1000)
+	function dpTime() {
+		var now = new Date()
+		now.setHours(now.getHours() + 9)
+		now.setTime(dates.getTime() - now.getTime())
+
+		months = now.getMonth()
+		days = now.getDate()-1
+		hours = now.getHours() + (days * 24) >= 10 ? now.getHours() + (days * 24) : '0' + (now.getHours() + (days * 24)) 
+		minutes = now.getMinutes() >= 10 ? now.getMinutes() : '0' + now.getMinutes()
+		seconds = now.getSeconds() >= 10 ? now.getSeconds() : '0' + now.getSeconds()
+		
+		time.innerText = '남은 시간  '+ hours + ' : ' + minutes + ' : ' + seconds
+	}
+}
+
 const betFrm = document.querySelector('#betFrm')
 if(betFrm) {
 	const buttons = document.querySelector('#buttons')
-	buttons.addEventListener('click', function() {
-		ajax()
-	})
+	if(buttons) {
+		buttons.addEventListener('click', function() {
+			ajax()
+		})
+	}
 	
 	function ajax() {
 		const userp = document.querySelector('#userp')

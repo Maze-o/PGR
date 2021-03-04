@@ -34,8 +34,9 @@ public class MatchPull implements ApplicationRunner { // 서버 가동시 실행
 	
 	 @Override
 	 public void run(ApplicationArguments args) throws Exception { // 일정에 있는 모든 날짜의 경기 기록들을 가져옴
+		 logger.info("서버 부팅후 데이터를 가져오고있습니다. 잠시만 기다려주세요...");
 		 List<String> length = DbUtils.getDateList(); // 일정 년월일을 list로 String으로 가져옴
-		 tService.insTeam(DbUtils.getTeamsList());
+		 tService.insTeam(DbUtils.getTeamsList()); // 팀 데이터 불러옴
 		 
 		 for(int j=0;j<length.size();j++) {
 			List<RecentEntity> list = DbUtils.getRmList("?dates=" + length.get(j));

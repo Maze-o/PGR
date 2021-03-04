@@ -47,9 +47,9 @@
 				<span><input th:if="${session.loginUser != null && bet == null}" class="betchoice" type="radio" name="chk_info" value="2">패(5.00)</span>
    				</div>
 	   				<input th:if="${session.loginUser != null && bet == null}" class="dobetting" type="text" name="property">
-	   				<a href="/login" th:unless="${session.loginUser != null}"> 　　로그인 후 이용 가능합니다.</a>
 	   				<input th:if="${session.loginUser != null && bet == null}" id="buttons" type="button" value="베팅하기">
    				</div>
+   				<div class="needlogin"><a href="/login" th:unless="${session.loginUser != null}">로그인 후 이용 가능합니다.</a></div>
    			</form>
 		</div>
 	</div>

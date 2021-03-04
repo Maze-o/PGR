@@ -68,9 +68,22 @@
 }
 
 
-.record {
+.W, .D, .L {
 	flex-grow: 1;
 	border: 1px solid #ccc;
+}
+
+.W {
+	background-color: #4169E1;
+}
+
+.D {
+	background-color: #A9A9A9;
+	
+}
+
+.L {
+	background-color: #DC143C;
 }
 .matchcontainer {
 	flex-grow: 15;

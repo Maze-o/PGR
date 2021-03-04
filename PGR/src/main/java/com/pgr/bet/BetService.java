@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 
 import com.pgr.model.BetEntity;
 import com.pgr.model.RecentEntity;
+import com.pgr.model.UserEntity;
 import com.pgr.rm.RecentMapper;
+import com.pgr.user.UserMapper;
 
 @Service
 public class BetService {
@@ -18,6 +20,9 @@ public class BetService {
 	@Autowired
 	RecentMapper mapper;
 	
+	@Autowired
+	UserMapper uMapper;
+	
 	public int insBet(BetEntity p) {
 		if(p.getTeam() == 2) { //팀선택시에 자동으로 property값이 win lose draw에 들어가게 설정
 			p.setLose(p.getProperty());
@@ -26,9 +31,14 @@ public class BetService {
 		} else if(p.getTeam() == 0) {
 			p.setWin(p.getProperty());
 		}
+		UserEntity up = new UserEntity();
 		
 		p.setMyProperty(p.getMyProperty()-p.getProperty()); //보유자산에서 배팅한 금액만큼 차감
-
+		
+		up.setMyProperty(p.getMyProperty());
+		up.setUserPk(p.getUserPk());
+		uMapper.updProperty(up);
+		
 		System.out.println("win : " + p.getWin());
 		System.out.println("lose : " + p.getLose());
 		System.out.println("draw : " + p.getDraw());
@@ -46,6 +56,12 @@ public class BetService {
 			bp.setcTeam(0);
 		}
 		return bMapper.updBetSuccess(bp);
+	}
+	
+	public int updBetUser(RecentEntity rp) {
+		BetEntity bp = new BetEntity();
+		bp.setId(rp.getId());
+		return bMapper.updBetUser(bp);
 	}
 	
 	public List<RecentEntity> selBettingRoomList() {

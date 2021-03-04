@@ -28,6 +28,7 @@ public class RecentService {
 			if(selRecentMatch(temp) != null) { // 이미 데이터가 있다면 업데이트된다.
 				if(temp.getCompleted() == true && selRecentMatch(temp).getCompleted() == false) {
 					bService.updBetSuccess(temp);
+					bService.updBetUser(temp);
 				}
 				updRecentMatch(temp);
 				count++;
@@ -50,5 +51,9 @@ public class RecentService {
 	
 	public List<RecentEntity> selListRecentMatch() {
 		return mapper.selListRecentMatch();
+	}
+	
+	public int delRecentMatch(RecentEntity data) {
+		return mapper.delRecentMatch(data);
 	}
 }

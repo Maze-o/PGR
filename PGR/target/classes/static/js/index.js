@@ -151,6 +151,8 @@ if(bflist) {
 			const rscore = document.createElement('span')
 			
 			const ahref = document.createElement('a')
+			const bdate = document.createElement('div')
+			var dates = new Date(myJson[i].date)
 			
 			const lString = 'img/teamlogo/' + myJson[i].lid + '.png'
 			const rString = 'img/teamlogo/' + myJson[i].rid + '.png'
@@ -161,6 +163,7 @@ if(bflist) {
 			score_sec.className = 'score_sec'
 			lscore.className = 'vs_score'
 			rscore.className = 'vs_score'
+			bdate.className = 'vs_date'
 			
 			limg.src = lString
 			rimg.src = rString
@@ -169,6 +172,7 @@ if(bflist) {
 			ahref.innerHTML = '<input type="button" value="상세보기" class="vs_btn">'
 			lscore.innerText = myJson[i].lscore
 			rscore.innerText = myJson[i].rscore
+			bdate.innerText = dates.toLocaleString()
 			
 			vs_area.append(limg)
 			vs_area.append(rimg)
@@ -177,6 +181,7 @@ if(bflist) {
 			score_sec.append(rscore)
 			
 			vs_area.append(score_sec)
+			vs_area.append(bdate)
 			vs_area.append(ahref)
 			
 			bflist.append(vs_area)

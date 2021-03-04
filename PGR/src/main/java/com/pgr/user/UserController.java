@@ -21,6 +21,9 @@ public class UserController {
 
 	@Autowired
 	private UserService service;
+	
+	@Autowired
+	private SecurityUtils sUtils;
 
 	@GetMapping("/join")
 	public String join() {

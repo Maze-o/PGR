@@ -143,6 +143,8 @@ if(betFrm) {
 		}).then(function(myJson) {
 			console.log(myJson)
 		})
+		
+		location.reload();
 	}
 	
 	    function value_check() {

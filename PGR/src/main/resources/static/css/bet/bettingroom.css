@@ -121,3 +121,14 @@
 .dobetting {
 	height: 27px;
 }
+
+.test {
+	border : 1px solid #ccc;
+	text-align: center;
+	font-size: 25px;
+}
+
+.test1 {
+
+	color: #DC143C;
+}

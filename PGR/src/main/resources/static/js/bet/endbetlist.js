@@ -29,7 +29,7 @@ if(containerElem) {
 			limg.src = lString
 			rimg.src = rString
 			
-			ahref.href = `/endbettingroom?id=${myJson[i].id}`
+			ahref.href = `/bettingroom?id=${myJson[i].id}`
 			div.className = 'box'
 			lteam.className = 'lTeam'
 			lteamlogo.className = 'lTeamlogo'

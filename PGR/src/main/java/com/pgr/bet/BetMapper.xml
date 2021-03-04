@@ -31,12 +31,9 @@
 		</choose>
 	</update>
 	
-	<update id="updBetUser">
-		UPDATE b_user A , pgruser B
-		SET A.myProperty = A.success + A.myProperty,
-		A.bResult = A.success - A.property,
-		B.myProperty = A.success + A.myProperty
-		WHERE A.userPk = B.userPk AND A.id = #{id};
+	<update id="updBetuser">
+		UPDATE b_user
+		SET myProperty = #{success} + #{myProperty}
+		WHERE id = #{id};
 	</update>
-	
 </mapper>

@@ -29,8 +29,4 @@ public class MatchRecordService {
 		}
 		return count;
 	}
-	
-	public int delMatchRecord(MatchRecordEntity p) {
-		return mapper.delMatchRecord(p);
-	}
 }

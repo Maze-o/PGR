@@ -43,18 +43,6 @@ public class MatchPull implements ApplicationRunner { // 서버 가동시 실행
 			rService.insRecentMatch(list);
 			mService.insMatchRecordList(list2);
 		 }
-		 
-		 //취소된 경기 하나 임의로 삭제
-		 RecentEntity temp = new RecentEntity();
-		 temp.setId(578475);
-		 
-		 MatchRecordEntity temp2 = new MatchRecordEntity();
-		 temp2.setId(578475);
-		 
-		 rService.delRecentMatch(temp);
-		 mService.delMatchRecord(temp2);
-		 //임시방편이라 해결해야할 문제
-		 
 		 logger.info("서버 부팅후 정상적으로 데이터 로딩이 완료되었습니다.");
 		 tempThread = false; // 임시 쓰레드 역할을 하는 변수 false
 	 }

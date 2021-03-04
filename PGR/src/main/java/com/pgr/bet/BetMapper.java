@@ -12,5 +12,5 @@ public interface BetMapper {
 	int insBet(BetEntity p);
 	List<BetEntity> selBetList(RecentEntity p);
 	int updBetSuccess(BetEntity p);
-	int updBetUser(BetEntity p);
+	int updBetuser(BetEntity p);
 }

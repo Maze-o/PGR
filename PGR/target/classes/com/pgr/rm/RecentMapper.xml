@@ -39,8 +39,4 @@
 		completed = #{completed}
 		WHERE id = #{id}
 	</update>
-	<delete id="delRecentMatch">
-		DELETE FROM rmatch
-		WHERE id = #{id}
-	</delete>
 </mapper>

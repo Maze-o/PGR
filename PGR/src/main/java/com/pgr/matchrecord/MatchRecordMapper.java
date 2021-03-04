@@ -10,6 +10,5 @@ import com.pgr.model.MatchRecordEntity;
 public interface MatchRecordMapper {
 	int insMatchRecordList(List<MatchRecordEntity> p);
 	int updMatchRecord(MatchRecordEntity p);
-	int delMatchRecord(MatchRecordEntity p);
 	MatchRecordEntity selMatchRecord(MatchRecordEntity p);
 }

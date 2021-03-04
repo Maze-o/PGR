@@ -30,11 +30,5 @@
 		SET nickname = #{nickname}, userPw = #{userPw} 
 		WHERE userEmail = #{userEmail}
 	</update>
-	
-	<update id="updProperty">
-		UPDATE pgrUser
-		SET myProperty = #{myProperty}
-		WHERE userPk = #{userPk}
-	</update>
 
 </mapper>

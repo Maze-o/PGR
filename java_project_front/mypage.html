@@ -14,50 +14,62 @@
 </head>
 
 <body>
-    <!-- header -->
-    <div class="header">
-        <a href="index.html" class="h_logo" title="home">
-            <img src="asset/logo.png">
-        </a>
-        <ul class="h_list">
-            <li><a href="#">menu1</a></li>
-            <li><a href="#">menu2</a></li>
-            <li><a href="#">menu3</a></li>
-            <li><a href="#">menu4</a></li>
-        </ul>
-        <div class="h_login">
-            <div class="login_container">
-                <a href="sign_in.html"><input type="button" name="signIn" value="sign in"></a>
-                <a href="sign_up.html"><input type="button" name="signUp" value="sign up"></a>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header">
+            <a href="index.html" class="h_logo" title="home">
+                <img src="asset/logo.png">
+            </a>
+            <ul class="h_list">
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+            </ul>
+            <div class="h_login">
+                <div class="login_container">
+                    <a href="sign_in.html"><input type="button" name="signIn" value="sign in"></a>
+                    <a href="sign_up.html"><input type="button" name="signUp" value="sign up"></a>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- content -->
-    <div class="user_profile">
-        <div class="pagew">
-            <div class="user_form">
-                <span class="userfrm_tit">profile</span>
-                <form id="userFrm">
-                    <span>E-mail</span>
-                    <input type="text" name="userEmail" value="msc0101312@gmail.com" disabled="true">
-                    <span>My point</span>
-                    <input type="text" name="myProperty" value="5000point" disabled="true">
-                    <span>Nickname</span>
-                    <input type="text" name="nickname" value="문수찬" spellcheck="false">
-                    <span class="changepw_tit">change password</span>
-                    <input type="password" name="userPw" id="nowPw" placeholder="현재 비밀번호">
-                    <input type="password" name="userNewPw" id="newPw" placeholder="새 비밀번호">
-                    <input type="password" name="userPwRe" id="newPwChk" placeholder="새 비밀번호 확인">
-                    <input type="button" id="changeProfileBtn" value="회원정보 수정">
-                </form>
-            </div>
-            <div class="bet_table">
-                <span class="bettable_tit">bet history</span>
+        <!-- content -->
+        <div class="tab_basic">
+            <div class="pagew">
+                <div class="tab_menu_cont">
+                    <div class="tab_list_wrap">
+                        <div class="tab_list tab_active" data-tabnum="0">
+                            <a href="#">베팅 내역</a>
+                        </div>
+                        <div class="tab_list" data-tabnum="1">
+                            <a href="#">회원 정보</a>
+                        </div>
+                    </div>
+                    <div class="tab_container">
+                        <div class="tab_content">
+                            <table class="tab_table">
+                                <tr>
+                                    <th>경기 날짜</th>
+                                    <th>베팅 결과</th>
+                                    <th>경기 결과</th>
+                                    <th>나의 선택</th>
+                                    <th>베팅 금액</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="tab_content">
+                            <div>이메일 : <span>msc010312@gmail.com</span></div>
+                            <div>닉네임 : <span>matic</span></div>
+                            <div>가입일 : <span>2021 03 03</span></div>
+                            <a href="/pwchange">정보 수정하기</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- footer -->
-    <div class="footer">
+        <!-- footer -->
+        <div class="footer">
+        </div>
     </div>
 </body>
 

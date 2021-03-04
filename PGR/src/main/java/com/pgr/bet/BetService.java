@@ -48,6 +48,12 @@ public class BetService {
 		return bMapper.updBetSuccess(bp);
 	}
 	
+	public int updBetUser(RecentEntity rp) {
+		BetEntity bp = new BetEntity();
+		bp.setId(rp.getId());
+		return bMapper.updBetUser(bp);
+	}
+	
 	public List<RecentEntity> selBettingRoomList() {
 		return mapper.selBettingRoomList();
 	}

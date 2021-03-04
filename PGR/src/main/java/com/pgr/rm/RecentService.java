@@ -51,4 +51,8 @@ public class RecentService {
 	public List<RecentEntity> selListRecentMatch() {
 		return mapper.selListRecentMatch();
 	}
+	
+	public int delRecentMatch(RecentEntity data) {
+		return mapper.delRecentMatch(data);
+	}
 }

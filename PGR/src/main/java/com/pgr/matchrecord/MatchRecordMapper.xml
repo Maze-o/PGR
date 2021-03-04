@@ -29,4 +29,9 @@
 		rtotalShots = #{rtotalShots}
 		WHERE id = #{id}
 	</update>
+	<delete id="delMatchRecord">
+		DELETE FROM matchrecord
+		WHERE id = #{id}
+	</delete>
+	
 </mapper>

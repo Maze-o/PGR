@@ -34,7 +34,7 @@ public class BoardController {
 		return "menus/board/writeEdit";
 	}
 	
-	@PostMapping
+	@PostMapping("/writeEdit")
 	@ResponseBody
 	public Map<String, Object> writeEdit(@RequestBody BoardEntity p) {
 		System.out.println("p.getTitle() : " + p.getTitle());

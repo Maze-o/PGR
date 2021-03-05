@@ -77,9 +77,7 @@ public class BetService {
 		return mapper.selEndBettingRoomList();
 	}
 	
-	public BetDomain selBetAllocation(RecentEntity rp) {
-		BetEntity bp = new BetEntity();
-		bp.setId(rp.getId());
-		return bMapper.selBetAllocation(bp);
+	public BetDomain selBetAllocation() {
+		return bMapper.selBetAllocation();
 	}
 }

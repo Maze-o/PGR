@@ -25,7 +25,7 @@
 		SELECT SUM(property)/SUM(win) AS w_allocation,
 		SUM(property)/SUM(draw) AS d_allocation,
 		SUM(property)/SUM(lose) AS l_allocation
-		FROM b_user WHERE id = #{id} ;
+		FROM b_user WHERE id = #{id}
 	</select>
 	
 	<update id="updBetSuccess">
@@ -51,7 +51,7 @@
 		SET A.myProperty = A.success + A.myProperty,
 		A.bResult = A.success - A.property,
 		B.myProperty = A.success + A.myProperty
-		WHERE A.userPk = B.userPk AND A.id = #{id};
+		WHERE A.userPk = B.userPk AND A.id = #{id}
 	</update>
 	
 </mapper>

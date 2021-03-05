@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.pgr.model.BetDomain;
 import com.pgr.model.BetEntity;
 import com.pgr.model.RecentEntity;
 import com.pgr.rm.RecentService;
@@ -71,5 +72,11 @@ public class BetController {
 	public int bet(@RequestBody BetEntity data, HttpSession hs) {
 		data.setMyProperty(sUtils.getLoginUser(hs).getMyProperty());
 		return bService.insBet(data);
+	}
+	
+	@ResponseBody
+	@GetMapping("/betallocation")
+	public BetDomain betallocation() {
+		return bService.selBetAllocation();
 	}
 }

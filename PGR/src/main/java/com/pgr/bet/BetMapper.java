@@ -15,5 +15,5 @@ public interface BetMapper {
 	BetEntity selBetUser(BetEntity p);
 	int updBetSuccess(BetEntity p);
 	int updBetUser(BetEntity p);
-	BetDomain selBetAllocation(BetEntity p);
+	BetDomain selBetAllocation();
 }

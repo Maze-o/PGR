@@ -122,6 +122,11 @@
 	height: 27px;
 }
 
+.needlogin {
+	text-decoration : underline;
+	text-align: center;
+}
+
 .test {
 	border : 1px solid #ccc;
 	text-align: center;

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
 .bettingroom_container {
 	position: relative;
 	display: block;
@@ -127,15 +129,21 @@
 	text-align: center;
 }
 
-.test {
+.betdetail {
 	border : 1px solid #ccc;
 	text-align: center;
 	font-size: 15px;
 }
 
-.test1,
-.test2,
-.test3 {
+.WDL,
+.Property,
+.Success {
 	font-size: 20px;
 	color: #DC143C;
+}
+
+.span1,
+.span2,
+.span3 {
+	font-family: 'Nanum Gothic', sans-serif;
 }

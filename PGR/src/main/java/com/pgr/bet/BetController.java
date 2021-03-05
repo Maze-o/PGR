@@ -76,7 +76,18 @@ public class BetController {
 	
 	@ResponseBody
 	@GetMapping("/betallocation")
-	public BetDomain betallocation() {
-		return bService.selBetAllocation();
+	public BetDomain betallocation(BetEntity data) {
+		//data.setId();
+		BetDomain bet = bService.selBetAllocation(data);
+		if(bet != null) {
+			return bet;
+		} else {
+			BetDomain temp = new BetDomain();
+			temp.setL_allocation(0);
+			temp.setD_allocation(0);
+			temp.setW_allocation(0);
+			
+			return temp;
+		}
 	}
 }

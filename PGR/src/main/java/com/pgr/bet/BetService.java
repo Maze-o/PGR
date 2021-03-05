@@ -34,7 +34,9 @@ public class BetService {
 		}
 		UserEntity up = new UserEntity();
 		
-		p.setMyProperty(p.getMyProperty()-p.getProperty()); //보유자산에서 배팅한 금액만큼 차감
+		if(p.getMyProperty()-p.getProperty() >= 0) { //보유자산이하에서만 배팅가능
+			p.setMyProperty(p.getMyProperty()-p.getProperty()); //보유자산에서 배팅한 금액만큼 차감
+		}
 		
 		up.setMyProperty(p.getMyProperty());
 		up.setUserPk(p.getUserPk());
@@ -77,7 +79,8 @@ public class BetService {
 		return mapper.selEndBettingRoomList();
 	}
 	
-	public BetDomain selBetAllocation() {
-		return bMapper.selBetAllocation();
+	public BetDomain selBetAllocation(BetEntity p) {
+		return bMapper.selBetAllocation(p);
 	}
+
 }

@@ -26,10 +26,8 @@ if (loginBtnElem) {
 			},
 			body: JSON.stringify(param)
 		}).then(function(res) {
-			console.log(res)
 			return res.json()
 		}).then(function(myJson) {
-			console.log(myJson)
 			proc(myJson)
 		})
 

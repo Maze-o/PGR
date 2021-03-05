@@ -1,0 +1,26 @@
+@charset 'utf-8';
+
+.schedule_wrap {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	flex: 1;
+}
+
+.schedule_cont {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 20px 0;
+}
+
+.schedule_box {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #333;
+	border-radius: 5px;
+}

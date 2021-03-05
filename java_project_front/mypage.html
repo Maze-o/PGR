@@ -33,15 +33,17 @@
         </div>
     </div>
     <!-- content -->
-    <div class="user_profile">
+    <div class="user_profile_wrap">
         <div class="pagew">
             <div class="user_form">
                 <span class="userfrm_tit">profile</span>
-                <form id="userFrm">
+                <div class="disable_text">
                     <span>E-mail</span>
                     <input type="text" name="userEmail" value="msc0101312@gmail.com" disabled="true">
                     <span>My point</span>
                     <input type="text" name="myProperty" value="5000point" disabled="true">
+                </div>
+                <form id="userFrm">
                     <span>Nickname</span>
                     <input type="text" name="nickname" value="문수찬" spellcheck="false">
                     <span class="changepw_tit">change password</span>
@@ -51,8 +53,295 @@
                     <input type="button" id="changeProfileBtn" value="회원정보 수정">
                 </form>
             </div>
-            <div class="bet_table">
+            <div class="bet_history">
                 <span class="bettable_tit">bet history</span>
+                <div class="bet_table_cont">
+                    <div class="bet_manage">
+                        <span>보유포인트 : </span>
+                        <span class="user_point">10000</span>
+                        <div class="bet_manage_btn">
+                            <input type="button" name="oneWeek" value="1주일">
+                            <input type="button" name="oneMonth" value="1개월">
+                            <input type="button" name="sixMonth" value="6개월">
+                        </div>
+                    </div>
+                    <table class="bet_table">
+                        <tr>
+                            <th>경기날짜</th>
+                            <th>베팅결과</th>
+                            <th>경기결과</th>
+                            <th>나의선택</th>
+                            <th>베팅금액</th>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="minus">-8000</td>
+                             <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">1</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>맨유</td>
+                            <td>8000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>21.02.25 목 09:30</td>
+                            <td class="plus">+8000</td>
+                            <td class="play_result">
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                                <span class="after">0</span>
+                                <span>1</span>
+                                <!-- img태그로 교체 -->
+                                <p></p>
+                            </td>
+                            <td>토트넘</td>
+                            <td>4000</td>
+                        </tr>
+
+                    </table>
+                </div>
             </div>
         </div>
     </div>

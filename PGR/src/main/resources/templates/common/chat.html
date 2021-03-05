@@ -1,0 +1,41 @@
+<html lang="ko" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      
+    <th:block th:fragment="chat">
+	<!-- show chat -->
+	<button id="show_chat">+</button>
+	<!-- modal chat -->
+	<div class="chat_container">
+	    <div class="chat_con">
+	        <div class="titlebox">
+	            <div class="close_icon">
+	                <i class="far fa-times-circle fa-3x" id="close_chat"></i>
+	            </div>
+	            <span>chatting room</span>
+	        </div>
+	        <div class="chatbox">
+	            <div class="chatlogs">
+	                <!--  <div class="chat me">
+	                    <div class="profile"></div>
+	                    <p class="chat_message">
+	                        hello!
+	                    </p>
+	                </div> -->
+	                <div class="chat others">
+	                   <div class="profile"></div>
+	                   <p class="chat_message">
+	                       hi!
+	                   </p>
+	               </div>
+	           </div>
+	           <div class="chat_form">
+	               <textarea id="chatting" th:if="${session.loginUser != null}"></textarea>
+	               <textarea id="chatting" class="needLogin" th:unless="${session.loginUser != null}" readonly>로그인 후 이용가능합니다.</textarea>
+	               <button id="sendBtn" th:if="${session.loginUser != null}">send</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	</th:block>
+</html>

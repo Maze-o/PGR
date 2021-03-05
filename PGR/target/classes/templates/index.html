@@ -16,46 +16,8 @@ layout:decorator="~{layout/layout_default}">
 <th:block layout:fragment="script">
 	<script defer th:src="@{js/index.js}"></script>
     <script th:src ="@{js/swiper/swiper.min.js}"></script>
-    <script th:src = "@{js/modal.js}"></script>
     <script defer th:src="@{js/script.js}"></script>
-    <script defer th:src="@{js/chat.js}"></script>
 </th:block>
-
-<div layout:fragment="content2">
-	<!-- show chat -->
-	<button id="show_chat">+</button>
-	<!-- modal chat -->
-	<div class="chat_container">
-	    <div class="chat_con">
-	        <div class="titlebox">
-	            <div class="close_icon">
-	                <i class="far fa-times-circle fa-3x" id="close_chat"></i>
-	            </div>
-	            <span>chatting room</span>
-	        </div>
-	        <div class="chatbox">
-	            <div class="chatlogs">
-	                <div class="chat me">
-	                    <div class="profile"></div>
-	                    <p class="chat_message">
-	                        hello!
-	                    </p>
-	                </div>
-	                <div class="chat others">
-	                    <div class="profile"></div>
-	                    <p class="chat_message">
-	                        hi!
-	                    </p>
-	                </div>
-	            </div>
-	            <div class="chat_form" th:if="${session.loginUser != null}">
-	                <textarea id="chatting"></textarea>
-	                <button onclick="send()" id="sendBtn">send</button>
-	            </div>
-	        </div>
-	    </div>
-	</div>
-</div>
 
 <!-- pagew -->
 <div class="pagew"  layout:fragment="content">

@@ -20,6 +20,14 @@ api document
 https://www.kryogenix.org/code/browser/sorttable/
 sort table JS 라이브러리
 
+채팅
+1. 로그인 한사람만 채팅이 가능
+2. 닉네임 표시
+3. 페이지를 옮겨도 채팅유지
+4. 몇명이 채팅방에 현재 있는지
+5. 이전의 채팅기록 30개 저장 후 새로 들어온사람들한테 출력해주기(자료구조: 큐 사용)
+6. 채팅기록은 최대 50개까지 초과할경우 가장 오래된 메시지 삭제
+
 //RECENT MATCH
 CREATE TABLE rmatch (
 pkid INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,

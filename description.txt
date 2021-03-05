@@ -124,18 +124,3 @@ CREATE TABLE `tb_board` (
 `contents` TEXT NULL,
 `image` VARCHAR(255) NULL,
 PRIMARY KEY (`idx`));
-
-//notice board 쿼리문
-CREATE TABLE pgrboard (
-	boardPk INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-	seq INT(10) UNSIGNED NOT NULL,
-	title VARCHAR(100) NOT NULL,
-	ctnt VARCHAR(2000) NOT NULL,
-	hits INT(10) UNSIGNED NULL DEFAULT '0',
-	userPk INT(10) UNSIGNED NOT NULL,
-	regDt DATETIME DEFAULT NOW(),
-	modDt DATETIME DEFAULT NOW(),
-	isDel INT(1) DEFAULT 0,
-	PRIMARY KEY (boardPk),
-	CONSTRAINT fk_board_userPk FOREIGN KEY (userPk) REFERENCES pgr.pgruser (userPk)
-);

@@ -68,6 +68,12 @@ public class BetController {
 	}
 	
 	@ResponseBody
+	@GetMapping("/betUser")
+	public BetEntity selBetUser(BetEntity p) {
+		return bService.selBetUser(p);
+	}
+	
+	@ResponseBody
 	@PostMapping("/bet")
 	public int bet(@RequestBody BetEntity data, HttpSession hs) {
 		data.setMyProperty(sUtils.getLoginUser(hs).getMyProperty());
@@ -76,7 +82,18 @@ public class BetController {
 	
 	@ResponseBody
 	@GetMapping("/betallocation")
-	public BetDomain betallocation() {
-		return bService.selBetAllocation();
+	public BetDomain betallocation(BetEntity data) {
+		//data.setId();
+		BetDomain bet = bService.selBetAllocation(data);
+		if(bet != null) {
+			return bet;
+		} else {
+			BetDomain temp = new BetDomain();
+			temp.setL_allocation(0);
+			temp.setD_allocation(0);
+			temp.setW_allocation(0);
+			
+			return temp;
+		}
 	}
 }

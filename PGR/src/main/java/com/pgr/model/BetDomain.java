@@ -1,28 +1,26 @@
 package com.pgr.model;
 
 public class BetDomain extends BetEntity{
-	private int w_allocation;
-	private int d_allocation;
-	private int l_allocation;
-	
-	public int getW_allocation() {
+	private double w_allocation;
+	private double d_allocation;
+	private double l_allocation;
+	public double getW_allocation() {
 		return w_allocation;
 	}
-	public void setW_allocation(int w_allocation) {
+	public void setW_allocation(double w_allocation) {
 		this.w_allocation = w_allocation;
 	}
-	public int getD_allocation() {
+	public double getD_allocation() {
 		return d_allocation;
 	}
-	public void setD_allocation(int d_allocation) {
+	public void setD_allocation(double d_allocation) {
 		this.d_allocation = d_allocation;
 	}
-	public int getL_allocation() {
+	public double getL_allocation() {
 		return l_allocation;
 	}
-	public void setL_allocation(int l_allocation) {
+	public void setL_allocation(double l_allocation) {
 		this.l_allocation = l_allocation;
 	}
-	
-	
+
 }

@@ -28,6 +28,13 @@
 		FROM b_user WHERE id = #{id}
 	</select>
 	
+	<select id="selBetMypage" resultType="com.pgr.model.BetEntity">
+		SELECT A.bResult, A.property, A.team, A.myProperty, B.lid, B.lscore, B.rscore, B.rid, B.date
+		FROM b_user A
+		INNER JOIN rmatch B ON A.id = B.id
+		WHERE B.completed = 1;
+	</select>
+	
 	<update id="updBetSuccess">
 		UPDATE b_user
 		<choose>

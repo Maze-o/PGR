@@ -1,4 +1,5 @@
 const temps = document.querySelector('.bettingroom_container')
+let dates
 
 if(temps) {
 	fetch('/recentMatch?id=' + temps.getAttribute('value'))
@@ -16,7 +17,7 @@ if(temps) {
 		const spanDate = document.createElement('span')
 		const spanVenue = document.createElement('span')
 		const spanVs= document.createElement('span')
-		const dates = new Date(myJson.date)	
+		dates = new Date(myJson.date)
 		
 		var date_string = myJson.date
 		const apidate = date_string.substring(0, 4) + date_string.substring(5, 7) + date_string.substring(8, 10)
@@ -114,12 +115,34 @@ if(temps) {
 	}
 }
 
+const empty = document.querySelector('.empty')
+if(empty) {
+	const time = document.createElement('span')
+	empty.prepend(time)
+	setInterval("dpTime()", 1000)
+	function dpTime() {
+		var now = new Date()
+		now.setHours(now.getHours() + 9)
+		now.setTime(dates.getTime() - now.getTime())
+
+		months = now.getMonth()
+		days = now.getDate()-1
+		hours = now.getHours() + (days * 24) >= 10 ? now.getHours() + (days * 24) : '0' + (now.getHours() + (days * 24)) 
+		minutes = now.getMinutes() >= 10 ? now.getMinutes() : '0' + now.getMinutes()
+		seconds = now.getSeconds() >= 10 ? now.getSeconds() : '0' + now.getSeconds()
+		
+		time.innerText = '남은 시간  '+ hours + ' : ' + minutes + ' : ' + seconds
+	}
+}
+
 const betFrm = document.querySelector('#betFrm')
 if(betFrm) {
 	const buttons = document.querySelector('#buttons')
-	buttons.addEventListener('click', function() {
-		ajax()
-	})
+	if(buttons) {
+		buttons.addEventListener('click', function() {
+			ajax()
+		})
+	}
 	
 	function ajax() {
 		const userp = document.querySelector('#userp')
@@ -157,3 +180,92 @@ if(betFrm) {
         }
     }
 }
+
+	const betchoice_boxElem = document.querySelector('.betchoice_box')
+	if(betchoice_boxElem) {
+			fetch('/betallocation?id=' + temps.getAttribute('value'))
+			.then(res => res.json())
+			.then(myJson => {
+				betchoice(myJson)
+			})	
+			
+			function betchoice(myJson) {
+
+				const win = document.querySelector('.choice_win')
+				const draw = document.querySelector('.choice_draw')
+				const lose = document.querySelector('.choice_lose')
+
+				const wdefault = "(" + myJson.w_allocation + ")"
+				const ddefault = "(" + myJson.d_allocation + ")"
+				const ldefault = "(" + myJson.l_allocation + ")"
+				
+				
+				const win_text = document.createTextNode(wdefault)
+				const draw_text = document.createTextNode(ddefault)
+				const lose_text = document.createTextNode(ldefault)
+
+				win.append(win_text)
+				draw.append(draw_text)
+				lose.append(lose_text)
+				}
+				
+			}
+	
+	const betdetailFrm = document.querySelector('.betdetail')
+	if(betdetailFrm) {
+			const userp = document.querySelector('#userp')
+			let myJson2 = null
+		
+			fetch('/betUser?id=' + temps.getAttribute('value') + '&userPk=' + userp.getAttribute("value"))
+			.then(res => res.json())
+			.then(myJson => {
+				myJson2 = myJson
+			})
+			
+			fetch('/betallocation?id=' + temps.getAttribute('value'))
+			.then(res => res.json())
+			.then(myJson => {
+				betdetail(myJson)
+			})
+			
+			function betdetail(myJson){
+				const WDL = document.createElement('span')
+				const span1 = document.createElement('span')
+				const Property = document.createElement('span')
+				const span2 = document.createElement('span')
+				const Success = document.createElement('span')
+				const span3 = document.createElement('span')
+				console.log(myJson2)
+				WDL.className = 'WDL'
+				span1.className = 'span1'
+				Property.className = 'Property'
+				span2.className = 'span2'
+				Success.className = 'Success'
+				span3.className = 'span3'
+				
+				switch(myJson2.team) {
+					case 0:
+						WDL.innerText = '승'
+						Success.innerText = myJson2.property * myJson.w_allocation - myJson2.property.toFixed(0) + 'p'
+						break
+					case 1:
+						WDL.innerText = '무'
+						Success.innerText = myJson2.property * myJson.d_allocation - myJson2.property.toFixed(0) + 'p'
+						break
+					case 2:
+						WDL.innerText = '패'
+						Success.innerText = (myJson2.property * myJson.l_allocation - myJson2.property).toFixed(0) + 'p'
+						break 
+				}
+				span1.innerText = '에 '
+				Property.innerText = myJson2.property + 'p'
+				span2.innerText = '를 거셨습니다. 예상 수익은 '
+				span3.innerText = '입니다.'
+				betdetailFrm.append(WDL)
+				betdetailFrm.append(span1)
+				betdetailFrm.append(Property)
+				betdetailFrm.append(span2)
+				betdetailFrm.append(Success)
+				betdetailFrm.append(span3)
+			}
+	}

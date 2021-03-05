@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-.user_profile {
+.user_profile_wrap {
     position: relative;
     display: block;
     width: 100%;
@@ -31,7 +31,8 @@
     font-family: 'Noto Sans KR', serif;
 }
 
-#userFrm {
+#userFrm,
+.disable_text {
     position: relative;
     display: block;
     width: 100%;
@@ -41,14 +42,16 @@
     font-family: tahoma, serif;
 }
 
-#userFrm span {
+#userFrm span,
+.disable_text span {
     display: block;
     font-size: 20px;
     margin-bottom: 15px;
 }
 
 #userFrm input[type="text"],
-#userFrm input[type="password"] {
+#userFrm input[type="password"],
+.disable_text input[type="text"] {
     position: relative;
     display: block;
     width: 100%;
@@ -63,13 +66,14 @@
     transition: all 0.3s;
 }
 
-#userFrm input[name="userEmail"],
-#userFrm input[name="myProperty"] {
+.disable_text input[name="userEmail"],
+.disable_text input[name="myProperty"] {
     color: #fff;
     background: #333;
 }
 
-#userFrm input[type="text"]:last-child {
+#userFrm input[type="text"]:last-child,
+.disable_text input[type="text"]:last-child {
     margin-bottom: 0;
 }
 
@@ -91,7 +95,7 @@
     height: 45px;
 }
 
-.bet_table {
+.bet_history {
     position: relative;
     display: block;
     width: 100%;
@@ -100,4 +104,144 @@
     border-radius: 5px;
     margin-bottom: 20px;
     padding: 40px;
+}
+
+.bet_table_cont {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 520px;
+}
+
+.bet_manage {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 10%;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 0 20px;
+
+}
+
+.bet_manage span {
+    display: inline-block;
+    width: 100px;
+    line-height: 50px;
+    font-size: 15px;
+    font-family: 'Nanum Gothic', sans-serif;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.bet_manage_btn {
+	position: relative;
+	display: block;
+	float: right;
+}
+
+.bet_manage_btn input[type="button"] {
+	display: inline-block;
+	width: 70px;
+	height: 25px;
+	padding: 0 10px;
+	margin: 15px;
+}
+
+.bet_table {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 90%;
+    padding-left: 5px;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 'Nanum Gothic', sans-serif;
+    table-layout: fixed;
+    overflow-y: scroll;
+}
+
+.bet_table::-webkit-scrollbar {
+	width: 5px;
+}
+
+.bet_table::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.bet_table tr {
+	border-bottom: 1px solid #333;
+}
+
+.bet_table tr:last-child {
+	border-bottom: 0
+}
+
+.bet_table th,
+.bet_table td {
+	width: 250px;
+	max-width: 250px;
+    height: 50px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.bet_table th {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.bet_table td {
+    font-size: 15px;
+    height: 70px;
+}
+
+.plus {
+    color: #1E90FF;
+}
+
+.minus {
+    color: crimson;
+}
+
+.play_result {
+	position: relative;
+	padding: 0 10px;
+	overflow: hidden;
+}
+
+/*p태그를 img태그로 교체*/
+.play_result p:first-child{
+	height: 35px;
+	width: 35px;
+	border-radius: 50%;
+	background: grey;
+	float: left;
+}
+
+/*p태그를 img태그로 교체*/
+.play_result p:last-child{
+	height: 35px;
+	width: 35px;
+	border-radius: 50%;
+	background: grey;
+	float: right;
+}
+
+.play_result span {
+	margin: 0 10px;
+	vertical-align: -8px;
+}
+
+.after::after {
+	content: ":";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
 }

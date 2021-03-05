@@ -42,21 +42,22 @@
 				<input type="hidden" id="userp" th:if="${session.loginUser != null}" th:value="${session.loginUser.userPk}">
 				<div class="betmanage">
 				<div class="betchoice_box">
-				<span><input th:if="${session.loginUser != null && bet == null}" class="betchoice" type="radio" name="chk_info" value="0">승(1.66)</span>
-				<span><input th:if="${session.loginUser != null && bet == null}" class="betchoice" type="radio" name="chk_info" value="1">무(2.50)</span>
-				<span><input th:if="${session.loginUser != null && bet == null}" class="betchoice" type="radio" name="chk_info" value="2">패(5.00)</span>
+				<span class="choice_win"><input th:if="${session.loginUser != null && bet == null}" class="betchoice" type="radio" name="chk_info" value="0">승</span>
+				<span class="choice_draw"><input th:if="${session.loginUser != null && bet == null}" class="betchoice" type="radio" name="chk_info" value="1">무</span>
+				<span class="choice_lose"><input th:if="${session.loginUser != null && bet == null}" class="betchoice" type="radio" name="chk_info" value="2">패</span>
    				</div>
 	   				<input th:if="${session.loginUser != null && bet == null}" class="dobetting" type="text" name="property">
 	   				<input th:if="${session.loginUser != null && bet == null}" id="buttons" type="button" value="베팅하기">
    				</div>
    				<div class="needlogin"><a href="/login" th:unless="${session.loginUser != null}">로그인 후 이용 가능합니다.</a></div>
-   				<div class="test">
-   					<span class="test1">승</span>
-   					<span class="testspan1">에</span>
-   					<span class="test2">7000p</span> <!-- DB 데이터로 처리 -->
-   					<span class="testspan2">를 거셨습니다. 예상 수익은</span>
-   						<span class="test3">21000p</span> <!-- DB 데이터로 처리 -->
-   					<span class="testspan3">입니다.</span>
+   				<div class="betdetail" th:if="${session.loginUser != null && bet != null}">
+   				 	<!--  <span class="WDL">승</span>
+   					<span class="span1">에</span>
+   					<span class="Property">7000p</span>
+   					<span class="span2">를 거셨습니다. 예상 수익은</span>
+   						<span class="Success">21000p</span>
+   					<span class="span3">입니다.</span>
+   					-->
    				</div>
    			</form>
 		</div>

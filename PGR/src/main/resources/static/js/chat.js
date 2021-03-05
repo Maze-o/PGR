@@ -1,4 +1,4 @@
-var ws = new WebSocket("ws://" + location.host + "/chating")
+/*var ws = new WebSocket("ws://" + location.host + "/chating")
 wsEvt();
 
 function wsEvt() {
@@ -30,4 +30,4 @@ if(sendBtnElem) {
 		ws.send(msg);
 		$('#chatting').val("");
 	}
-}
+}*/

@@ -9,14 +9,23 @@
 		VALUES
 		(#{userPk}, #{property}, #{id}, #{team}, #{myProperty}, #{bResult}, #{success}, #{win}, #{lose}, #{draw})	
 	</insert>
+	
 	<select id="selBetList" resultType="com.pgr.model.BetEntity">
 		SELECT * FROM b_user
 		WHERE id = #{id}
 	</select>
+	
 	<select id="selBetUser" resultType="com.pgr.model.BetEntity">
 		SELECT * FROM b_user
 		WHERE id = #{id}
 		AND userPk = #{userPk}
+	</select>
+	
+	<select id="selBetAllocation" resultType="com.pgr.model.BetDomain">
+		SELECT SUM(property)/SUM(win) AS w_allocation,
+		SUM(property)/SUM(draw) AS d_allocation,
+		SUM(property)/SUM(lose) AS l_allocation
+		FROM b_user WHERE id = #{id} ;
 	</select>
 	
 	<update id="updBetSuccess">

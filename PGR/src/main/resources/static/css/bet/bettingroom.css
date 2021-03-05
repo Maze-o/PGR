@@ -125,10 +125,12 @@
 .test {
 	border : 1px solid #ccc;
 	text-align: center;
-	font-size: 25px;
+	font-size: 15px;
 }
 
-.test1 {
-
+.test1,
+.test2,
+.test3 {
+	font-size: 20px;
 	color: #DC143C;
 }

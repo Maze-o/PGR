@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.pgr.model.BetDomain;
 import com.pgr.model.BetEntity;
 import com.pgr.model.RecentEntity;
 
@@ -14,4 +15,5 @@ public interface BetMapper {
 	BetEntity selBetUser(BetEntity p);
 	int updBetSuccess(BetEntity p);
 	int updBetUser(BetEntity p);
+	BetDomain selBetAllocation(BetEntity p);
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pgr.model.BetDomain;
 import com.pgr.model.BetEntity;
 import com.pgr.model.RecentEntity;
 import com.pgr.model.UserEntity;
@@ -74,5 +75,11 @@ public class BetService {
 	
 	public List<RecentEntity> selEndBettingroomList() {
 		return mapper.selEndBettingRoomList();
+	}
+	
+	public BetDomain selBetAllocation(RecentEntity rp) {
+		BetEntity bp = new BetEntity();
+		bp.setId(rp.getId());
+		return bMapper.selBetAllocation(bp);
 	}
 }

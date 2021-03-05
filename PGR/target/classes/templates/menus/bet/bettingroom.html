@@ -47,8 +47,16 @@
 				<span><input th:if="${session.loginUser != null && bet == null}" class="betchoice" type="radio" name="chk_info" value="2">패(5.00)</span>
    				</div>
 	   				<input th:if="${session.loginUser != null && bet == null}" class="dobetting" type="text" name="property">
-	   				<a href="/login" th:unless="${session.loginUser != null}"> 　　로그인 후 이용 가능합니다.</a>
 	   				<input th:if="${session.loginUser != null && bet == null}" id="buttons" type="button" value="베팅하기">
+   				</div>
+   				<div class="needlogin"><a href="/login" th:unless="${session.loginUser != null}">로그인 후 이용 가능합니다.</a></div>
+   				<div class="test">
+   					<span class="test1">승</span>
+   					<span class="testspan1">에</span>
+   					<span class="test2">7000p</span> <!-- DB 데이터로 처리 -->
+   					<span class="testspan2">를 거셨습니다. 예상 수익은</span>
+   						<span class="test3">21000p</span> <!-- DB 데이터로 처리 -->
+   					<span class="testspan3">입니다.</span>
    				</div>
    			</form>
 		</div>

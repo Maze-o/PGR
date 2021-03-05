@@ -20,11 +20,12 @@
         <div class="pagew">
             <div class="user_form">
                 <span class="userfrm_tit">profile</span>
-                <form id="userFrm">
                     <span>E-mail</span>
-                    <input type="text" name="userEmail" th:value="${session.loginUser.userEmail}" disabled>
+                    <input type="text" id="userEmail" th:value="${session.loginUser.userEmail}" disabled>
                     <span>My point</span>
-                    <input type="text" name="myProperty" th:value="${session.loginUser.myProperty}" disabled>
+                    <input type="text" id="myProperty" th:value="${session.loginUser.myProperty}" disabled>
+                <form id="userFrm">
+                		<input type="hidden" name="userEmail" th:value="${session.loginUser.userEmail}">
                     <span>Nickname</span>
                     <input type="text" name="nickname" th:value="${session.loginUser.nickname}">
                     <span class="changepw_tit">change password</span>

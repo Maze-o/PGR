@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pgr.Const;
+import com.pgr.SecurityUtils;
 import com.pgr.model.UserDomain;
 import com.pgr.model.UserEntity;
 
@@ -21,9 +22,6 @@ public class UserController {
 
 	@Autowired
 	private UserService service;
-	
-	@Autowired
-	private SecurityUtils sUtils;
 
 	@GetMapping("/join")
 	public String join() {

@@ -1,6 +1,7 @@
 
 var userFrmElem = document.querySelector('#userFrm')
 var changeProfileBtn = document.querySelector('#changeProfileBtn')
+var userEmailElem = document.querySelector('#userEmail')
 var nicknameElem = userFrmElem.nickname
 var nowPw = document.querySelector('#nowPw')
 var newPw = document.querySelector('#newPw')
@@ -9,7 +10,7 @@ var newPwRe = document.querySelector('#newPwChk')
 if (changeProfileBtn) {
 	function ajax() {
 		var param = {
-			userEmail: userFrmElem.userEmail.value,
+			userEmail: userEmailElem.value,
 			nickname: nicknameElem.value,
 			userPw: nowPw.value,
 			userNewPw: newPw.value,

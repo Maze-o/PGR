@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="~{layout/layout_default}">
+
+<head>
+<title>글쓰기</title>
+</head>
+
+<th:block layout:fragment="css">
+</th:block>
+
+<th:block layout:fragment="script">
+	<script defer type="text/javascript" th:src="@{js/board/writeEdit.js}"></script>
+</th:block>
+
+<div layout:fragment="content" th:if="${session.loginUser != null}">
+	<form id="form">
+		<input type="hidden" name="userPk" th:value="${session.loginUser.userPk}">
+		<input type="text" name="title" value="제목">
+		<input type="text" name="ctnt" value="내용">
+		<input type="button" id="writeEditBtn" value="글쓰기">
+	</form>
+</div>
+
+</html>

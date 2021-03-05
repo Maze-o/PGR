@@ -1,4 +1,4 @@
-package com.pgr.user;
+package com.pgr;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,6 +10,13 @@ import com.pgr.model.UserEntity;
 
 @Component
 public class SecurityUtils {
+
+	public int getLoginUserPk(HttpSession hs) {
+		UserEntity loginUser = getLoginUser(hs);
+
+		return loginUser == null ? -1: loginUser.getUserPk();
+	}
+	
 	public UserEntity getLoginUser(HttpSession hs) {
 		return (UserEntity)hs.getAttribute(Const.KEY_LOGINUSER);
 	}

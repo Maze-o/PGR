@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pgr.board.BoardMapper">
+	<select id="selBoardList" resultType="com.pgr.model.BoardDomain">
+		SELECT A.boardPk, A.seq,
+		A.title, A.hits, A.regDt,
+		A.userPk, B.nickname AS writerNm
+		FROM pgrboard A
+		INNER JOIN pgruser B
+		ON A.userPk = B.userPk
+		ORDER BY A.boardPk DESC;
+	</select>
+	
+	<insert id="insBoard">
+		INSERT INTO pgrboard
+		(seq, title, ctnt, userPk)
+		SELECT IFNULL(MAX(seq), 0) + 1, #{title}, #{ctnt}, #{userPk}
+		FROM pgrboard
+	</insert>
+</mapper>

@@ -6,6 +6,7 @@ public class Const {
 	public static final String TEAMS_STAT = "http://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/teams";
 	
 	// USER관련 상수
+	public static final String KEY_DATA = "data";
 	public static final String KEY_LOGINUSER = "loginUser";
 	public static final String KEY_MENULIST = "menuList";
 	public static final String KEY_RESULT = "result";

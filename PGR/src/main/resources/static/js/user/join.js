@@ -77,7 +77,7 @@ if (chkjoinButton) {
 					return
 				case 6:
 					alert('회원가입을 축하합니다!')
-					location.href = '/login'
+					history.go(-1)
 					return
 			}
 		}

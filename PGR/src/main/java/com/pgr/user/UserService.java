@@ -12,6 +12,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import com.pgr.Const;
+import com.pgr.SecurityUtils;
 import com.pgr.model.UserDomain;
 import com.pgr.model.UserEntity;
 
@@ -167,7 +168,10 @@ public class UserService {
 
 		p.setUserPw(hashPw);
 		
-		hs.setAttribute(Const.KEY_LOGINUSER, p);
+		check.setNickname(p.getNickname());
+		check.setUserPw(p.getUserPw());
+		
+		hs.setAttribute(Const.KEY_LOGINUSER, check);
 		
 		mapper.profileChange(p);
 		return 4;

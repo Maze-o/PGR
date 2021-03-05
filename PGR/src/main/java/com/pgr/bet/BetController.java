@@ -16,7 +16,7 @@ import com.pgr.model.BetDomain;
 import com.pgr.model.BetEntity;
 import com.pgr.model.RecentEntity;
 import com.pgr.rm.RecentService;
-import com.pgr.user.SecurityUtils;
+import com.pgr.SecurityUtils;
 
 @Controller
 public class BetController {

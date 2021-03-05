@@ -99,6 +99,10 @@ if(temps) {
 		const lteamNode = document.createTextNode(myJson.lteam)
 		const rteamNode = document.createTextNode(myJson.rteam)
 		
+		spanDate.className = 'empty_date'
+		spanVenue.className = 'empty_venue'
+		spanVs.className = 'empty_vs'
+		
 		lteam.prepend(lteamNode)
 		rteam.prepend(rteamNode)
 		
@@ -118,6 +122,7 @@ if(temps) {
 const empty = document.querySelector('.empty')
 if(empty) {
 	const time = document.createElement('span')
+	time.className = 'empty_time'
 	empty.prepend(time)
 	setInterval("dpTime()", 1000)
 	function dpTime() {
@@ -195,9 +200,9 @@ if(betFrm) {
 				const draw = document.querySelector('.choice_draw')
 				const lose = document.querySelector('.choice_lose')
 
-				const wdefault = "(" + myJson.w_allocation + ")"
-				const ddefault = "(" + myJson.d_allocation + ")"
-				const ldefault = "(" + myJson.l_allocation + ")"
+				const wdefault = "( x" + (myJson.w_allocation).toFixed(2) + ")"
+				const ddefault = "( x" + (myJson.d_allocation).toFixed(2) + ")"
+				const ldefault = "( x" + (myJson.l_allocation).toFixed(2) + ")"
 				
 				
 				const win_text = document.createTextNode(wdefault)
@@ -246,11 +251,11 @@ if(betFrm) {
 				switch(myJson2.team) {
 					case 0:
 						WDL.innerText = '승'
-						Success.innerText = myJson2.property * myJson.w_allocation - myJson2.property.toFixed(0) + 'p'
+						Success.innerText = (myJson2.property * myJson.w_allocation - myJson2.property).toFixed(0) + 'p'
 						break
 					case 1:
 						WDL.innerText = '무'
-						Success.innerText = myJson2.property * myJson.d_allocation - myJson2.property.toFixed(0) + 'p'
+						Success.innerText = (myJson2.property * myJson.d_allocation - myJson2.property).toFixed(0) + 'p'
 						break
 					case 2:
 						WDL.innerText = '패'

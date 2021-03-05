@@ -18,7 +18,7 @@
 		<div class="leftContainer" >
 			<div class="lTeam"></div>
 			<div class="recent-history">
-				<div class="recent-title">최근전적</div>
+				<div class="recent-title">최근전적 (5경기)</div>
 				<div class="recent-record" id="lrecord">
 
 				</div>
@@ -29,7 +29,7 @@
 		<div class="rightContainer">
 			<div class="rTeam"></div>
 			<div class="recent-history">
-				<div class="recent-title">최근전적</div>
+				<div class="recent-title">최근전적 (5경기)</div>
 				<div class="recent-record" id="rrecord">
 					<!-- w는 파랑, l은 빨강, d는 회색 -->
 				</div>
@@ -49,7 +49,12 @@
 	   				<input th:if="${session.loginUser != null && bet == null}" class="dobetting" type="text" name="property">
 	   				<input th:if="${session.loginUser != null && bet == null}" id="buttons" type="button" value="베팅하기">
    				</div>
-   				<div class="needlogin"><a href="/login" th:unless="${session.loginUser != null}">로그인 후 이용 가능합니다.</a></div>
+   				<div class="needlogin">
+   					<a href="/login" th:unless="${session.loginUser != null}">
+   						<span class="needbet">베팅 : </span>
+   						<span class="plz">로그인 후 이용 가능합니다.</span>
+   					</a>
+   				</div>
    				<div class="betdetail" th:if="${session.loginUser != null && bet != null}">
    				 	<!--  <span class="WDL">승</span>
    					<span class="span1">에</span>

@@ -68,6 +68,12 @@ public class BetController {
 	}
 	
 	@ResponseBody
+	@GetMapping("/betUser")
+	public BetEntity selBetUser(BetEntity p) {
+		return bService.selBetUser(p);
+	}
+	
+	@ResponseBody
 	@PostMapping("/bet")
 	public int bet(@RequestBody BetEntity data, HttpSession hs) {
 		data.setMyProperty(sUtils.getLoginUser(hs).getMyProperty());

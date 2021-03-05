@@ -213,6 +213,15 @@ if(betFrm) {
 	
 	const betdetailFrm = document.querySelector('.betdetail')
 	if(betdetailFrm) {
+			const userp = document.querySelector('#userp')
+			let myJson2 = null
+		
+			fetch('/betUser?id=' + temps.getAttribute('value') + '&userPk=' + userp.getAttribute("value"))
+			.then(res => res.json())
+			.then(myJson => {
+				myJson2 = myJson
+			})
+			
 			fetch('/betallocation?id=' + temps.getAttribute('value'))
 			.then(res => res.json())
 			.then(myJson => {
@@ -226,7 +235,7 @@ if(betFrm) {
 				const span2 = document.createElement('span')
 				const Success = document.createElement('span')
 				const span3 = document.createElement('span')
-				
+				console.log(myJson2)
 				WDL.className = 'WDL'
 				span1.className = 'span1'
 				Property.className = 'Property'
@@ -234,12 +243,24 @@ if(betFrm) {
 				Success.className = 'Success'
 				span3.className = 'span3'
 				
-				/*WDL.innerText = if()
-				span1.innerText = '에'
-				Property.innerText =
-				span2.innerText = '를 거셨습니다. 예상 수익은'
-				Success.innerText = if()
-				span3.innerText = '입니다.'*/
+				switch(myJson2.team) {
+					case 0:
+						WDL.innerText = '승'
+						Success.innerText = myJson2.property * myJson.w_allocation - myJson2.property.toFixed(0) + 'p'
+						break
+					case 1:
+						WDL.innerText = '무'
+						Success.innerText = myJson2.property * myJson.d_allocation - myJson2.property.toFixed(0) + 'p'
+						break
+					case 2:
+						WDL.innerText = '패'
+						Success.innerText = (myJson2.property * myJson.l_allocation - myJson2.property).toFixed(0) + 'p'
+						break 
+				}
+				span1.innerText = '에 '
+				Property.innerText = myJson2.property + 'p'
+				span2.innerText = '를 거셨습니다. 예상 수익은 '
+				span3.innerText = '입니다.'
 				betdetailFrm.append(WDL)
 				betdetailFrm.append(span1)
 				betdetailFrm.append(Property)

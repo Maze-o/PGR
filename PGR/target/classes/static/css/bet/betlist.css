@@ -35,6 +35,15 @@
     height: 100%;
 }
 
+.stream {
+	background-color: #333;
+	color: #fff;
+}
+
+.stream a {
+	color: #fff;
+}
+
 .box {
 	position: relative;
 	display: block;

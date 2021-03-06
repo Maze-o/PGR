@@ -1,6 +1,7 @@
 package com.pgr.user;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pgr.Const;
-import com.pgr.SecurityUtils;
 import com.pgr.model.UserDomain;
 import com.pgr.model.UserEntity;
 
@@ -83,5 +83,11 @@ public class UserController {
 		map.put(Const.KEY_RESULT, service.profileChange(p, hs));
 		return map;
 	}
-
+	
+	@ResponseBody
+	@GetMapping("/topuser")
+	public List<UserEntity> topuser() {
+		return service.selTopUser();
+	}
+ 
 }

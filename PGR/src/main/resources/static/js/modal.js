@@ -39,6 +39,9 @@ $(document).ready(function() {
     
     // 모달창 클릭시 닫기
     modalDiv.click(function() {
+    	if(sessionStorage.getItem(onoff) == null || sessionStorage.getItem(onoff) == 1) {
+    		sessionStorage.setItem(onoff, 0)
+    	}
         if (modalMotion == true) {
             modalDiv.fadeOut(modalMotionTime / 2);
         } else {

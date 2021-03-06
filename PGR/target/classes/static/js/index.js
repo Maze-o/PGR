@@ -108,24 +108,6 @@ if(swiperWrapper) {
 			    },
 			});
 			
-			// play_list slide
-			const sw_pl = new Swiper('.sw_pl', {
-			    loop: true,
-			    autoplay: {
-			        delay: 4000,
-			        disableOnInteraction: false,
-			    },
-			    navigation: {
-			        prevEl: '.pl_slide .sw_prev',
-			        nextEl: '.pl_slide .sw_next',
-			    },
-			    pagination: {
-			        el: '.pl_slide .sw_pg',
-			        type: 'bullets',
-			        // clickable: true,
-			    },
-			});
-			
 			}
 		}
 	}
@@ -238,6 +220,81 @@ if(recentBet) {
 			swiper_slide.append(pl_profile)
 			
 			recentBet.append(swiper_slide)
+		}
+		
+		// play_list slide
+		const sw_pl = new Swiper('.sw_pl', {
+		    loop: true,
+		    autoplay: {
+		        delay: 4000,
+		        disableOnInteraction: false,
+		    },
+		    navigation: {
+		        prevEl: '.pl_slide .sw_prev',
+		        nextEl: '.pl_slide .sw_next',
+		    },
+		    pagination: {
+		        el: '.pl_slide .sw_pg',
+		        type: 'bullets',
+		        // clickable: true,
+		    },
+		});
+	}
+}
+
+const usercont = document.querySelector('.user_rank_cont')
+if(usercont) {
+	fetch('/topuser')
+	.then(res => res.json())
+	.then(myJson => {
+		console.log(myJson)
+		createTopuser(myJson)
+	})
+	
+	function createTopuser(myJson) {
+		
+		for(var i=0;i<myJson.length;i++) {
+			const userbox = document.createElement('div')
+			const medalicon= document.createElement('div')
+			const overlay = document.createElement('div')
+			const userinfo = document.createElement('div')
+			
+			const imedal = document.createElement('i')
+			
+			const name = document.createElement('span')
+			const point = document.createElement('span')
+			
+			userbox.className = 'user_box'
+			medalicon.className = 'medal_icon_cont'
+			
+			userinfo.className = 'user_info'
+			imedal.className = 'fas fa-medal fa-3x medal_icon'
+			
+			switch(i) {
+				case 0:
+					overlay.className = 'overlay gold_medal'
+					break;
+				case 1:
+					overlay.className = 'overlay silver_medal'
+					break;
+				case 2:
+					overlay.className = 'overlay bronze_medal'
+					break;
+			}
+			
+			name.innerText = myJson[i].nickname
+			point.innerText = myJson[i].myProperty
+			
+			medalicon.append(imedal)
+			userbox.append(medalicon)
+			
+			userbox.append(overlay)
+			
+			userinfo.append(name)
+			userinfo.append(point)
+			
+			userbox.append(userinfo)
+			usercont.append(userbox)
 		}
 	}
 }

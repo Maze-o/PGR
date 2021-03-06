@@ -1,5 +1,7 @@
 package com.pgr.user;
 
+import java.util.List;
+
 import javax.mail.Message.RecipientType;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -175,5 +177,9 @@ public class UserService {
 		
 		mapper.profileChange(p);
 		return 4;
+	}
+	
+	public List<UserEntity> selTopUser() {
+		return mapper.selTopUser();
 	}
 }

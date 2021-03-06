@@ -121,22 +121,28 @@ if(temps) {
 
 const empty = document.querySelector('.empty')
 if(empty) {
+	
 	const time = document.createElement('span')
 	time.className = 'empty_time'
 	empty.prepend(time)
 	setInterval("dpTime()", 1000)
 	function dpTime() {
 		var now = new Date()
-		now.setHours(now.getHours() + 9)
-		now.setTime(dates.getTime() - now.getTime())
-
-		months = now.getMonth()
-		days = now.getDate()-1
-		hours = now.getHours() + (days * 24) >= 10 ? now.getHours() + (days * 24) : '0' + (now.getHours() + (days * 24)) 
-		minutes = now.getMinutes() >= 10 ? now.getMinutes() : '0' + now.getMinutes()
-		seconds = now.getSeconds() >= 10 ? now.getSeconds() : '0' + now.getSeconds()
-		
-		time.innerText = '남은 시간  '+ hours + ' : ' + minutes + ' : ' + seconds
+		if(dates.getTime() > now.getTime()) { // 경기 시작전일때만
+			now.setHours(now.getHours() + 9)
+			now.setTime(dates.getTime() - now.getTime())
+	
+			months = now.getMonth()
+			days = now.getDate()-1
+			hours = now.getHours() + (days * 24) >= 10 ? now.getHours() + (days * 24) : '0' + (now.getHours() + (days * 24)) 
+			minutes = now.getMinutes() >= 10 ? now.getMinutes() : '0' + now.getMinutes()
+			seconds = now.getSeconds() >= 10 ? now.getSeconds() : '0' + now.getSeconds()
+			
+			time.innerText = '남은 시간  '+ hours + ' : ' + minutes + ' : ' + seconds
+		}
+		else {
+			time.innerText = '경기가 진행중입니다.'
+		}
 	}
 }
 

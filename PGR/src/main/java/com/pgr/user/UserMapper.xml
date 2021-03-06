@@ -13,6 +13,12 @@
 		SELECT * FROM pgrUser
 		WHERE userEmail = #{userEmail}
 	</select>
+	
+	<select id="selTopUser" resultType="com.pgr.model.UserEntity">
+		SELECT nickname, myProperty FROM pgrUser
+		ORDER BY myProperty DESC
+		LIMIT 3;
+	</select>
 
 	<update id="updateUserPassword">
 		UPDATE pgrUser

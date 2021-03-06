@@ -10,7 +10,6 @@ layout:decorator="~{layout/layout_default}">
 
 <th:block layout:fragment="css">
 	<link rel="stylesheet" th:href="@{js/swiper/swiper.min.css}">
-	<link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css}" />
 </th:block>
 
 <th:block layout:fragment="script">
@@ -19,10 +18,9 @@ layout:decorator="~{layout/layout_default}">
     <script defer th:src="@{js/script.js}"></script>
 </th:block>
 
-<!-- pagew -->
-<div class="pagew"  layout:fragment="content">
-    <!-- content -->
-    <div class="content">
+<!-- content -->
+<div class="content"  layout:fragment="content">
+    <div class="pagew_1600">
         <!-- content_left -->
         <div class="content_left">
             <div class="play_list">
@@ -78,19 +76,66 @@ layout:decorator="~{layout/layout_default}">
                    </div>
                </div>
            </div>
-            <div class="before_game">
+            <div class="end_game">
                 <a href="/endbetting" class="more">+ more</a>
                 <div class="bf_list">
 
                 </div>
             </div>
         </div>
-        <!-- content_right -->
-        <div class="content_right">
-            <div class="notice">
-                <a href="#" class="more">+ more</a>
-            </div>
-        </div>
+                <!-- content_right -->
+                <div class="content_right">
+                    <div class="notice">
+                        <a href="#" class="more">+ more</a>
+                        <div class="notice_list">
+                            <ul>
+                                <a href="#">
+                                    <li>123444444444444444444444444444444444444444444444444444444444444444</li>
+                                </a>
+                                <a href="#">
+                                    <li>notice</li>
+                                </a>
+                                <a href="#">
+                                    <li>notice</li>
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="user_rank">
+                        <div class="user_rank_cont">
+                            <div class="user_box">
+                                <div class="medal_icon_cont">
+                                    <i class="fas fa-medal fa-3x medal_icon"></i>
+                                </div>
+                                <div class="overlay gold_medal"></div>
+                                <div class="user_info">
+                                    <span>권혁진</span>
+                                    <span>5000point</span>
+                                </div>
+                            </div>
+                            <div class="user_box">
+                                <div class="medal_icon_cont">
+                                    <i class="fas fa-medal fa-3x medal_icon"></i>
+                                </div>
+                                <div class="overlay silver_medal"></div>
+                                <div class="user_info">
+                                    <span>권혁진</span>
+                                    <span>5000point</span>
+                                </div>
+                            </div>
+                            <div class="user_box">
+                                <div class="medal_icon_cont">
+                                    <i class="fas fa-medal fa-3x medal_icon"></i>
+                                </div>
+                                <div class="overlay bronze_medal"></div>
+                                <div class="user_info">
+                                    <span>권혁진</span>
+                                    <span>5000point</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     </div>
 </div>
 

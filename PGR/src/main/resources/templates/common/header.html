@@ -1,12 +1,14 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <!-- header -->
 <div th:fragment="header" class="header">
-	<a href="/" class="h_logo" title="logo">PGR</a>
+	<a href="/" class="h_logo" title="logo">
+		<img src="asset/logo.png">
+	</a>
 	<ul class="h_list">
 		<li><a href="/home">Notice</a></li>
 		<li><a href="/betting">Betting</a></li>
 		<li><a href="/teams">Team</a></li>
-		<li><a href="#">schedule</a></li>
+		<li><a href="#">Schedule</a></li>
 	</ul>
 	<div class="h_login">
 		<div th:if="${session.loginUser == null}">

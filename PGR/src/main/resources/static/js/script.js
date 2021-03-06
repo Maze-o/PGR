@@ -10,6 +10,14 @@ window.onload = function() {
 
 }
 
+$(document).ready(function() {
+    $('.gotop').click(function() {
+        $('html').animate({
+            scrollTop: 0
+        }, 600);
+    })
+})
+
 // $(document).ready(function() {
 //     $('#fullpage').fullpage({
 //         //options here

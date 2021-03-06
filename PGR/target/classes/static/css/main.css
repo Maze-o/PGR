@@ -33,30 +33,29 @@ html {
 
 body {
     font-family: 'IBM Plex Serif', serif;
+    overflow-x: hidden;
 }
 
-.hidden {
+/*레이아웃 공통사항*/
+.pagew {
+    position: relative;
+    display: block;
+    width: 1200px;
     height: 100%;
-    min-height: 100%;
-    overflow: hidden !important;
+    margin: 0 auto;
 }
 
-.swiper-slide a {
-	overflow:hidden;
+.pagew_1600 {
+    position: relative;
+    display: flex;
+    width: 1600px;
+    height: 100%;
+    margin: 0 auto;
 }
 
-.header_img {
-	position:absolute;
-	left: 50%;
-	top: 50%;
-	width:100%;
-	height:100%;
-	transform: translate(-50%,-50%);
-}
-
-#teamlogo {
-	height: 50%;
-	width: 50%;
+.swiper-container {
+    width: 100%;
+    height: 100%;
 }
 
 /*show chat*/
@@ -179,10 +178,10 @@ body {
 .chat .chat_message {
     position: relative;
     width: 80%;
-    padding: 10px;
-    margin: 0 10px;
+    padding: 5px;
+    margin: 1px 10px;
     color: #fff;
-    font-size: 15px;
+    font-size: 12px;
     border-radius: 10px;
 }
 
@@ -248,19 +247,6 @@ body {
 }
 
 
-/*레이아웃 공통사항*/
-.pagew {
-    position: relative;
-    display: block;
-    width: 1600px; /*가로스크롤 발생요인*/
-    margin: 0 auto;
-    flex: 1;
-}
-
-.swiper-container {
-    width: 100%;
-    height: 100%;
-}
 
 /*wrap*/
 .wrap {
@@ -268,6 +254,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    width: 100vw;
 }
 
 /*content*/
@@ -276,6 +263,7 @@ body {
     display: flex;
     width: 100%;
     height: 100%;
+    flex: 1;
 }
 
 /*content 공통*/
@@ -292,8 +280,9 @@ body {
 .play_list,
 .rank_chart,
 .main_news,
-.before_game,
-.notice {
+.end_game,
+.notice,
+.user_rank {
     position: relative;
     display: block;
     width: 100%;
@@ -306,7 +295,7 @@ body {
     top: 5px;
     right: 10px;
     display: block;
-    z-index: 99999;
+    z-index: 99998;
     font-size: 13px;
 }
 
@@ -339,7 +328,7 @@ body {
     left: 15px;
     bottom: 20px;
     cursor: pointer;
-    z-index: 99999;
+    z-index: 99998;
 }
 
 .pl_slide .sw_next {
@@ -347,7 +336,7 @@ body {
     right: 15px;
     bottom: 20px;
     cursor: pointer;
-    z-index: 99999;
+    z-index: 99998;
 }
 
 .pl_slide .sw_pg {
@@ -363,6 +352,25 @@ body {
     height: 50px;
     margin-top: 25px;
     text-align: center;
+}
+
+.header_img {
+	position:absolute;
+	left: 50%;
+	top: 50%;
+	width:100%;
+	height:100%;
+	transform: translate(-50%,-50%);
+}
+
+#teamlogo {
+	height: 50%;
+	width: 50%;
+}
+
+.vs_date {
+	text-align: center;
+	font-size:15px;                   
 }
 
 .state {
@@ -419,6 +427,7 @@ body {
     display: block;
     width: 90px;
     height: 90px;
+    background: grey;
     border-radius: 50%;
 }
 
@@ -455,7 +464,7 @@ body {
 
 .rank_box_cont {
     position: relative;
-    height: 60px;
+    height: 55px;
 }
 
 .rank_box {
@@ -469,6 +478,7 @@ body {
     border-radius: 5px;
     transition: all 0.7s;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .rank_box:last-child {
@@ -484,16 +494,21 @@ body {
     height: 100%;
     border-radius: 5px;
     transition: all 0.6s;
+    background: #333;
 }
 
 .rank_box:hover {
     color: #fff;
-    cursor: pointer;
 }
 
-.rank_box:hover .overlay {
+.user_box:hover .user_info span {
+    text-shadow: 1px 1px 2px #333;
+    color: #fff;
+}
+
+.rank_box:hover .overlay,
+.user_box:hover .overlay {
     width: 100%;
-    background: #333;
 }
 
 .rank_box span {
@@ -522,7 +537,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    z-index: 99999;
+    z-index: 99998;
 }
 
 .news_slide .sw_next {
@@ -531,7 +546,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    z-index: 99999;
+    z-index: 99998;
 }
 
 .news_slide .sw_pg {
@@ -539,6 +554,7 @@ body {
     left: 50%;
     top: 20px;
     transform: translateX(-50%);
+    z-index: 99998;
 }
 
 .sw_text {
@@ -548,8 +564,9 @@ body {
     background: #fff;
     width: 100%;
     height: 50px;
-    z-index: 99999;
+    z-index: 99998;
     border-radius: 0 0 5px 5px;
+    border-top: 1px solid #333;
 }
 
 .sw_text span {
@@ -557,7 +574,7 @@ body {
     display: block;
     text-align: center;
     line-height: 50px;
-    width: 700px;
+    width: 100%;
     height: 50px;
     margin: 0 auto;
     font-size: 20px;
@@ -565,15 +582,16 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
     letter-spacing: 1px;
+    padding: 0 10px;
 }
 
 
-.before_game {
+.end_game {
     padding: 20px 0;
     flex: 1;
 }
 
-.bf_list {
+.eg_list {
     position: relative;
     display: inline-block;
     width: 100%;
@@ -604,6 +622,7 @@ body {
 .vs_area:first-child::after {
     content: none;
 }
+
 .vs_area::before {
     content: 'VS';
     position: absolute;
@@ -620,6 +639,7 @@ body {
     display: inline-block;
     width: 30%;
     height: 35%;
+    background: grey;
     border-radius: 50%;
 }
 
@@ -629,11 +649,6 @@ body {
 
 .vs_img:nth-child(2) {
     float: right;
-}
-
-.vs_date {
-	text-align: center;
-	font-size:15px;                   
 }
 
 
@@ -678,7 +693,8 @@ body {
 }
 
 .notice {
-    height: 100%;
+    flex: 1;
+    margin-bottom: 20px;
 }
 
 .notice_list {
@@ -714,6 +730,94 @@ body {
     border-bottom-color: #333;
 }
 
+.user_rank {
+    padding: 20px;
+    flex: 1;
+}
+
+.user_rank_cont {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.user_box {
+    position: relative;
+    display: flex;
+    height: 60px;
+    background: #fff;
+    box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    transition: all 0.7s;
+    margin-bottom: 30px;
+}
+
+.user_box:last-child {
+    margin: 0;
+}
+
+.gold_medal,
+.silver_medal,
+.bronze_medal {
+    position: absolute;
+    display: block;
+    width: 30%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.gold_medal {
+    background: #f9ad0e;
+}
+
+.silver_medal {
+    background: #d1d7da;
+}
+
+.bronze_medal {
+    background: #df7e08;
+}
+
+.medal_icon_cont {
+    position: relative;
+    display: block;
+    width: 30%;
+    height: 100%;
+}
+
+.medal_icon {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
+}
+
+.user_info {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    font-size: 17px;
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #333;
+}
+
+.user_info span {
+    display: block;
+    flex: 1;
+    text-align: center;
+    font-weight: 200;
+    letter-spacing: 1px;
+    transition: all 0.6s;
+}
+
 /* 반응형 코드 */
 @media all and (max-width: 1024px) {
     .h_logo {
@@ -723,7 +827,8 @@ body {
 }
 
 @media all and (max-width: 960px) {
-    .header {
+    .h_list,
+    .h_login {
         padding-top: 25px;
     }
 

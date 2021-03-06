@@ -4,10 +4,12 @@ $(document).ready(function() {
     const modalClose = $('#close_chat')
     const modalShow = $('#show_chat')
 
-    const modalOpen = false;
+    const modalOpen = true;
     const modalMotion = true;
     // 1000 = 1초
     const modalMotionTime = true;
+    
+    const onoff = 'onoff'
 
     modalDiv.css({
         'position': 'fixed',
@@ -18,14 +20,23 @@ $(document).ready(function() {
         'z-index': 99999,
         'display': 'none'
     })
-    // 초기에 보일지 말지 결정한다.
+
+    /*// 초기에 보일지 말지 결정한다.
     if (modalOpen == true) {
         if (modalMotion == true) {
             modalDiv.fadeIn(modalMotionTime);
         } else {
             modalDiv.show();
         }
+    }*/
+    if(sessionStorage.getItem(onoff) == 1) {
+        if (modalMotion == true) {
+            modalDiv.fadeIn(modalMotionTime);
+        } else {
+            modalDiv.show();
+        }
     }
+    
     // 모달창 클릭시 닫기
     modalDiv.click(function() {
         if (modalMotion == true) {
@@ -41,6 +52,9 @@ $(document).ready(function() {
     })
     // 닫기 버튼을 클릭시 모달창 닫기
     modalClose.click(function() {
+    	if(sessionStorage.getItem(onoff) == null || sessionStorage.getItem(onoff) == 1) {
+    		sessionStorage.setItem(onoff, 0)
+    	}
         if (modalMotion == true) {
             modalDiv.fadeOut(modalMotionTime / 2);
         } else {
@@ -49,6 +63,9 @@ $(document).ready(function() {
     })
     // 모달 창 보기 버튼 클릭
     modalShow.click(function() {
+    	if(sessionStorage.getItem(onoff) == null || sessionStorage.getItem(onoff) == 0) {
+    		sessionStorage.setItem(onoff, 1)
+    	}
         if (modalMotion == true) {
             modalDiv.fadeIn(modalMotionTime);
         } else {

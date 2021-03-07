@@ -4,13 +4,11 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import com.pgr.bet.BetService;
-import com.pgr.db.DbUtils;
+import com.pgr.model.RecentDTO;
 import com.pgr.model.RecentEntity;
-import com.pgr.model.TeamEntity;
 
 @Service
 public class RecentService {
@@ -55,5 +53,9 @@ public class RecentService {
 	
 	public int delRecentMatch(RecentEntity data) {
 		return mapper.delRecentMatch(data);
+	}
+	
+	public List<RecentEntity> selScheduleList(RecentDTO data) {
+		return mapper.selScheduleList(data);
 	}
 }

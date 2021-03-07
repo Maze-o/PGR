@@ -27,7 +27,7 @@
 	           </div>
 	           <div class="chat_form">
 	               <textarea id="chatting" th:if="${session.loginUser != null}"></textarea>
-	               <textarea id="chatting" class="needLogin" th:unless="${session.loginUser != null}" readonly>로그인 후 이용가능합니다.</textarea>
+	               <textarea id="chatting" class="needLogin" th:unless="${session.loginUser != null}" disabled placeholder="로그인 후 이용가능합니다."></textarea>
 	               <button id="sendBtn" th:if="${session.loginUser != null}">send</button>
 	            </div>
 	        </div>

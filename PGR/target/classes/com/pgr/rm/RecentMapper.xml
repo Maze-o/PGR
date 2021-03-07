@@ -32,6 +32,10 @@
 		AND DATE_FORMAT(date, '%Y-%m-%d') &gt; DATE_ADD(NOW(), INTERVAL -4 DAY)
 		ORDER BY pkid DESC;
 	</select>
+	<select id="selScheduleList" resultType="com.pgr.model.RecentEntity">
+		SELECT * FROM rmatch
+		WHERE DATE_FORMAT(DATE_ADD(DATE_FORMAT(DATE, '%Y-%m-%d %H:%i'), INTERVAL + 9 HOUR), '%m') = #{month}
+	</select>
 	<update id="updRecentMatch">
 		UPDATE rmatch
 		SET lscore = #{lscore},

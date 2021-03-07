@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.pgr.model.RecentDTO;
 import com.pgr.model.RecentEntity;
 
 @Mapper
@@ -15,4 +16,5 @@ public interface RecentMapper {
 	List<RecentEntity> selListRecentMatch();
 	List<RecentEntity> selBettingRoomList();
 	List<RecentEntity> selEndBettingRoomList();
+	List<RecentEntity> selScheduleList(RecentDTO data);
 }

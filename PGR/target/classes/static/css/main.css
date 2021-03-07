@@ -227,6 +227,11 @@ body {
     background: #ccc;
 }
 
+
+.needLogin {
+	cursor: not-allowed;
+}
+
 .chat_form button {
     position: relative;
     background: #fc766aff;

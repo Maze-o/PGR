@@ -3,9 +3,110 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorator="~{layout/layout_default}">
+	
+<th:block layout:fragment="css">
+	<link rel="stylesheet" type="text/css" th:href="@{css/schedule.css}">
+</th:block>
 
+<th:block layout:fragment="script">
+	<script defer type="text/javascript" th:src="@{js/schedule.js}"></script>
+</th:block>
 
-<div layout:fragment="content">
+<div class="schedule_wrap" layout:fragment="content">
+	<div class="pagew">
+		<div class="schedule_cont">
+		    <div class="schedule_box">
+		        <div class="schedule_month">
+		            <ul class="month_list">
+		            	<li id="date_9">
+		                    <a href="/schedule?month=9">
+		                        <span class="year">2020</span>
+		                        <span class="month">9</span>
+		                    </a>
+		                </li>
+		            	<li id="date_10">
+		                    <a href="/schedule?month=10">
+		                        <span class="year">2020</span>
+		                        <span class="month">10</span>
+		                    </a>
+		                </li>
+		            	<li id="date_11">
+		                    <a href="/schedule?month=11">
+		                        <span class="year">2020</span>
+		                        <span class="month">11</span>
+		                    </a>
+		                </li>
+		                <li id="date_12">
+		                    <a href="/schedule?month=12">
+		                        <span class="year">2020</span>
+		                        <span class="month">12</span>
+		                    </a>
+		                </li>
+		                <li id="date_1">
+		                    <a href="/schedule?month=1">
+		                        <span class="year">2021</span>
+		                        <span class="month">1</span>
+		                    </a>
+		                </li>
+		                <li id="date_2">
+		                    <a href="/schedule?month=2">
+		                        <span class="year">2021</span>
+		                        <span class="month">2</span>
+		                    </a>
+		                </li>
+		                <li id="date_3">
+		                    <a href="/schedule?month=3">
+		                        <span class="year">2021</span>
+		                        <span class="month">3</span>
+		                    </a>
+		                </li>
+		                <li id="date_4">
+		                    <a href="/schedule?month=4">
+		                        <span class="year">2021</span>
+		                        <span class="month">4</span>
+		                    </a>
+		                </li>
+		                <li id="date_5">
+		                    <a href="/schedule?month=5">
+		                        <span class="year">2021</span>
+		                        <span class="month">5</span>
+		                    </a>
+		                </li>
+		            </ul>
+		        </div>
+		        <table class="schedule_table" th:value=${param.month}>
+		            <tr class="game_content">
+		                <th>날짜</th>
+		                <th>시간</th>
+		                <th>장소</th>
+		                <th>경기</th>
+		            </tr>
+		            <!-- 경기없는 경우 -->
+		          <!-- <tr class="empty_game">
+		              <th>
+		                  <div class="inner empty">
+		                      <span>3/1</span>
+		                      (월)
+		                  </div>
+		              </th>
+		              <td>
+		                  <div class="inner empty">
+		                      <span>경기가 없습니다.</span>
+		                  </div>
+		              </td>
+		          </tr> -->
+		          <!-- 경기가 예정되어 있는 경우 -->
+		          <!--=====================test================-->
+		                <tr class="empty_game">
+		                    <th>
+		                    </th>
+		                    <td>
+		                    </td>
+		                </tr>
+		            </table>
+		        </div>
+		    </div>
+	</div>
 </div>
 	
 </html>

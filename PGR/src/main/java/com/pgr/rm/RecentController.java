@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pgr.model.RecentDTO;
 import com.pgr.model.RecentEntity;
 
 @RestController
@@ -21,7 +22,12 @@ public class RecentController {
 	}
 
 	@GetMapping("/recentMatch")
-	public RecentEntity recentMatch(RecentEntity p) {
-		return service.selRecentMatch(p);
+	public RecentEntity recentMatch(RecentEntity data) {
+		return service.selRecentMatch(data);
+	}
+	
+	@GetMapping("/scheduleMatch")
+	public List<RecentEntity> scheduleMatch(RecentDTO data) {
+		return service.selScheduleList(data);
 	}
 }

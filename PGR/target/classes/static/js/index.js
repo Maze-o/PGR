@@ -247,7 +247,6 @@ if(usercont) {
 	fetch('/topuser')
 	.then(res => res.json())
 	.then(myJson => {
-		console.log(myJson)
 		createTopuser(myJson)
 	})
 	

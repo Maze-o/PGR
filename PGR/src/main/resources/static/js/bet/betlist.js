@@ -18,6 +18,7 @@ if(containerElem) {
 			var rteam = document.createElement('div')
 			var textspan = document.createElement('span')
 			var datespan = document.createElement('span')
+			var statuspan = document.createElement('span')
 			var dates = new Date(myJson[i].date)
 			var span = document.createElement('div')
 			
@@ -42,6 +43,7 @@ if(containerElem) {
 			
 			datespan.innerText = dates.toLocaleString()
 			textspan.innerText = 'VS'
+			statuspan.innerText = new Date() > dates ? '진행중' : '진행 예정'
 			lteam.innerText = myJson[i].lteam
 			rteam.innerText = myJson[i].rteam
 			
@@ -49,7 +51,9 @@ if(containerElem) {
 			lteamlogo.append(limg)
 			rteamlogo.append(rimg)
 			span.append(datespan)
+			span.append(statuspan)
 			span.append(textspan)
+			
 			
 			div.append(ahref)
 			ahref.append(lteamlogo)

@@ -39,7 +39,7 @@ function wsEvt() {
 				}
 		}
 		if(msg.type == 'status') {
-				currentStatus.innerText = '동시접속자수: ' + msg.value
+				currentStatus.innerText = '홈페이지 동시접속자수: ' + msg.value
 		}
 	}
 

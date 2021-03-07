@@ -32,7 +32,6 @@ public class UserController {
 	@PostMapping("/join") // 회원가입 정보 DB 전달
 	public Map<String, Object> join(@RequestBody UserEntity p) throws Exception {
 		Map<String, Object> map = new HashMap<>();
-		System.out.println("DB EMAIL : " + p.getUserEmail());
 		map.put(Const.KEY_RESULT, service.join(p));
 
 		return map;

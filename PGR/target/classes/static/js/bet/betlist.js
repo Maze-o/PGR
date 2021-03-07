@@ -43,7 +43,7 @@ if(containerElem) {
 			
 			datespan.innerText = dates.toLocaleString()
 			textspan.innerText = 'VS'
-			statuspan.innerText = new Date() > dates ? '진행중' : '진행 예정'
+			statuspan.className = new Date() > dates ? 'play' : 'expected'
 			lteam.innerText = myJson[i].lteam
 			rteam.innerText = myJson[i].rteam
 			

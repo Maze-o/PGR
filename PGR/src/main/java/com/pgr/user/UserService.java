@@ -97,7 +97,6 @@ public class UserService {
 
 		message.setText(msg, "utf-8", "html");// 내용
 		message.setFrom(new InternetAddress(Const.FROM_ADDRESS));
-		System.out.println("이메일 전송 완료");
 		return message;
 
 	}
@@ -119,7 +118,6 @@ public class UserService {
 			}
 
 			// 비밀번호 변경
-			System.out.println("변경 비밀번호  : " + pw);
 			p.setUserPw(pw);
 			mapper.updateUserPassword(p);
 

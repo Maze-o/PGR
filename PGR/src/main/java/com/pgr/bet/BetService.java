@@ -42,9 +42,6 @@ public class BetService {
 		up.setUserPk(p.getUserPk());
 		uMapper.updProperty(up);
 		
-		System.out.println("win : " + p.getWin());
-		System.out.println("lose : " + p.getLose());
-		System.out.println("draw : " + p.getDraw());
 		return bMapper.insBet(p);
 	}
 

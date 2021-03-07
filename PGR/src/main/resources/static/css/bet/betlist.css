@@ -117,3 +117,27 @@
 .text {
 	font-size: 40px;
 }
+
+.play::after {
+	display: block;
+    margin: 0 10px;
+    font-size: 17px;
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    content: 'play';
+    color: #90EE90;
+}
+
+.expected::after {
+	display: block;
+    margin: 0 10px;
+    font-size: 17px;
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    content: 'expected';
+    color: #87CEFA;
+}

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorator="~{layout/layout_default}">
+	layout:decorator="~{layout/layout_default_nowrap}">
 
 <head>
 <title>마이페이지</title>
@@ -16,18 +16,20 @@
 	<script defer type="text/javascript" th:src="@{js/mypage.js}"></script>
 </th:block>
 
-<div class="user_profile" layout:fragment="content" th:if="${session.loginUser != null}">
-        <div class="pagew_1600">
+<div class="user_profile_wrap" layout:fragment="content" th:if="${session.loginUser != null}">
+        <div class="pagew">
             <div class="user_form">
                 <span class="userfrm_tit">profile</span>
+                <div class="disable_text">
                     <span>E-mail</span>
-                    <input type="text" id="userEmail" th:value="${session.loginUser.userEmail}" disabled>
+                    <input type="text" name="userEmail" id="userEmail" th:value="${session.loginUser.userEmail}" disabled="true">
                     <span>My point</span>
-                    <input type="text" id="myProperty" th:value="${session.loginUser.myProperty}" disabled>
+                    <input type="text" name="myProperty" id="myProperty" th:value="${session.loginUser.myProperty}" disabled="true">
+                </div>
                 <form id="userFrm">
-                		<input type="hidden" name="userEmail" th:value="${session.loginUser.userEmail}">
+                	<input type="hidden" name="userEmail" th:value="${session.loginUser.userEmail}">
                     <span>Nickname</span>
-                    <input type="text" name="nickname" th:value="${session.loginUser.nickname}">
+                    <input type="text" name="nickname" th:value="${session.loginUser.nickname}" spellcheck="false">
                     <span class="changepw_tit">change password</span>
                     <input type="password" name="userPw" id="nowPw" placeholder="현재 비밀번호">
                     <input type="password" name="userNewPw" id="newPw" placeholder="새 비밀번호">
@@ -40,7 +42,7 @@
                 <div class="bet_table_cont">
                     <div class="bet_manage">
                         <span>보유포인트 : </span>
-                        <span class="user_point">10000</span>
+                        <span class="user_point" th:text="${session.loginUser.myProperty}"></span>
                         <div class="bet_manage_btn">
                             <input type="button" name="oneWeek" value="1주일">
                             <input type="button" name="oneMonth" value="1개월">

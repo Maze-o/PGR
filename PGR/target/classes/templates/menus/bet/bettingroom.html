@@ -49,8 +49,8 @@
 	   				<input th:if="${session.loginUser != null && bet == null}" class="dobetting" type="text" name="property">
 	   				<input th:if="${session.loginUser != null && bet == null}" id="buttons" type="button" value="베팅하기">
    				</div>
-   				<div class="needlogin">
-   					<a href="/login" th:unless="${session.loginUser != null}">
+   				<div class="needlogin" th:unless="${session.loginUser != null}">
+   					<a href="/login">
    						<span class="needbet">베팅 : </span>
    						<span class="plz">로그인 후 이용 가능합니다.</span>
    					</a>

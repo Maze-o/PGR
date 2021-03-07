@@ -61,7 +61,6 @@ public class EmailService {
 	}
 
 	public void sendSimpleMessage(String to) throws Exception {
-		System.out.println("to : " + to);
 		MimeMessage message = createMessage(to);
 		try {// 예외처리
 			emailSender.send(message);

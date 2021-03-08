@@ -141,6 +141,9 @@ if(empty) {
 			time.innerText = '남은 시간  '+ hours + ' : ' + minutes + ' : ' + seconds
 		}
 		else {
+			const betmanage = document.querySelector('.betmanage')
+			betmanage.innerHTML = ''
+			
 			time.innerText = '경기가 진행중입니다.'
 		}
 	}

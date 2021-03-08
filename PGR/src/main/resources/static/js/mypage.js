@@ -16,7 +16,6 @@ if (changeProfileBtn) {
 			userNewPw: newPw.value,
 			userPwRe: newPwRe.value
 		}
-		console.log(nicknameElem.value)
 		fetch('/mypage', {
 			method: 'post',
 			headers: {
@@ -66,7 +65,6 @@ if(bet_table) {
 	fetch('/betUserPk?userPk=' + userPk_value)
 	.then(res => res.json())
 	.then(myJson => {
-		console.log(myJson)
 		createBet(myJson)
 	})
 	

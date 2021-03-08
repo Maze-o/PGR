@@ -20,6 +20,9 @@ if(schedule_table) {
 	})
 	
 	function createSchedule(myJson) {
+		const nowDate = new Date().getDate()
+		//여기서부터 작업
+		
 		for(var i=0;i<myJson.length;i++) {
 			const isGame = document.createElement('tr')
 			

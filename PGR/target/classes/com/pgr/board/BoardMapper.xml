@@ -10,14 +10,20 @@
 		FROM pgrboard
 	</insert>
 	
+	<select id="selMaxPageNum" resultType="_int">
+		SELECT CEIL(COUNT(boardPk) / #{rowCnt}) 
+		FROM pgrboard
+	</select>
+	
 	<select id="selBoardList" resultType="com.pgr.model.BoardDomain">
 		SELECT A.boardPk, A.seq,
-		A.title, A.hits, A.regDt,
+		A.title, A.hits, DATE_FORMAT(A.regDt, '%Y-%m-%d') AS regDt, A.isDel,
 		A.userPk, B.nickname AS writerNm
 		FROM pgrboard A
 		INNER JOIN pgruser B
 		ON A.userPk = B.userPk
-		ORDER BY A.boardPk DESC;
+		WHERE A.isDel = 0
+		ORDER BY A.boardPk DESC;	
 	</select>
 
 	<select id="selBoard" resultType="com.pgr.model.BoardDomain">
@@ -29,7 +35,7 @@
 	</select>
 	
 	<update id="upBoard">
-		UPDATE t_board
+		UPDATE pgrboard
 		<set>
 		<choose>
 			<when test="hits == 1">

@@ -8,15 +8,17 @@ if (writeEditBtn) {
 		const titleElem = formElem.title
 		const ctntElem = formElem.ctnt
 		const userPkElem = formElem.userPk
+		const boardPkElem = formElem.boardPk
 
 		const param = {
 			title: titleElem.value,
 			ctnt: ctntElem.value,
-			userPk: userPkElem.value
+			userPk: userPkElem.value,
+			boardPk: boardPkElem.value
 		}
 		console.log(param)
 
-		fetch('/writeEdit', {
+		fetch(boardPkElem.value == 0 ? 'write' : 'edit', {
 			method: 'post',
 			headers: {
 				'Content-type': 'application/json',
@@ -38,10 +40,11 @@ if (writeEditBtn) {
 				alert('내용을 입력해 주십시오')
 				return
 			case 2:
-				location.href = "/home"
+				location.href = "/gallery"
 				return
 		}
 	}
 }
 
 writeEditBtn.addEventListener('click', ajax)
+

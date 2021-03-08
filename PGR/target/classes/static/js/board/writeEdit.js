@@ -22,7 +22,25 @@ if (writeEditBtn) {
 				'Content-type': 'application/json',
 			},
 			body: JSON.stringify(param)
+		}).then(res => {
+			return res.json()
+		}).then(myJson => {
+			proc(myJson)
 		})
+	}
+
+	function proc(myJson) {
+		switch (myJson.result) {
+			case 0:
+				alert('제목을 입력해 주십시오')
+				return
+			case 1:
+				alert('내용을 입력해 주십시오')
+				return
+			case 2:
+				location.href = "/home"
+				return
+		}
 	}
 }
 

@@ -52,7 +52,9 @@
 
 					<tr th:each="data: ${data}">
 						<td th:text=${data.boardPk}></td>
-						<td th:text=${data.title}></td>
+						<td><a th:href="@{/detail(boardPk=${data.boardPk})}">
+						<em th:text=${data.title}></em>
+						</a></td>
 						<td th:text=${data.writerNm}></td>
 						<td th:text=${data.hits}></td>
 						<td th:text=${data.regDt}></td>

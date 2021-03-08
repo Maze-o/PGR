@@ -2,6 +2,14 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pgr.board.BoardMapper">
+	
+	<insert id="insBoard">
+		INSERT INTO pgrboard
+		(seq, title, ctnt, userPk)
+		SELECT IFNULL(MAX(seq), 0) + 1, #{title}, #{ctnt}, #{userPk}
+		FROM pgrboard
+	</insert>
+	
 	<select id="selBoardList" resultType="com.pgr.model.BoardDomain">
 		SELECT A.boardPk, A.seq,
 		A.title, A.hits, A.regDt,
@@ -11,11 +19,40 @@
 		ON A.userPk = B.userPk
 		ORDER BY A.boardPk DESC;
 	</select>
+
+	<select id="selBoard" resultType="com.pgr.model.BoardDomain">
+		SELECT A.boardPk, A.seq, A.title, A.ctnt, A.hits, A.userPk, A.regDt, B.nickname AS writerNm 
+		FROM pgrboard A
+		INNER JOIN pgruser B
+		ON A.userPk = B.userPk
+		WHERE A.boardPk = #{boardPk}
+	</select>
 	
-	<insert id="insBoard">
-		INSERT INTO pgrboard
-		(seq, title, ctnt, userPk)
-		SELECT IFNULL(MAX(seq), 0) + 1, #{title}, #{ctnt}, #{userPk}
-		FROM pgrboard
-	</insert>
+	<update id="upBoard">
+		UPDATE t_board
+		<set>
+		<choose>
+			<when test="hits == 1">
+				hits = hits + 1
+			</when>
+			<otherwise>
+				<if test="title != null and title !=''">
+						title = #{title},
+				</if>
+				<if test="ctnt != null and ctnt !=''">
+						ctnt = #{ctnt},
+				</if>
+				<if test="isDel == 1">
+					isDel = 1,
+				</if>
+				
+				modDt = now()
+				</otherwise>
+			</choose>
+		</set>
+		WHERE boardPk = #{boardPk}
+		<if test="userPk != 0">
+			AND userPk = #{userPk}
+		</if>
+	</update>
 </mapper>

@@ -16,50 +16,20 @@
 </th:block>
 
 <div layout:fragment="content">
-	<div>
-		<a href="/board/list?category=${requestScope.data.category}">리스트로
-			돌아가기</a>
-	</div>
-	<div>
-		<div th:if="${session.loginUser.userPk == session.data.userPk}">
-			<a
-				href="/board/edit?category=${session.data.category}&boardPk=${session.data.boardPk}">
+
+	<div>번호 : <span th:text=${data.seq}></span></div>
+	<div>조회수 : <span th:text=${data.hits}></span></div>
+	<div>제목 : <span th:text=${data.title}></span></div>
+	<div>작성 일시 : <span th:text=${data.regDt}></span></div>
+	<div>작성자 : <span th:text=${data.writerNm}></span></div>
+	<div>내용 : <span th:text=${data.ctnt}></span></div>
+	
+	<div th:if="${session.loginUser != null}">
+		<div th:if="${session.loginUser.userPk == data.userPk}">
+			<a th:href="@{/edit(boardPk=${data.boardPk})}">
 				<button>수정</button>
 			</a>
 			<button id="btnDel">삭제</button>
-			<div></div>
-
-			<div id="data" data-loginuserpk="${session.loginUser.userPk}"
-				data-pk="${session.data.boardPk}"
-				data-category="${session.data.category}">
-				<div>번호 : ${requestScope.data.seq}</div>
-				<div>조회수 : ${requestScope.data.hits}</div>
-				<div>제목 : ${requestScope.data.title}</div>
-				<div>작성 일시 : ${requestScope.data.regDt}</div>
-				<div>작성자 : ${requestScope.data.writerNm}</div>
-				<div>내용 : ${requestScope.data.ctnt}</div>
-			</div>
-
-			<div th:if="${session.loginUser != null}">
-				<div>
-					<h4>댓글쓰기</h4>
-					<form id="cmtFrm" onsubmit="return false;">
-						<input type="text" name="ctnt" placeholder="내용"> <input
-							type="button" name="btn" value="댓글등록">
-					</form>
-				</div>
-
-				<div id="modal" class="hide">
-					<div class="modal-content">
-						<span id="modClose">X</span> <input type="text" id="modCtnt">
-						<input type="button" id="modBtn" value="수정">
-					</div>
-				</div>
-
-			</div>
-
-
-			<div id="cmtList"></div>
 		</div>
 	</div>
 </div>

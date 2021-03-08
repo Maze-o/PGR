@@ -7,6 +7,7 @@
 	<button id="show_chat">+</button>
 	<!-- modal chat -->
 	<div class="chat_container">
+	<input type="hidden" id="tempNick" th:if="${session.loginUser != null}" th:value="${session.loginUser.nickname}">
 	    <div class="chat_con">
 	        <div class="titlebox">
 	            <div class="close_icon">
@@ -23,6 +24,7 @@
 	                    </p>
 	                </div> -->
 	                <div class="chat others">
+
 	               </div>
 	           </div>
 	           <div class="chat_form">

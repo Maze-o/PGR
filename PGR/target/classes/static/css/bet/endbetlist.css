@@ -6,6 +6,7 @@
     display: block;
     flex: 1;
     padding: 30px;
+    min-height: 768px;
 }
 
 .Schedule-notification {

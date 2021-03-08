@@ -216,7 +216,7 @@
 }
 
 /*p태그를 img태그로 교체*/
-.play_result p:first-child{
+.play_result img:first-child{
 	height: 35px;
 	width: 35px;
 	border-radius: 50%;
@@ -225,7 +225,7 @@
 }
 
 /*p태그를 img태그로 교체*/
-.play_result p:last-child{
+.play_result img:last-child{
 	height: 35px;
 	width: 35px;
 	border-radius: 50%;

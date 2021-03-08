@@ -134,18 +134,9 @@
     white-space: nowrap;
     overflow: hidden;
     cursor: pointer;
-    padding: 0 10px;
     font-size: 17px;
     font-weight: 500;
     color: #3e3e3e;
-}
-
-.game_content th:first-child {
-    padding-left: 0;
-}
-
-.game_content th:last-child {
-    padding-right: 0;
 }
 
 .inner {
@@ -180,7 +171,6 @@
     width: 300px;
     max-width: 300px;
     height: 70px;
-    padding-right: 20px;
     cursor: pointer;
 }
 
@@ -199,14 +189,24 @@
 
 .expected_game {
     position: relative;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
+    display: block;
     height: 70px;
     border-bottom: 1px solid #ccc;
 }
 
 .expected_game th,
+.expected_game td {
+	position: relative;
+	width: 300px;
+	max-width: 300px;
+	height: 70px;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/*.expected_game th,
 .expected_game td {
     position: relative;
     display: flex;
@@ -219,7 +219,7 @@
     overflow: hidden;
     cursor: pointer;
     padding: 0 10px;
-}
+}*/
 
 .expected_game th:first-child,
 .expected_game td:first-child {
@@ -246,8 +246,8 @@
 	content: "VS";
 	position: absolute;
 	right: 0;
-	top: 50%;
-	transform: translateY(-50%);
+	top: 60%;
+	transform: translateY(-60%);
 	font-weight: 900;
 	font-family: 'Nanum Gothic', sans-serif;
 	font-style: italic;

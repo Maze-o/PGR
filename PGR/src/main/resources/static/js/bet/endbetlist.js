@@ -25,7 +25,7 @@ if(containerElem) {
 			var rimg = document.createElement('img')
 			var lString = 'img/teamlogo/' + myJson[i].lid + '.png'
 			var rString = 'img/teamlogo/' + myJson[i].rid + '.png'
-			
+
 			limg.src = lString
 			rimg.src = rString
 			
@@ -45,6 +45,18 @@ if(containerElem) {
 			lteam.innerText = myJson[i].lteam
 			rteam.innerText = myJson[i].rteam
 			
+			if(myJson[i].lscore > myJson[i].rscore) {
+      			lteam.className += 'color'
+				lteamlogo.className += 'color'
+			} else if(myJson[i].lscore < myJson[i].rscore) {
+				rteam.className += 'color'
+				rteamlogo.className += 'color'
+			} else if(myJson[i].lscore === myJson[i].rscore) {
+      			lteam.className += 'color'
+				lteamlogo.className += 'color'
+				rteam.className += 'color'
+				rteamlogo.className += 'color'
+			}
 			
 			lteamlogo.append(limg)
 			rteamlogo.append(rimg)

@@ -142,6 +142,8 @@ if(empty) {
 		}
 		else {
 			time.innerText = '경기가 진행중입니다.'
+			const manage = document.querySelector('.betmanage')
+			manage.innerHTML = ''
 		}
 	}
 }
@@ -246,7 +248,7 @@ if(betFrm) {
 				const span2 = document.createElement('span')
 				const Success = document.createElement('span')
 				const span3 = document.createElement('span')
-				console.log(myJson2)
+				
 				WDL.className = 'WDL'
 				span1.className = 'span1'
 				Property.className = 'Property'

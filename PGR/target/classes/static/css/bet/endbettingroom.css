@@ -9,41 +9,50 @@
 .playcontainer {
 	display: flex;
 	flex-direction: column;
-	margin: 30px 0 20px 0;
+	margin: 20px 0 20px 0;
 	flex: 2;
 }
 .date {
 	flex-grow: 1;
-	border: 1px solid #ccc;
 	display: flex;
-	font-size: 15px;
+	font-size: 20px;
 	text-align: center;
 	justify-content: center;
 	align-items: center;
+	color: #F08080;
 }
 
 .stadium {
 	flex-grow: 1;
-	border: 1px solid #ccc;
 	display: flex;
-	font-size: 15px;
+	font-size: 20px;
 	text-align: center;
 	justify-content: center;
 	align-items: center;
+	color: #F08080;
 }
 
 .minicontainer {
-	flex-grow: 10;
+	flex-grow: 8;
 	display: flex;
 	flex-direction: row;
 }
 
-.minicontainer .left-information {
+.left-information,
+.right-information {
 	display: flex;
 	flex-direction: column;
-	flex-grow: 2;
-	border: 1px solid #ccc;
+	flex-grow: 1;
 	font-size: 10px;
+}
+
+.left-informationcolor,
+.right-informationcolor {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	font-size: 10px;
+	background-color: #6495ED;
 }
 
 .leftContainer,
@@ -52,94 +61,95 @@
 	display: block;
 	flex-direction: column;
 	flex-grow: 1;
-	border: 1px solid #ccc;
 	text-align: center;
 	vertical-align: middle;
 }
 
+.leftContainercolor,
+.rightContainercolor {
+	position: relative;
+	display: block;
+	flex-direction: column;
+	flex-grow: 1;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #6495ED;
+}
+
 .leftContainer > span,
 .rightContainer > span {
-	display:block;
-	font-size:40px;
+	display: block;
+	font-size: 30px;
+}
+
+.leftContainercolor > span,
+.rightContainercolor > span {
+	display: block;
+	font-size: 30px;
 }
 
 .leftContainer > img,
 .rightContainer > img {
 	position: relative;
 	display: inline-block;
-	top:50%;
-	transform: translateY(-50%);
- 	width: 48%;
- 	height: 60%;
+ 	width: 57%;
+ 	height: 90%;
 }
 
-.minicontainer .lscore {
+.leftContainercolor > img,
+.rightContainercolor > img {
+	position: relative;
+	display: inline-block;
+ 	width: 57%;
+ 	height: 90%;
+}
+
+.lscore,
+.rscore {
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
-	border: 1px solid #ccc;
+	color: #F08080;
+	font-size: 95px;
+	justify-content: center;
+	align-items: center;
+}
+
+.semicolon {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 	font-size: 50px;
 	justify-content: center;
 	align-items: center;
+	color: #F08080;
 }
 
-.minicontainer .semicolon {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
-	font-size: 30px;
-	justify-content: center;
-	align-items: center;
-}
-
-.minicontainer .rscore {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
-	border: 1px solid #ccc;
-	font-size: 50px;
-	justify-content: center;
-	align-items: center;
-}
-
-.minicontainer .right-information {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 2;
-	border: 1px solid #ccc;
-	font-size: 10px;
-	justify-content: center;
-	align-items: center;
-}
-
-.minicontainer .right-information ul {
+.right-information ul,
+.left-information ul,
+.right-informationcolor ul,
+.left-informationcolor ul {
 	height: 100%;
 	width: 100%;
-	font-size: 30px;
+	font-size: 25px;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 
-.minicontainer .right-information li {
-	height: 10%;
-	width: 100%;
-	margin-bottom: 10px;
-}
-
-.minicontainer .left-information ul {
-	height: 100%;
-	width: 100%;
-	font-size: 30px;
-	text-align: center;
-}
-
-.minicontainer .left-information li {
+.right-information li,
+.left-information li,
+.right-informationcolor li,
+.left-informationcolor li {
 	height: 10%;
 	width: 100%;
 	margin-bottom: 10px;
 }
 
 .betcontainer {
-	margin-bottom: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	border: 1px solid #ccc;
 	flex: 1;
 	display:flex;
@@ -167,22 +177,33 @@
 	flex-direction: column;
 	border: 1px solid #ccc;
 	font-size: 30px;
-	line-height: 76px;
+}
+
+.horizontalbar_w,
+.horizontalbar_d,
+.horizontalbar_l {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid #ccc;	
+}
+
+.horizontalbar_l {
+	border-bottom: none;
 }
 
 .share_1 {
 	height: 50%;
 	width: 20%;
 	background-color: gray;
-	margin-top: 20px;
-
 }
 
 .share_2 {
 	height: 50%;
 	width: 40%;
 	background-color: gray;
-	margin-top: 20px;
+
 
 }
 
@@ -190,7 +211,7 @@
 	height: 50%;
 	width: 60%;
 	background-color: gray;
-	margin-top: 20px;
+
 
 }
 

@@ -85,6 +85,33 @@
 	border-left: 1px solid #ccc;
 }
 
+.lTeamcolor,
+.rTeamcolor {
+	position: relative;
+	display: block;
+	flex: 3;
+    width: 40%;
+    height: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+.lTeamcolor {
+	border-right: 1px solid #ccc;
+}
+
+.rTeamlogocolor {
+	border-left: 1px solid #ccc;
+}
+
+
+
+.lTeamcolor,
+.rTeamcolor,
+.lTeamlogocolor,
+.rTeamlogocolor {
+	background-color: #6495ED;
+}
+
 .teamlogo {
 	width: 66%;
 	height: 70%;
@@ -100,6 +127,7 @@
 	border-bottom: 1px solid #ccc;
 	font-size: 20px;
 	font-family: 'Nanum Gothic', sans-serif;
+	color: #F08080;
 }
 
 .CenterSpan span {
@@ -109,6 +137,14 @@
 
 .lTeamlogo,
 .rTeamlogo {
+	position :relative;
+	display: block;
+	flex:1;
+	border-bottom: 1px solid #ccc;
+}
+
+.lTeamlogocolor,
+.rTeamlogocolor {
 	position :relative;
 	display: block;
 	flex:1;

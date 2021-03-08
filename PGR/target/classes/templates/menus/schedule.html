@@ -74,33 +74,19 @@
 		                </li>
 		            </ul>
 		        </div>
-		        <table class="schedule_table" th:value=${param.month}>
-		            <tr class="game_content">
-		                <th>날짜</th>
-		                <th>시간</th>
-		                <th>장소</th>
-		                <th>경기</th>
-		            </tr>
-		            <!-- 경기없는 경우 -->
-		          <!-- <tr class="empty_game">
-		              <th>
-		                  <div class="inner empty">
-		                      <span>3/1</span>
-		                      (월)
-		                  </div>
-		              </th>
-		              <td>
-		                  <div class="inner empty">
-		                      <span>경기가 없습니다.</span>
-		                  </div>
-		              </td>
-		          </tr> -->
-		          <!-- 경기가 예정되어 있는 경우 -->
-		          <!--=====================test================-->
-
-		            </table>
-		        </div>
+		        <div class="schedule_table_cont">
+			        <table class="schedule_table" th:value=${param.month}>
+			            <tr class="game_content">
+			                <th>날짜</th>
+			                <th>시간</th>
+			                <th>장소</th>
+			                <th>경기</th>
+			            </tr>
+	
+			        </table>
+			    </div>
 		    </div>
+		</div>
 	</div>
 </div>
 	

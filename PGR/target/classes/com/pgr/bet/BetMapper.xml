@@ -22,7 +22,7 @@
 	</select>
 	
 	<select id="selBetUserPk" resultType="com.pgr.model.BetDomain2">
-		SELECT A.date, A.completed, A.lid, A.rid, A.lscore, A.rscore, B.bResult, B.team, B.property FROM rmatch AS A
+		SELECT A.date, A.completed, A.lid, A.rid, A.lscore, A.rscore, B.bResult, B.team, B.property, B.id FROM rmatch AS A
 		LEFT JOIN b_user AS B
 		ON B.id = A.id
 		WHERE b.userPk = #{userPk}

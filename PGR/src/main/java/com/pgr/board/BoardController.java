@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pgr.Const;
@@ -27,16 +28,16 @@ public class BoardController {
 	@Autowired
 	private BoardService service;
 
-	@GetMapping("/home")
+	@GetMapping("/gallery")
 	public String home(BoardDomain p, Model model) {
 		model.addAttribute(Const.KEY_DATA, service.selBoardList(p));
 
-		return "menus/board/home";
+		return "menus/gallery/home";
 	}
 
 	@GetMapping("/writeEdit")
 	public String writeEdit() {
-		return "menus/board/writeEdit";
+		return "menus/gallery/writeEdit";
 	}
 
 	@PostMapping("/writeEdit")
@@ -53,13 +54,13 @@ public class BoardController {
 	@GetMapping("/detail")
 	public String detail(BoardEntity p, Model model) {
 		model.addAttribute(Const.KEY_DATA, service.selBoard(p));
-		return "menus/board/detail";
+		return "menus/gallery/detail";
 	}
 	
 	@GetMapping("/edit")
 	public String edit(BoardEntity p, Model model) {
 		model.addAttribute(Const.KEY_DATA, service.selBoard(p));
-		return "/menus/board/writeEdit";
+		return "/menus/gallery/writeEdit";
 	}
 
 	@PostMapping("/edit")

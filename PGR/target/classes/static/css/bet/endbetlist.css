@@ -67,26 +67,25 @@
     line-height: 150px;
 }
 
-.lTeam,
-.rTeam {
-	position: relative;
-	display: block;
-	flex: 3;
-    width: 40%;
-    height: 100%;
-    border-bottom: 1px solid #ccc;
-}
-
 .lTeam {
 	border-right: 1px solid #ccc;
 }
 
-.rTeamlogo {
+.rTeamlogo,
+.rTeamlogocolorgray,
+.rTeamLogocolorblue,
+.rTeamLogocolorred {
 	border-left: 1px solid #ccc;
 }
 
-.lTeamcolor,
-.rTeamcolor {
+.lTeam,
+.rTeam,
+.lTeamcolorblue,
+.lTeamcolorgray,
+.lTeamcolorred,
+.rTeamcolorblue,
+.rTeamcolorgray,
+.rTeamcolorred {
 	position: relative;
 	display: block;
 	flex: 3;
@@ -95,21 +94,37 @@
     border-bottom: 1px solid #ccc;
 }
 
-.lTeamcolor {
+.lTeamcolorblue,
+.lTeamcolorgray,
+.lTeamcolorred {
 	border-right: 1px solid #ccc;
 }
 
-.rTeamlogocolor {
+.rTeamlogocolorblue,
+.rTeamlogocolorgray,
+.rTeamlogocolorred {
 	border-left: 1px solid #ccc;
 }
 
-
-
-.lTeamcolor,
-.rTeamcolor,
-.lTeamlogocolor,
-.rTeamlogocolor {
+.lTeamcolorblue,
+.rTeamcolorblue,
+.lTeamlogocolorblue,
+.rTeamlogocolorblue {
 	background-color: #6495ED;
+}
+
+.lTeamcolorgray,
+.rTeamcolorgray,
+.lTeamlogocolorgray,
+.rTeamlogocolorgray {
+	background-color: #D3D3D3;
+}
+
+.lTeamcolorred,
+.rTeamcolorred,
+.lTeamlogocolorred,
+.rTeamlogocolorred {
+	background-color: #DC143C;
 }
 
 .teamlogo {
@@ -136,15 +151,13 @@
 }
 
 .lTeamlogo,
-.rTeamlogo {
-	position :relative;
-	display: block;
-	flex:1;
-	border-bottom: 1px solid #ccc;
-}
-
-.lTeamlogocolor,
-.rTeamlogocolor {
+.rTeamlogo,
+.lTeamlogocolorblue,
+.rTeamlogocolorblue,
+.lTeamlogocolorgray,
+.rTeamlogocolorgray,
+.lTeamlogocolorred,
+.rTeamlogocolorred {
 	position :relative;
 	display: block;
 	flex:1;

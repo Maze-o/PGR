@@ -46,16 +46,20 @@ if(containerElem) {
 			rteam.innerText = myJson[i].rteam
 			
 			if(myJson[i].lscore > myJson[i].rscore) {
-      			lteam.className += 'color'
-				lteamlogo.className += 'color'
+      			lteam.className += 'colorblue'
+				lteamlogo.className += 'colorblue'
+				rteam.className += 'colorred'
+				rteamlogo.className += 'colorred'
 			} else if(myJson[i].lscore < myJson[i].rscore) {
-				rteam.className += 'color'
-				rteamlogo.className += 'color'
+      			lteam.className += 'colorred'
+				lteamlogo.className += 'colorred'
+				rteam.className += 'colorblue'
+				rteamlogo.className += 'colorblue'
 			} else if(myJson[i].lscore === myJson[i].rscore) {
-      			lteam.className += 'color'
-				lteamlogo.className += 'color'
-				rteam.className += 'color'
-				rteamlogo.className += 'color'
+      			lteam.className += 'colorgray'
+				lteamlogo.className += 'colorgray'
+				rteam.className += 'colorgray'
+				rteamlogo.className += 'colorgray'
 			}
 			
 			lteamlogo.append(limg)

@@ -46,15 +46,6 @@
 	font-size: 10px;
 }
 
-.left-informationcolor,
-.right-informationcolor {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
-	font-size: 10px;
-	background-color: #6495ED;
-}
-
 .leftContainer,
 .rightContainer {
 	position: relative;
@@ -65,39 +56,55 @@
 	vertical-align: middle;
 }
 
-.leftContainercolor,
-.rightContainercolor {
+.leftContainercolorblue,
+.leftContainercolorgray,
+.leftContainercolorred,
+.rightContainercolorblue,
+.rightContainercolorgray,
+.rightContainercolorred {
 	position: relative;
 	display: block;
 	flex-direction: column;
 	flex-grow: 1;
 	text-align: center;
 	vertical-align: middle;
+}
+
+.leftContainercolorblue,
+.rightContainercolorblue {
 	background-color: #6495ED;
 }
 
-.leftContainer > span,
-.rightContainer > span {
-	display: block;
-	font-size: 30px;
+.leftContainercolorgray,
+.rightContainercolorgray {
+	background-color: #D3D3D3;
 }
 
-.leftContainercolor > span,
-.rightContainercolor > span {
+.leftContainercolorred,
+.rightContainercolorred {
+	background-color: #DC143C;
+}
+
+.leftContainer > span,
+.rightContainer > span,
+.leftContainercolorblue > span,
+.leftContainercolorgray > span,
+.leftContainercolorred > span,
+.rightContainercolorblue > span,
+.rightContainercolorgray > span,
+.rightContainercolorred > span {
 	display: block;
 	font-size: 30px;
 }
 
 .leftContainer > img,
-.rightContainer > img {
-	position: relative;
-	display: inline-block;
- 	width: 57%;
- 	height: 90%;
-}
-
-.leftContainercolor > img,
-.rightContainercolor > img {
+.rightContainer > img,
+.leftContainercolorblue > img,
+.leftContainercolorgray > img,
+.leftContainercolorred > img,
+.rightContainercolorblue > img,
+.rightContainercolorgray > img,
+.rightContainercolorred > img {
 	position: relative;
 	display: inline-block;
  	width: 57%;
@@ -126,9 +133,7 @@
 }
 
 .right-information ul,
-.left-information ul,
-.right-informationcolor ul,
-.left-informationcolor ul {
+.left-information ul {
 	height: 100%;
 	width: 100%;
 	font-size: 25px;
@@ -139,9 +144,7 @@
 }
 
 .right-information li,
-.left-information li,
-.right-informationcolor li,
-.left-informationcolor li {
+.left-information li {
 	height: 10%;
 	width: 100%;
 	margin-bottom: 10px;
@@ -150,33 +153,34 @@
 .betcontainer {
 	margin-top: 20px;
 	margin-bottom: 20px;
-	border: 1px solid #ccc;
+	border-top: 1px solid #ccc;
 	flex: 1;
 	display:flex;
 	flex-direction:row;
 }
 
 .betgraph {
-	flex: 3;
+	flex: 5;
 	display: flex;
 	flex-direction:column;
-	border: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
 }
 
 .horizontalbar {
 	flex: 1;
 	display:flex;
 	flex-direction: column;
-	border: 1px solid #ccc;
 	font-size: 20px;
+	border-bottom: 1px solid #ccc;
 }
 
 .allocation {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	border: 1px solid #ccc;
 	font-size: 30px;
+	border-right: 1px solid #ccc;
 }
 
 .horizontalbar_w,
@@ -189,29 +193,18 @@
 	border-bottom: 1px solid #ccc;	
 }
 
-.horizontalbar_l {
-	border-bottom: none;
-}
-
-.share_1 {
-	height: 50%;
-	width: 20%;
-	background-color: gray;
-}
-
-.share_2 {
-	height: 50%;
-	width: 40%;
-	background-color: gray;
-
-
-}
-
+.share_1,
+.share_2,
 .share_3 {
-	height: 50%;
-	width: 60%;
+	margin-top: 15px;
+	height: 60%;
 	background-color: gray;
-
-
 }
 
+.share_1change,
+.share_2change,
+.share_3change {
+	margin-top: 15px;
+	height: 60%;
+	background-color: blue;
+}

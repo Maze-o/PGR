@@ -1,14 +1,15 @@
 window.onload = function(){
+
 const containerElem = document.querySelector('.bet_container')
 if(containerElem) {
-	fetch('/betroomlist')
+	fetch('/betroomlist') //list에 넣을 내용 불러옴
 	.then(res => res.json())
 	.then(myJson => {
 		createTable(myJson)
 	})
 	
 	function createTable(myJson) {
-		
+		//list를 불러왔기 때문에 for문 돌림
 		for(var i=0;i<myJson.length;i++) {
 			var ahref = document.createElement('a')
 			var div = document.createElement('div')

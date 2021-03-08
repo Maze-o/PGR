@@ -1,7 +1,7 @@
 const temps = document.querySelector('.bettingroom_container')
 let dates
 
-if(temps) {
+if(temps) { //id 값에 맞는 경기를 찾아서 경기 내용 가져옴
 	fetch('/recentMatch?id=' + temps.getAttribute('value'))
 	.then(res => res.json())
 	.then(myJson => {
@@ -121,7 +121,7 @@ if(temps) {
 
 const empty = document.querySelector('.empty')
 if(empty) {
-	
+	//경기가 얼마나 남았는지 시간을 확인하게 해줌
 	const time = document.createElement('span')
 	time.className = 'empty_time'
 	empty.prepend(time)
@@ -153,6 +153,7 @@ if(empty) {
 
 const betFrm = document.querySelector('#betFrm')
 if(betFrm) {
+	// 버튼을 누르면 db에 property(베팅금액) 값이 올라가고 그 property 만큼 현재 가지고있는 재산이 차감됨(service에서 처리)
 	const buttons = document.querySelector('#buttons')
 	if(buttons) {
 		buttons.addEventListener('click', function() {
@@ -161,7 +162,7 @@ if(betFrm) {
 	}
 	
 	function ajax() {
-		const userp = document.querySelector('#userp')
+		const userp = document.querySelector('#userp') //userpk 갖고옴
 		
 		var param = {
 			userPk: userp.getAttribute('value'),
@@ -206,7 +207,7 @@ if(betFrm) {
 			})	
 			
 			function betchoice(myJson) {
-
+				//betchoice 후 베팅의 배당이 표시되게함
 				const win = document.querySelector('.choice_win')
 				const draw = document.querySelector('.choice_draw')
 				const lose = document.querySelector('.choice_lose')
@@ -229,6 +230,7 @@ if(betFrm) {
 	
 	const betdetailFrm = document.querySelector('.betdetail')
 	if(betdetailFrm) {
+			//베팅한 유저가 자신이 얼마를 걸었고 베팅을 성공한다면 얼마를 얻을 것인지를 알게해줌
 			const userp = document.querySelector('#userp')
 			let myJson2 = null
 		

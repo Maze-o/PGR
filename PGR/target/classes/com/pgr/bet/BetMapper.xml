@@ -21,6 +21,7 @@
 		AND userPk = #{userPk}
 	</select>
 	
+	<!-- idx 순서에 따라 정렬 (mypage) -->
 	<select id="selBetUserPk" resultType="com.pgr.model.BetDomain2">
 		SELECT A.date, A.completed, A.lid, A.rid, A.lscore, A.rscore, B.bResult, B.team, B.property FROM rmatch AS A
 		LEFT JOIN b_user AS B
@@ -29,12 +30,17 @@
 		ORDER BY b.idx DESC
 	</select>
 	
+	<!--배당과 백분율 -->
 	<select id="selBetAllocation" resultType="com.pgr.model.BetDomain">
 		SELECT SUM(property)/SUM(win) AS w_allocation,
 		SUM(property)/SUM(draw) AS d_allocation,
-		SUM(property)/SUM(lose) AS l_allocation
+		SUM(property)/SUM(lose) AS l_allocation,
+		SUM(win)*100/SUM(property) AS w_percent,
+		SUM(draw)*100/SUM(property) AS d_percent,
+		SUM(lose)*100/SUM(property) AS l_percent
 		FROM b_user WHERE id = #{id}
 	</select>
+	
 	
 	<select id="selBetMypage" resultType="com.pgr.model.BetEntity">
 		SELECT A.bResult, A.property, A.team, A.myProperty, B.lid, B.lscore, B.rscore, B.rid, B.date
@@ -43,6 +49,7 @@
 		WHERE B.completed = 1;
 	</select>
 	
+	<!--경기결과(cTeam)에 따라서 배팅 성공 여부를 따짐 service에서 유저선택(team)과 비교 후에 success에 값 부여-->
 	<update id="updBetSuccess">
 		UPDATE b_user
 		<choose>
@@ -61,6 +68,7 @@
 		</choose>
 	</update>
 	
+	<!-- 경기가 끝나고 success에 값 부여가 끝나면 myproperty(보유자산)에 success만큼 더해줌 bResult는 베팅후에 손익을 알려줌-->
 	<update id="updBetUser">
 		UPDATE b_user A , pgruser B
 		SET A.myProperty = A.success + A.myProperty,

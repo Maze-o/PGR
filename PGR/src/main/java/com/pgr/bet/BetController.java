@@ -28,13 +28,13 @@ public class BetController {
 	SecurityUtils sUtils;
 	
 	@GetMapping("/betting")
-	public String betting() {
+	public String betting() { //메뉴바에서 betting 누르면 바로 bettinglist로 이동
 		return "menus/bet/betlist";
 	}
 	
 	@GetMapping("/bettingroom")
 	public String bettingroom(Model model, HttpSession hs, BetEntity bet) {
-		
+		//bettingroom에 입장시 로그인 했다면 UserPk값을 세션을 통해서 받고 id 값으로 어떤 경기인지 파악
 		if(sUtils.getLoginUser(hs) != null) {
 			BetEntity temp = new BetEntity();
 			temp.setUserPk(sUtils.getLoginUser(hs).getUserPk());
@@ -83,11 +83,10 @@ public class BetController {
 	@ResponseBody
 	@GetMapping("/betallocation")
 	public BetDomain betallocation(BetEntity data) {
-		//data.setId();
 		BetDomain bet = bService.selBetAllocation(data);
-		if(bet != null) {
+		if(bet != null) { 
 			return bet;
-		} else {
+		} else { //배팅 참여가 전무한 경우에 allocation이 null로 다 넘어오기때문에 0으로 default값을 줌
 			BetDomain temp = new BetDomain();
 			temp.setL_allocation(0);
 			temp.setD_allocation(0);

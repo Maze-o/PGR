@@ -14,6 +14,7 @@
 
 <div layout:fragment="content" class="pagew_1600">
 	<div class="container">
+	<!-- 경기결과를 담은 컨테이너 -->
 		<div th:value="${param.id}"  class="playcontainer">
 		<div class="date"></div>
 		<div class="stadium"></div>
@@ -29,19 +30,21 @@
 			</div>
 		</div>
 		</div>
+		<!-- 베팅결과를 담은 컨테이너 -->
 		<div class="betcontainer">
 			<div class="betgraph">
-				<!-- 가변적으로 %값에 따라 width 변화함-->
-				<!-- 경기결과 값에 따라서 해당 bar에 하이라이트 -->
 				<!-- 로그인 시 자신이 선택한 bar 알려줌 (checkBox) -->
 				<div class="horizontalbar">
-					<div class="share_1">승</div>
+					<div class="share_1"></div>
+					<div class="result_1"></div>
 				</div>
 				<div class="horizontalbar">
-					<div class="share_2">무</div>
+					<div class="share_2"></div>
+					<div class="result_2"></div>
 				</div>
 				<div class="horizontalbar">
-					<div class="share_3">패</div>
+					<div class="share_3"></div>
+					<div class="result_3"></div>
 				</div>
 			</div>
 			<div class="allocation">

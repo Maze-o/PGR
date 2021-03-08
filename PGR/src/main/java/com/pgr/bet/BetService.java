@@ -61,12 +61,16 @@ public class BetService {
 	
 	public int updBetUser(RecentEntity rp) {
 		BetEntity bp = new BetEntity();
-		bp.setId(rp.getId());
+		bp.setId(rp.getId()); //경기id 값 얻기위함
 		return bMapper.updBetUser(bp);
 	}
 	
 	public BetEntity selBetUser(BetEntity p) {
 		return bMapper.selBetUser(p);
+	}
+	
+	public List<BetEntity> selBetList(RecentEntity p) {
+		return bMapper.selBetList(p);
 	}
 	
 	public List<RecentEntity> selBettingRoomList() {

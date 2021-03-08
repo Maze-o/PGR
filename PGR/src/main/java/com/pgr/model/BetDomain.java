@@ -4,6 +4,28 @@ public class BetDomain extends BetEntity{
 	private double w_allocation;
 	private double d_allocation;
 	private double l_allocation;
+	private double w_percent;
+	private double d_percent;
+	private double l_percent;
+	
+	public double getW_percent() {
+		return w_percent;
+	}
+	public void setW_percent(double w_percent) {
+		this.w_percent = w_percent;
+	}
+	public double getD_percent() {
+		return d_percent;
+	}
+	public void setD_percent(double d_percent) {
+		this.d_percent = d_percent;
+	}
+	public double getL_percent() {
+		return l_percent;
+	}
+	public void setL_percent(double l_percent) {
+		this.l_percent = l_percent;
+	}
 	public double getW_allocation() {
 		return w_allocation;
 	}

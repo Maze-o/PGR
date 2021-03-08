@@ -244,6 +244,14 @@
 	padding: 20px;
 }
 
+.edit_btn {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 10%;
+	margin-top: 10px;
+}
+
 #writeEditBtn {
 	position: absolute;
 	right: 10px;

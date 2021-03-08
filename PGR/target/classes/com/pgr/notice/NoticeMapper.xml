@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pgr.notice.NoticeMapper">
+	
+	<insert id="insNotice">
+		INSERT INTO pgrnotice
+		(seq, title, ctnt, userPk)
+		SELECT IFNULL(MAX(seq), 0) + 1, #{title}, #{ctnt}, #{userPk}
+		FROM pgrnotice
+	</insert>
+	
+	<select id="selNoticeList" resultType="com.pgr.model.NoticeDomain">
+		SELECT A.noticePk, A.seq,
+		A.title, A.hits, A.regDt,
+		A.userPk, B.nickname AS writerNm
+		FROM pgrnotice A
+		INNER JOIN pgruser B
+		ON A.userPk = B.userPk
+		ORDER BY A.noticePk DESC;
+	</select>
+
+	<select id="selNotice" resultType="com.pgr.model.NoticeDomain">
+		SELECT A.noticePk, A.seq, A.title, A.ctnt, A.hits, A.userPk, A.regDt, B.nickname AS writerNm 
+		FROM pgrnotice A
+		INNER JOIN pgruser B
+		ON A.userPk = B.userPk
+		WHERE A.noticePk = #{noticePk}
+	</select>
+	
+	<update id="upNotice">
+		UPDATE t_notice
+		<set>
+		<choose>
+			<when test="hits == 1">
+				hits = hits + 1
+			</when>
+			<otherwise>
+				<if test="title != null and title !=''">
+						title = #{title},
+				</if>
+				<if test="ctnt != null and ctnt !=''">
+						ctnt = #{ctnt},
+				</if>
+				<if test="isDel == 1">
+					isDel = 1,
+				</if>
+				
+				modDt = now()
+				</otherwise>
+			</choose>
+		</set>
+		WHERE noticePk = #{noticePk}
+		<if test="userPk != 0">
+			AND userPk = #{userPk}
+		</if>
+	</update>
+</mapper>

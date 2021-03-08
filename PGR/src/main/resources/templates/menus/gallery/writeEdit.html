@@ -18,9 +18,10 @@
 <div layout:fragment="content" th:if="${session.loginUser != null}">
 	<form id="form">
 		<input type="hidden" name="userPk" th:value="${session.loginUser.userPk}">
-		<input type="text" name="title" value="제목">
-		<input type="text" name="ctnt" value="내용">
-		<input type="button" id="writeEditBtn" value="글쓰기">
+		<input type="hidden" name="boardPk" th:value="${data == null ? 0 : data.boardPk}">
+		<input type="text" name="title" placeholder="제목" th:value="${data == null ? '' : data.title}">
+		<input type="text" name="ctnt" placeholder="내용" th:value="${data == null ? '' : data.ctnt}">
+		<input type="button" id="writeEditBtn" th:value="${data == null ? '등록' : '수정'}">
 	</form>
 </div>
 

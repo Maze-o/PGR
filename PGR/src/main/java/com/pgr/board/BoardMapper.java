@@ -9,6 +9,8 @@ import com.pgr.model.BoardEntity;
 
 @Mapper
 public interface BoardMapper {
-	List<BoardDomain> selBoardList(BoardDomain p);
 	int insBoard(BoardEntity p);
+	List<BoardDomain> selBoardList(BoardDomain p);
+	BoardDomain selBoard(BoardEntity p);
+	int upBoard(BoardEntity p);
 }

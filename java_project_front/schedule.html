@@ -83,60 +83,86 @@
                                 </li>
                             </ul>
                         </div>
-                        <table class="schedule_table">
-                            <tr class="game_content">
-                                <th>날짜</th>
-                                <th>시간</th>
-                                <th>장소</th>
-                                <th>경기</th>
-                            </tr>
-                            <!-- 경기없는 경우 -->
-                            <tr class="empty_game">
-                                <th>
-                                    <div class="inner empty">
-                                        <span>3/1</span>
-                                        (월)
-                                    </div>
-                                </th>
-                                <td>
-                                    <div class="inner empty">
-                                        <span>경기가 없습니다.</span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <!-- 경기가 예정되어 있는 경우 -->
-                            <tr class="expected_game">
-                                <th>
-                                    <div class="inner">
-                                        <span>3/2</span>
-                                        (화)
-                                    </div>
-                                </th>
-                                <td>
-                                    <div class="inner">
-                                        <span>01:32</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="inner">
-                                        <span>포항스틸야드</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="inner">
-                                        <div class="team_left">
-                                            <span>Everton</span>
-                                            <img src="asset/profile.jpg">
+                        <div class="schedule_table_cont">
+                            <table class="schedule_table">
+                                <tr class="game_content">
+                                    <th>날짜</th>
+                                    <th>시간</th>
+                                    <th>장소</th>
+                                    <th>경기</th>
+                                </tr>
+                                <!-- 경기없는 경우 -->
+                                <tr class="empty_game">
+                                    <th>
+                                        <div class="inner empty">
+                                            <span>3/1</span>
+                                            (월)
                                         </div>
-                                        <div class="team_right">
-                                            <span>Southampton</span>
-                                            <img src="asset/profile.jpg">
+                                    </th>
+                                    <td colspan="3">
+                                        <div class="inner empty">
+                                            <span>경기가 없습니다.</span>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <!--=====================test================-->
-                        </table>
+                                    </td>
+                                </tr>
+                                <!-- 경기가 예정되어 있는 경우 -->
+                                <tr class="expected_game">
+                                    <th rowspan="2">
+                                        <div class="inner">
+                                            <span>3/2</span>
+                                            (화)
+                                        </div>
+                                    </th>
+                                    <td>
+                                        <div class="inner">
+                                            <span>01:32</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inner">
+                                            <span>포항스틸야드</span>
+                                        </div>
+                                    </td>
+                                    <td class="teams">
+                                        <div class="inner">
+                                            <div class="team_left">
+                                                <span>Everton</span>
+                                                <img src="asset/profile.jpg">
+                                            </div>
+                                            <div class="team_right">
+                                                <span>Southampton</span>
+                                                <img src="asset/profile.jpg">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!--=====================test================-->
+                               <tr class="expected_game">
+                                    <td>
+                                        <div class="inner">
+                                            <span>01:32</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inner">
+                                            <span>포항스틸야드</span>
+                                        </div>
+                                    </td>
+                                    <td class="teams">
+                                        <div class="inner">
+                                            <div class="team_left">
+                                                <span>Everton</span>
+                                                <img src="asset/profile.jpg">
+                                            </div>
+                                            <div class="team_right">
+                                                <span>Southampton</span>
+                                                <img src="asset/profile.jpg">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

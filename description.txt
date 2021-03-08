@@ -110,15 +110,7 @@ CREATE TABLE b_user (
 	PRIMARY KEY (idx,userPk,id)
 );
 
-//notice CREATE TABLE
-CREATE TABLE `tb_board` (
-`idx` INT NOT NULL AUTO_INCREMENT,
-`title` VARCHAR(255) NULL,
-`contents` TEXT NULL,
-`image` VARCHAR(255) NULL,
-PRIMARY KEY (`idx`));
-
-//notice board 쿼리문
+//게시판 CREATE TABLE 쿼리문
 CREATE TABLE pgrboard (
 	boardPk INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	seq INT(10) UNSIGNED NOT NULL,
@@ -132,3 +124,4 @@ CREATE TABLE pgrboard (
 	PRIMARY KEY (boardPk),
 	CONSTRAINT fk_board_userPk FOREIGN KEY (userPk) REFERENCES pgr.pgruser (userPk)
 );
+

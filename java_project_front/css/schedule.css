@@ -163,7 +163,7 @@
 }
 
 .empty_game:last-child {
-	border-bottom: 0;
+    border-bottom: 0;
 }
 
 .empty_game th {
@@ -172,19 +172,17 @@
     max-width: 300px;
     height: 70px;
     cursor: pointer;
+    border-right: 1px solid #ccc;
 }
 
 .empty_game td {
     position: relative;
-    width: 900px;
-    max-width: 900px;
+    width: 905px;
+    max-width: 905px;
     height: 70px;
     cursor: pointer;
 }
 
-.expected_game:last-child {
-	border-bottom: 0;
-}
 
 
 .expected_game {
@@ -194,41 +192,24 @@
     border-bottom: 1px solid #ccc;
 }
 
-.expected_game th,
-.expected_game td {
-	position: relative;
-	width: 300px;
-	max-width: 300px;
-	height: 70px;
-	text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    cursor: pointer;
+.expected_game:last-child {
+    border-bottom: 0;
 }
 
-/*.expected_game th,
+.expected_game th,
 .expected_game td {
     position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    max-width: 300px;
+    height: 70px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     cursor: pointer;
-    padding: 0 10px;
-}*/
-
-.expected_game th:first-child,
-.expected_game td:first-child {
-    padding-left: 0;
 }
 
-.expected_game th:last-child,
-.expected_game td:last-child {
-    padding-right: 0;
+.expected_game th {
+	border-right: 1px solid #ccc;
 }
 
 .team_left,
@@ -243,19 +224,19 @@
 }
 
 .team_left::after {
-	content: "VS";
-	position: absolute;
-	right: 0;
-	top: 60%;
-	transform: translateY(-60%);
-	font-weight: 900;
-	font-family: 'Nanum Gothic', sans-serif;
-	font-style: italic;
+    content: "VS";
+    position: absolute;
+    right: 0;
+    top: 60%;
+    transform: translateY(-60%);
+    font-weight: 900;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-style: italic;
 }
 
 .team_left span,
 .team_right span {
-	font-weight: 300;
+    font-weight: 300;
     font-size: 12px;
     line-height: 40px;
     letter-spacing: 1px;

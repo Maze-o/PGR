@@ -1,9 +1,18 @@
 package com.pgr.chatting;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class TempData {
-	public static List<String> chat = new ArrayList<>();
-	public static int total;
+	private String msg;
+	private String nickname;
+	public String getMsg() {
+		return msg;
+	}
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
 }

@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.pgr.SecurityUtils;
 import com.pgr.model.BetDomain;
+import com.pgr.model.BetDomain2;
 import com.pgr.model.BetEntity;
 import com.pgr.model.RecentEntity;
-import com.pgr.rm.RecentService;
-import com.pgr.SecurityUtils;
 
 @Controller
 public class BetController {
@@ -95,5 +95,11 @@ public class BetController {
 			
 			return temp;
 		}
+	}
+	
+	@ResponseBody
+	@GetMapping("/betUserPk")
+	public List<BetDomain2> betUserPk(BetEntity data) {
+		return bService.selBetUserPk(data);
 	}
 }

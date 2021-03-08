@@ -95,6 +95,7 @@ CREATE TABLE pgruser (
 
 //betting CREATE TABLE 
 CREATE TABLE b_user (
+	idx INT UNSIGNED AUTO_INCREMENT,
 	userPk INT UNSIGNED,
 	property INT NOT NULL,
 	id INT UNSIGNED NOT NULL,
@@ -106,7 +107,7 @@ CREATE TABLE b_user (
 	lose INT UNSIGNED,
 	draw INT UNSIGNED,
 	cTeam INT UNSIGNED,
-	PRIMARY KEY (userPk,id)
+	PRIMARY KEY (idx,userPk,id)
 );
 
 //게시판 CREATE TABLE 쿼리문

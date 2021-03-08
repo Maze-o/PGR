@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ChatController {
+	
 	@GetMapping("/chatRecord")
-	public List<String> chat() {
-		return TempData.chat;
+	public List<TempData> chat() {
+		//Map<String, Object> rVal = new HashMap<>();
+		return TempStatic.tData;
 	}
 	
 }

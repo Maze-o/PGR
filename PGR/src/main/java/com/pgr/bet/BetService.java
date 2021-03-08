@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pgr.model.BetDomain;
+import com.pgr.model.BetDomain2;
 import com.pgr.model.BetEntity;
 import com.pgr.model.RecentEntity;
 import com.pgr.model.UserEntity;
@@ -78,6 +79,10 @@ public class BetService {
 	
 	public BetDomain selBetAllocation(BetEntity p) {
 		return bMapper.selBetAllocation(p);
+	}
+	
+	public List<BetDomain2> selBetUserPk(BetEntity p) {
+		return bMapper.selBetUserPk(p);
 	}
 
 }

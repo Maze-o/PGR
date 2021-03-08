@@ -95,6 +95,10 @@
     height: 45px;
 }
 
+.bets {
+	cursor: pointer;
+}
+
 .bet_history {
     position: relative;
     display: block;

@@ -16,7 +16,6 @@ if (changeProfileBtn) {
 			userNewPw: newPw.value,
 			userPwRe: newPwRe.value
 		}
-		console.log(nicknameElem.value)
 		fetch('/mypage', {
 			method: 'post',
 			headers: {
@@ -66,7 +65,6 @@ if(bet_table) {
 	fetch('/betUserPk?userPk=' + userPk_value)
 	.then(res => res.json())
 	.then(myJson => {
-		console.log(myJson)
 		createBet(myJson)
 	})
 	
@@ -91,6 +89,7 @@ if(bet_table) {
 			td_result.className = item.bResult > 0 ? 'plus' : 'minus'
 			td_play.className = 'play_result'
 			lscore.className = 'after'
+			tr.className = 'bets'
 			
 			const year_string = dates.getFullYear() - 2000
 			const month_string = dates.getMonth()+1 >= 10 ? dates.getMonth()+1 : '0' + (dates.getMonth()+1)
@@ -126,8 +125,14 @@ if(bet_table) {
 			td_date.innerText = year_string + '.' + month_string + '.' + date_string + ' ' + day_string + ' ' + hour_string + ':' + min_string
 			if(item.bResult == 0) {
 				td_result.innerText = '진행중'
+				tr.addEventListener('click', function() {
+					location.href='/bettingroom?id=' + item.id
+				})
 			} else {
 				td_result.innerText = item.bResult > 0 ? '+' + item.bResult : item.bResult
+				tr.addEventListener('click', function() {
+					location.href='/endbettingroom?id=' + item.id
+				})
 			}
 			
 			lscore.innerText = item.lscore

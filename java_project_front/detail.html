@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- board관련 css -->
+    <link rel="stylesheet" type="text/css" href="css/list.css">
+</head>
+
+<body>
+    <!-- header -->
+    <div class="header">
+        <a href="index.html" class="h_logo" title="home">
+            <img src="asset/logo.png">
+        </a>
+        <ul class="h_list">
+            <li><a href="#">menu1</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+            <li><a href="#">menu4</a></li>
+        </ul>
+        <div class="h_login">
+            <div class="login_container">
+                <a href="sign_in.html"><input type="button" name="signIn" value="sign in"></a>
+                <a href="sign_up.html"><input type="button" name="signUp" value="sign up"></a>
+            </div>
+        </div>
+    </div>
+        <div class="detail">
+        	<div class="pagew">
+            <input type="hidden" id="pkvalue" th:value="${data.boardPk}">
+            <div class="detail_head">
+                <div class="detail_title">
+                    <span>제목입니다</span>
+                </div>
+                <!-- detail_title_left -->
+                <div class="detail_tl">
+                    <span>작성자 : 문수찬</span>
+                    <span class="detail_date">2021-03-08</span>
+                </div>
+                <!-- detail_title_right -->
+                <div class="detail_tr">
+                    <span>번호 : 1</span>
+                    <span>조회수 : 0</span>
+                </div>
+            </div>
+            <!-- detail_content -->
+            <div class="detail_content">
+            	<span>
+            		안녕하세요ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+            	</span>
+            </div>
+            <div>
+                <div class="detail_btn">
+                    <a>
+                        <button>수정</button>
+                    </a>
+                    <button id="btnDel">삭제</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+    </div>
+</body>
+
+</html>

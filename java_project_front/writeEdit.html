@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- board관련 css -->
+    <link rel="stylesheet" type="text/css" href="css/list.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <div class="header">
+            <a href="index.html" class="h_logo" title="home">
+                <img src="asset/logo.png">
+            </a>
+            <ul class="h_list">
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+            </ul>
+            <div class="h_login">
+                <div class="login_container">
+                    <a href="sign_in.html"><input type="button" name="signIn" value="sign in"></a>
+                    <a href="sign_up.html"><input type="button" name="signUp" value="sign up"></a>
+                </div>
+            </div>
+        </div>
+        <div class="write_edit">
+            <div class="pagew">
+                <form id="writeEditFrm">
+                    <input type="hidden" name="userPk">
+                    <input type="hidden" name="boardPk">
+                    <div class="edit_title">
+                        <input type="text" name="title" placeholder="제목을 입력해 주세요." class="input_title">
+                    </div>
+                    <div class="edit_ctnt">
+                        <textarea name="ctnt" form="writeEditFrm" class="input_ctnt"></textarea>
+                    </div>
+                    <!-- value에 값을 넣어야지 글자가 나옵니다. -->
+                    <input type="button" id="writeEditBtn" value="글쓰기">
+                </form>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="footer">
+        </div>
+    </div>
+</body>
+
+</html>

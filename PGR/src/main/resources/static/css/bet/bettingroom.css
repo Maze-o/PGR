@@ -11,8 +11,8 @@
 	display: flex;
 	flex-direction: column;
 	flex-grow: 4;
-	border: 1px solid #ccc;
 	font-size: 30px;
+
 }
 
 .leftContainer .lTeam {
@@ -51,7 +51,6 @@
 	flex-direction: column;
 	flex-grow: 4;
 	font-size: 30px;
-	border: 1px solid #ccc;
 }
 
 .rightContainer .rTeam {
@@ -81,9 +80,10 @@
 }
 
 
-.W, .D, .L {
+#rrecord .W, .D, .L,
+#lrecord .W, .D, .L {
 	flex-grow: 1;
-	border: 1px solid #ccc;
+	border-right: 1px solid #fff;
 }
 
 .W {
@@ -103,6 +103,7 @@
 	display:flex;
 	flex-direction: row;
 	text-align:center;
+	margin-top: 10px;
 }
 .betstatus {
 	flex-grow: 1;
@@ -130,7 +131,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
+	height: 40%;
+	margin-top: 8px;
 }
 .dobetting {
 	height: 27px;

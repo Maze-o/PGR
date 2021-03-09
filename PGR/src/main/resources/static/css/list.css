@@ -1,0 +1,260 @@
+@charset 'utf-8';
+
+/*boardList*/
+.board_list_cont {
+	position: relative;
+	display: block;
+	height: 100%;
+	min-height: 100vh;
+	padding: 20px 0 5px 0;
+}
+
+.board_list_cont h1 {
+	font-size: 25px;
+	font-weight: 600;
+	font-family: 'Noto Sans KR', serif;
+	margin-bottom: 5px;
+}
+
+.board_list_table {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed;
+	font-size: 14px;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+.board_list_table tr th {
+	height: 40px;
+	border-top: 2px solid #333;
+	border-bottom: 1px solid #333;
+}
+
+/*colgroup*/
+.num {
+	width: 8%;
+}
+
+.title {
+	width: auto;
+}
+
+.writer {
+	width: 10%;
+}
+
+.hits, .date {
+	width: 8%;
+}
+
+.gall_tr {
+	width: 100%;
+	height: 50px;
+}
+
+.gall_tr td {
+	height: 50px;
+	border-bottom: 1px solid #333;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.gall_num {
+	position: relative;
+}
+
+.gall_num::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 30px;
+	width: 1px;
+	background: #ccc;
+}
+
+.gall_title {
+	padding: 0 10px;
+	text-align: left;
+}
+
+.gall_title a {
+	cursor:pointer;
+}
+
+.gall_nick {
+	position: relative;
+}
+
+.gall_nick::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 30px;
+	width: 1px;
+	background: #ccc;
+}
+
+.link_btn_box {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100px;
+}
+
+.write_link_btn {
+	position: absolute;
+	right: 10px;
+	top: 60%;
+	transform: translateY(-60%);
+}
+
+.write_link_btn:hover {
+	color: #fff;
+}
+
+#pagingContent {
+	position: absolute;
+	left: 50%;
+	top: 20px;
+	transform: translateX(-50%);
+	font-size: 15px;
+}
+
+/*detail*/
+.detail {
+	position: relative;
+	display: block;
+	height: 100%;
+	min-height: 100vh;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+.detail_head {
+	position: relative;
+	display: block;
+	margin: 20px 0 15px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+}
+
+.detail_title {
+	position: relative;
+	display: block;
+	font-size: 23px;
+	margin-bottom: 10px;
+	padding: 0 5px;
+}
+
+.detail_tl {
+	position: relative;
+	font-size: 12px;
+	float: left;
+	padding: 0 10px;
+}
+
+.detail_date {
+	margin-left: 5px;
+}
+
+.detail_date::before {
+	content: "";
+	display: inline-block;
+	vertical-align: -1px;
+	margin-right: 9px;
+	height: 10px;
+	width: 1px;
+	background: #ccc;
+}
+
+.detail_tr {
+	position: relative;
+	font-size: 11px;
+	float: right;
+}
+
+.detail_tr span {
+	padding: 0 5px;
+}
+
+.detail_content {
+	position: relative;
+	display: block;
+	border-radius: 5px;
+	font-size: 16px;
+	padding: 20px;
+	word-break: break-all;
+}
+
+.detail_btn button {
+	float: right;
+}
+
+/*writeEdit*/
+.write_edit {
+	position: relative;
+	display: block;
+	height: 100%;
+	flex: 1;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+#writeEditFrm {
+	position: relative;
+	display: block;
+	height: 100%;
+	padding: 20px 0 10px;
+}
+
+.edit_title {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 10%;
+	border: 1px solid #ccc;
+	padding: 0 10px;
+}
+
+.input_title {
+	border: none;
+	height: 100%;
+	width: 100%;
+	font-size: 15px;
+}
+
+.edit_ctnt {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 75%;
+	margin-top: 20px;
+}
+
+.input_ctnt {
+	width: 100%;
+	height: 100%;
+	resize: none;
+	padding: 20px;
+}
+
+.edit_btn {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 10%;
+	margin-top: 10px;
+}
+
+#writeEditBtn {
+	position: absolute;
+	right: 10px;
+	bottom: 5px;
+}

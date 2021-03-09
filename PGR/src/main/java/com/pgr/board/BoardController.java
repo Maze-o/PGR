@@ -1,6 +1,7 @@
 package com.pgr.board;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.pgr.Const;
 import com.pgr.SecurityUtils;
 import com.pgr.model.BoardDTO;
+import com.pgr.model.BoardDomain;
 import com.pgr.model.BoardEntity;
 
 @Controller
@@ -30,11 +32,24 @@ public class BoardController {
 	private BoardService service;
 
 	@GetMapping("/gallery")
-	public String home(BoardDTO p, Model model) {
-		model.addAttribute(Const.KEY_DATA, service.selBoardList(p));
-
-		return "menus/board/home";
+	public String home() {
+		return "/menus/board/list";
 	}
+	
+	// 페이징 ajax처리
+	@GetMapping("/listData")
+	@ResponseBody
+	public List<BoardDomain> listData(BoardDTO p) {
+		return service.selBoardList(p);
+	}
+
+	// 페이징 ajax처리
+	@ResponseBody
+	@GetMapping("/getMaxPageNum")
+	public int selMaxPageNum(BoardDTO p) {
+		return service.selMaxPageNum(p);
+	}
+	
 
 	@GetMapping("/write")
 	public String writeEdit() {
@@ -65,6 +80,7 @@ public class BoardController {
 		return "/menus/board/writeEdit";
 	}
 
+	// 글쓰기 ajax처리
 	@PostMapping("/edit")
 	@ResponseBody
 	public Map<String, Object> edit(@RequestBody BoardEntity p, HttpSession hs) {
@@ -75,9 +91,10 @@ public class BoardController {
 		return map;
 	}
 	
+	// 삭제 ajax처리
 	@ResponseBody
 	@DeleteMapping("/del/{boardPk}")
-	public Map<String, Object> delBoard(BoardEntity p, HttpSession hs) {
+	public Map<String, Object> delBoard(@RequestBody BoardEntity p, HttpSession hs) {
 		p.setUserPk(sUtils.getLoginUserPk(hs));
 		
 		System.out.println("boardPk : " + p.getBoardPk());
@@ -85,13 +102,6 @@ public class BoardController {
 		map.put(Const.KEY_DATA, service.delBoard(p));
 		return map;
 		
-	}
-	
-	@ResponseBody
-	@GetMapping("/getMaxPageNum")
-	public String selMaxPageNum(BoardDTO p) {
-		service.selMaxPageNum(p);
-		return "/menus/board/home";
 	}
 	
 

@@ -5,18 +5,37 @@
 	layout:decorator="~{layout/layout_default}">
 
 <head>
-<title>리스트</title>
+<title>홈</title>
 </head>
 
 <th:block layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="css/list.css">
 </th:block>
 
 <th:block layout:fragment="script">
-	<script defer type="text/javascript" th:src="@{js/notice.js}"></script>
+	<script defer type="text/javascript" th:src="@{js/board/list.js}"></script>
 </th:block>
 
-<div layout:fragment="content">
+<div layout:fragment="content" class="board_list_cont">
+	<div class="pagew">
+		<h1>게시판</h1>
+		<div id="listContent">
 
+		</div>
+	
+		<div class="link_btn_box">
+			<div id="pagingContent">
+			
+			</div>
+			<!-- 
+			<input type="button" class="write_link_btn" onclick="location.href='/write'" th:if="${session.loginUser != null}" value="글쓰기">
+			 -->
+			 
+			 <button class="write_link_btn" onclick="location.href='/write'" th:if="${session.loginUser != null}">
+			 	글쓰기
+			 </button>
+		</div>
+	</div>
 </div>
 
 </html>

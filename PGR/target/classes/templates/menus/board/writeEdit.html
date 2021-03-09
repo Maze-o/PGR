@@ -9,20 +9,31 @@
 </head>
 
 <th:block layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="css/list.css">
 </th:block>
 
 <th:block layout:fragment="script">
 	<script defer type="text/javascript" th:src="@{js/board/writeEdit.js}"></script>
 </th:block>
 
-<div layout:fragment="content" th:if="${session.loginUser != null}">
-	<form id="form">
-		<input type="hidden" name="userPk" th:value="${session.loginUser.userPk}">
-		<input type="hidden" name="boardPk" th:value="${data == null ? 0 : data.boardPk}">
-		<input type="text" name="title" placeholder="제목" th:value="${data == null ? '' : data.title}">
-		<input type="text" name="ctnt" placeholder="내용" th:value="${data == null ? '' : data.ctnt}">
-		<input type="button" id="writeEditBtn" th:value="${data == null ? '등록' : '수정'}">
-	</form>
+<div class="write_edit" layout:fragment="content" th:if="${session.loginUser != null}">
+	<div class="pagew">
+		<form id="writeEditFrm">
+			<input type="hidden" name="userPk" th:value="${session.loginUser.userPk}">
+			<input type="hidden" name="boardPk" th:value="${data == null ? 0 : data.boardPk}">
+			
+			<div class="edit_title">
+				<input class="input_title" type="text" name="title" placeholder="제목" th:value="${data == null ? '' : data.title}">
+			</div>
+			
+			<div class="edit_ctnt">
+				<textarea class="input_ctnt" name="ctnt" form="writeEditFrm" th:text="${data == null ? '' : data.ctnt}"></textarea>
+			</div>
+			
+			<div class="edit_btn">
+				<input type="button" id="writeEditBtn" th:value="${data == null ? '등록' : '수정'}">
+			</div>
+		</form>
+	</div>
 </div>
-
 </html>

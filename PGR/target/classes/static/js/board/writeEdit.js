@@ -1,5 +1,5 @@
 
-const formElem = document.querySelector('#form')
+const formElem = document.querySelector('#writeEditFrm')
 
 const writeEditBtn = document.querySelector('#writeEditBtn')
 

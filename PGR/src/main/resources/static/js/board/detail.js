@@ -1,4 +1,5 @@
 
+// 삭제 ajax처리
 const pkvalue = document.querySelector('#pkvalue')
 const btnDelElem = document.querySelector("#btnDel")
 
@@ -14,7 +15,7 @@ if (btnDelElem) {
 		const pk = pkvalue.value
 		fetch(`/del/${pk}`, {
 			method: 'delete',
-		}).then(function(res) {
+		}).then(function() {
 			location.href = '/gallery'
 		})
 	}

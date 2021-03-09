@@ -23,7 +23,8 @@
 		INNER JOIN pgruser B
 		ON A.userPk = B.userPk
 		WHERE A.isDel = 0
-		ORDER BY A.boardPk DESC;	
+		ORDER BY A.boardPk DESC
+		LIMIT #{sIdx}, #{rowCnt};	
 	</select>
 
 	<select id="selBoard" resultType="com.pgr.model.BoardDomain">

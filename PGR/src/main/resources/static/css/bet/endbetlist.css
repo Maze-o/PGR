@@ -29,6 +29,10 @@
 
 }
 
+.stream {
+	border-right:none;
+}
+
 .stream a,
 .finish a {
     position: relative;
@@ -71,39 +75,67 @@
 	border-right: 1px solid #ccc;
 }
 
-.rTeamlogo,
-.rTeamlogocolorgray,
-.rTeamLogocolorblue,
+.rTeamlogocolorgray {
+	border-left: 1px #D3D3D3;
+}
+.rTeamLogocolorblue {
+	border-left: 1px #DC143C;
+}
 .rTeamLogocolorred {
-	border-left: 1px solid #ccc;
+	border-left: 1px #6495ED;
 }
 
-.lTeam,
-.rTeam,
 .lTeamcolorblue,
-.lTeamcolorgray,
-.lTeamcolorred,
 .rTeamcolorblue,
+.lTeamcolorgray,
 .rTeamcolorgray,
+.lTeamcolorred,
 .rTeamcolorred {
 	position: relative;
 	display: block;
 	flex: 3;
     width: 40%;
     height: 100%;
-    border-bottom: 1px solid #ccc;
 }
 
 .lTeamcolorblue,
-.lTeamcolorgray,
-.lTeamcolorred {
-	border-right: 1px solid #ccc;
+.rTeamcolorblue {
+	border-bottom: solid 1px #6495ED;
 }
 
-.rTeamlogocolorblue,
-.rTeamlogocolorgray,
+.lTeamcolorgray,
+.rTeamcolorgray {
+	border-bottom: solid 1px #D3D3D3;
+}
+
+.lTeamcolorred,
+.rTeamcolorred {
+	border-bottom: solid 1px #DC143C;
+}
+
+
+.lTeamcolorblue {
+	border-right: solid 1px #6495ED;
+}
+
+.lTeamcolorgray{
+	border-right: solid 1px #D3D3D3;
+}
+
+.lTeamcolorred {
+	border-right: solid 1px #DC143C;
+}
+
+.rTeamlogocolorblue {
+	border-left: solid 1px #6495ED;
+}
+
+.rTeamlogocolorgray {
+	border-left: solid 1px #D3D3D3;
+}
+
 .rTeamlogocolorred {
-	border-left: 1px solid #ccc;
+	border-left: 1px solid #DC143C;
 }
 
 .lTeamcolorblue,
@@ -150,18 +182,28 @@
 	line-height:normal;
 }
 
-.lTeamlogo,
-.rTeamlogo,
 .lTeamlogocolorblue,
-.rTeamlogocolorblue,
+.rTeamlogocolorblue {
+	position :relative;
+	display: block;
+	flex:1;
+	border-bottom: 1px solid #6495ED;
+}
+
 .lTeamlogocolorgray,
-.rTeamlogocolorgray,
+.rTeamlogocolorgray {
+	position :relative;
+	display: block;
+	flex:1;
+	border-bottom: 1px solid #D3D3D3;
+}
+
 .lTeamlogocolorred,
 .rTeamlogocolorred {
 	position :relative;
 	display: block;
 	flex:1;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #DC143C;
 }
 
 .text {

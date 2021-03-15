@@ -19,6 +19,7 @@ public class EmailService {
 	@Autowired
 	private JavaMailSender emailSender;
 
+	// static으로 메모리에 올려서 controller에서 사용
 	public static String ePw = createKey();
 
 	private MimeMessage createMessage(String to) throws Exception {
@@ -47,7 +48,7 @@ public class EmailService {
 		return message;
 	}
 
-//		인증코드 만들기
+//	인증코드 만들기
 	public static String createKey() {
 		StringBuffer key = new StringBuffer();
 		Random rnd = new Random();

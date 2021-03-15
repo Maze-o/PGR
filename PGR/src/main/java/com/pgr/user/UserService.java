@@ -30,6 +30,7 @@ public class UserService {
 	@Autowired
 	private JavaMailSender emailSender;
 
+	// join 로직
 	public int join(UserEntity p) throws Exception {
 		UserEntity check = mapper.selUser(p);
 
@@ -63,20 +64,24 @@ public class UserService {
 		return 6; // 회원가입이 성공하면 6를 리턴
 	}
 
-	// 1: 로그인 성공, 2: 아이디 없음, 3: 비밀번호가 틀림, 0: 에러
+	// login 로직
 	public int login(UserEntity p, HttpSession hs) throws Exception {
-		UserEntity check = mapper.selUser(p);
+		UserEntity check = mapper.selUser(p); // DB에 저장되어 있는 데이터 가져옴
 
-		if (check == null) {
+		if (check == null) { // check == null 이면 2 리턴
+			// (select를 userEmail로 하기때문에 입력한 email이 DB에 저장되어있는 userEmail값과 일치하지않으면 NULL값이
+			// 넘어옴)
 			return 2;
 		}
 
-		if (!BCrypt.checkpw(p.getUserPw(), check.getUserPw())) {
+		if (!BCrypt.checkpw(p.getUserPw(), check.getUserPw())) { // 입력한 비밀번호와 DB에 저장되어있는 비밀번호값이 일치하지않으면 3 리턴
 			return 3;
 		}
 
+		// 세션에 담을때 사용하지않을 정보를 담아두면 메모리 낭비가 되기 때문에 NULL처리
 		check.setUserPw(null);
 		hs.setAttribute(Const.KEY_LOGINUSER, check);
+
 		return 1;
 	}
 
@@ -101,8 +106,9 @@ public class UserService {
 
 	}
 
+	// findPw 로직
 	public int findPw(UserEntity p) throws Exception {
-		UserEntity check = mapper.selUser(p);
+		UserEntity check = mapper.selUser(p); // DB에 저장되어 있는 데이터 가져옴
 		// 이메일이 없으면
 		if (check == null) {
 			return 1;
@@ -147,36 +153,40 @@ public class UserService {
 
 	}
 
+	// 회원정보 수정 로직
 	public int profileChange(UserDomain p, HttpSession hs) throws Exception {
-		UserEntity check = mapper.selUser(p);
-		
-		if (p.getNickname().equals("")) {
+		UserEntity check = mapper.selUser(p); // DB에 저장되어 있는 데이터 가져옴
+
+		if (p.getNickname().equals("")) { // 닉네임이 비어있으면 0 리턴
 			return 0;
 		}
-		if (!BCrypt.checkpw(p.getUserPw(), check.getUserPw())) {
+		if (!BCrypt.checkpw(p.getUserPw(), check.getUserPw())) { // DB에 저장되어있는 비밀번호와 입력한 비밀번호의 정보가 다르면 1 리턴
 			return 1;
 		}
-		if (p.getUserNewPw().equals("")) {
+		if (p.getUserNewPw().equals("")) { // 새 비밀번호 칸이 비어있으면 2 리턴
 			return 2;
 		}
-		if (!p.getUserNewPw().equals(p.getUserPwRe())) {
+		if (!p.getUserNewPw().equals(p.getUserPwRe())) { // 새 비밀번호 칸과 새 비밀번호 확인 칸이 다르면 3 리턴
 			return 3;
 		}
 
+		// 비밀번호 암호화
 		String salt = sUtils.getSalt();
 		String hashPw = sUtils.getHashPw(p.getUserNewPw(), salt);
 
 		p.setUserPw(hashPw);
-		
+
+		// 세션에 값을 담기위해 set
 		check.setNickname(p.getNickname());
 		check.setUserPw(p.getUserPw());
-		
+
+		// 세션에 새로 로그인정보를 담아줌
 		hs.setAttribute(Const.KEY_LOGINUSER, check);
-		
+
 		mapper.profileChange(p);
 		return 4;
 	}
-	
+
 	public List<UserEntity> selTopUser() {
 		return mapper.selTopUser();
 	}

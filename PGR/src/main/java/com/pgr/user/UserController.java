@@ -28,8 +28,9 @@ public class UserController {
 		return "menus/sign_up";
 	} // 회원가입 화면 맵핑
 
+	// join ajax처리
 	@ResponseBody
-	@PostMapping("/join") // 회원가입 정보 DB 전달
+	@PostMapping("/join")
 	public Map<String, Object> join(@RequestBody UserEntity p) throws Exception {
 		Map<String, Object> map = new HashMap<>();
 		map.put(Const.KEY_RESULT, service.join(p));
@@ -42,6 +43,7 @@ public class UserController {
 		return "menus/sign_in";
 	}
 
+	// login ajax처리
 	@ResponseBody
 	@PostMapping("/login")
 	public Map<String, Object> login(@RequestBody UserEntity p, HttpSession hs) throws Exception {
@@ -62,6 +64,7 @@ public class UserController {
 		return "menus/findpw";
 	}
 
+	// findpw ajax처리
 	@ResponseBody
 	@PostMapping("/findpw")
 	public Map<String, Object> findPw(@RequestBody UserEntity p) throws Exception {
@@ -75,6 +78,7 @@ public class UserController {
 		return "menus/mypage";
 	}
 
+	// mypage ajax처리
 	@ResponseBody
 	@PostMapping("/mypage")
 	public Map<String, Object> pwChange(@RequestBody UserDomain p, HttpSession hs) throws Exception {

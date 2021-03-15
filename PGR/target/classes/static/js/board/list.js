@@ -6,18 +6,16 @@ function goToDetail(boardPk) {
 	location.href = `/detail?boardPk=${boardPk}`
 }
 
-
+// 페이징 ajax
 function getBoardList(page) {
 
 	if (!page) {
 		page = 1
 	}
 
-
 	fetch(`/listData?page=${page}&rowCnt=${rowCnt}`)
 		.then(res => res.json())
 		.then(myJson => {
-			console.log(myJson)
 			boardProc(myJson)
 		})
 }
@@ -29,6 +27,7 @@ function boardProc(myJson) {
 		return
 	}
 
+	// table
 	const table = document.createElement('table')
 	table.classList.add('board_list_table')
 	
@@ -115,6 +114,7 @@ function boardProc(myJson) {
 			goToDetail(item.boardPk)
 		})
 	})
+
 	listContentElem.innerHTML = ''
 	listContentElem.append(table)
 }
@@ -130,8 +130,8 @@ function getMaxPageNum() {
 }
 
 const pagingContentElem = document.querySelector('#pagingContent')
+ 
 function pageProc(myJson) {
-	console.log(myJson)
 
 	for (let i = 1; i < myJson; i++) {
 		const span = document.createElement('span')

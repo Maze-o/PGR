@@ -21,9 +21,6 @@ if (findPwButton) {
 		}).then(function(res) {
 			return res.json()
 		}).then(function(myJson) {
-			console.log(formElem.userEmail.value)
-			console.log(formElem.nickname.value)
-			console.log(param)
 			proc(myJson)
 		})
 
@@ -50,13 +47,3 @@ if (findPwButton) {
 
 	findPwButton.addEventListener('click', ajax)
 }
-
-
-
-
-
-
-
-
-
-

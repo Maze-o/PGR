@@ -43,7 +43,7 @@ public class BoardController {
 		return service.selBoardList(p);
 	}
 
-	// 페이징 ajax처리
+	// 페이징 max값 구하는 처리
 	@ResponseBody
 	@GetMapping("/getMaxPageNum")
 	public int selMaxPageNum(BoardDTO p) {
@@ -56,6 +56,7 @@ public class BoardController {
 		return "menus/board/writeEdit";
 	}
 
+	// 글쓰기 ajax처리
 	@PostMapping("/write")
 	@ResponseBody
 	public Map<String, Object> writeEdit(@RequestBody BoardEntity p) {
@@ -80,7 +81,7 @@ public class BoardController {
 		return "/menus/board/writeEdit";
 	}
 
-	// 글쓰기 ajax처리
+	// 글수정 ajax처리
 	@PostMapping("/edit")
 	@ResponseBody
 	public Map<String, Object> edit(@RequestBody BoardEntity p, HttpSession hs) {
@@ -91,7 +92,7 @@ public class BoardController {
 		return map;
 	}
 	
-	// 삭제 ajax처리
+	// delete ajax처리
 	@ResponseBody
 	@DeleteMapping("/del/{boardPk}")
 	public Map<String, Object> delBoard(@RequestBody BoardEntity p, HttpSession hs) {

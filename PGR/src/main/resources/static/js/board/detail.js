@@ -9,7 +9,6 @@ if (btnDelElem) {
 			ajax()
 		}
 	})
-	console.log(pkvalue.value)
 
 	function ajax() {
 		const pk = pkvalue.value

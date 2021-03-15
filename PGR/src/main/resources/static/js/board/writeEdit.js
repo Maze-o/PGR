@@ -16,9 +16,8 @@ if (writeEditBtn) {
 			userPk: userPkElem.value,
 			boardPk: boardPkElem.value
 		}
-		console.log(param)
 
-		fetch(boardPkElem.value == 0 ? 'write' : 'edit', {
+		fetch(boardPkElem.value == 0 ? 'write' : 'edit', { // boardPkElem의 value가 0이면 controller의  write post를 호출 아니면 edit post를 호출
 			method: 'post',
 			headers: {
 				'Content-type': 'application/json',

@@ -52,8 +52,17 @@
 <br>
 <p align="center">
     <img src="/image/SignIn.png">
-
+</p>
 <br>
+
+* **Forgot your password?** - 비밀번호 찾기 버튼입니다. 회원가입 시 등록했던 이메일과 닉네임을 입력하시고 정보가 일치하면 이메일으로 임시 비밀번호가 전송됩니다.
+<br>
+<p align="center">
+    <img src="/image/FindPw.png">
+</p>
+<br>
+
+
 
 * **Sign Up** - 이메일 인증을 통해 회원가입을 진행합니다. 이메일 인증이 완료되지 않으면 다른 정보들을 입력할 수 없습니다.
 <br>

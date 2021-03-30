@@ -8,7 +8,15 @@ if(containerElem) {
 	})
 	
 	function createTable(myJson) {
-		
+		//4일 내에 경기가 없을 경우 표시
+		if (myJson.length === 0) {
+			const list = document.createElement('div')
+			list.innerText = '4일 내에 종료된 경기가 없습니다.'
+			list.classList.add('setgame')
+			containerElem.append(list)
+			return
+		}
+		//betlist와 동일
 		for(var i=0;i<myJson.length;i++) {
 			var ahref = document.createElement('a')
 			var div = document.createElement('div')

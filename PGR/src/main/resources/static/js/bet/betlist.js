@@ -9,6 +9,14 @@ if(containerElem) {
 	})
 	
 	function createTable(myJson) {
+		//4일 내에 경기가 없을 경우 표시
+		if (myJson.length === 0) {
+			const list = document.createElement('div')
+			list.innerText = '4일 내에 예정된 경기가 없습니다.'
+			list.classList.add('setgame')
+			containerElem.append(list)
+			return
+		}
 		//list를 불러왔기 때문에 for문 돌림
 		for(var i=0;i<myJson.length;i++) {
 			var ahref = document.createElement('a')

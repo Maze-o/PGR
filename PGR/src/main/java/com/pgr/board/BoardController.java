@@ -60,8 +60,6 @@ public class BoardController {
 	@PostMapping("/write")
 	@ResponseBody
 	public Map<String, Object> writeEdit(@RequestBody BoardEntity p) {
-		System.out.println("p.getTitle() : " + p.getTitle());
-		System.out.println("p : " + p);
 		Map<String, Object> map = new HashMap<>();
 		map.put(Const.KEY_RESULT, service.insBoard(p));
 		return map;
@@ -95,10 +93,10 @@ public class BoardController {
 	// delete ajax처리
 	@ResponseBody
 	@DeleteMapping("/del/{boardPk}")
-	public Map<String, Object> delBoard(@RequestBody BoardEntity p, HttpSession hs) {
+	public Map<String, Object> delBoard(BoardEntity p, HttpSession hs) {
+
 		p.setUserPk(sUtils.getLoginUserPk(hs));
-		
-		System.out.println("boardPk : " + p.getBoardPk());
+
 		Map<String, Object> map = new HashMap<>();
 		map.put(Const.KEY_DATA, service.delBoard(p));
 		return map;

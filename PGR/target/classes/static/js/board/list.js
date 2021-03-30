@@ -1,6 +1,6 @@
 
 const listContentElem = document.querySelector('#listContent')
-const rowCnt = 10;
+const rowCnt = 9;
 
 function goToDetail(boardPk) {
 	location.href = `/detail?boardPk=${boardPk}`
@@ -133,7 +133,7 @@ const pagingContentElem = document.querySelector('#pagingContent')
  
 function pageProc(myJson) {
 
-	for (let i = 1; i < myJson; i++) {
+	for (let i = 1; i <= myJson; i++) {
 		const span = document.createElement('span')
 		span.innerText = i
 		span.classList.add('pointer')
@@ -145,7 +145,6 @@ function pageProc(myJson) {
 			getBoardList(i)
 
 			const spanList = pagingContentElem.children
-			console.log(spanList)
 			for (let z = 0; z < spanList.length; z++) {
 				spanList[z].classList.remove('selected')
 			}

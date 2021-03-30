@@ -24,7 +24,7 @@
 		ON A.userPk = B.userPk
 		WHERE A.isDel = 0
 		ORDER BY A.boardPk DESC
-		LIMIT #{sIdx}, #{rowCnt};	
+		LIMIT #{sIdx}, #{rowCnt};
 	</select>
 
 	<select id="selBoard" resultType="com.pgr.model.BoardDomain">
@@ -49,7 +49,7 @@
 				<if test="ctnt != null and ctnt !=''">
 						ctnt = #{ctnt},
 				</if>
-				<if test="isDel == 1">
+				<if test="isDel != 0">
 					isDel = 1,
 				</if>
 				

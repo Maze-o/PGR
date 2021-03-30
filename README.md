@@ -25,9 +25,9 @@
 * **Sign In**
 
 * **Sign Up** 
-<br>
-<img scr="/image/Sign Up.JPG" width="100px">
-<br>
+<p align="center">
+    <img scr="/image/Sign Up.JPG" width="100px">
+</p>
 
 ## 3. 사용기술
 

@@ -30,13 +30,11 @@
 <p align="center">
     <img src="/image/gamelist.png">
 </p>
-<br>
 
 <br>
 <p align="center">
     <img src="/image/베팅룸1.png">
 </p>
-<br>
 
 <br>
 <p align="center">
@@ -49,8 +47,6 @@
 <p align="center">
     <img src="/image/endgamelist.png">
 </p>
-<br>
-
 <br>
 <p align="center">
     <img src="/image/endgame.png">

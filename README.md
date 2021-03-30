@@ -26,7 +26,7 @@
 
 * **Sign Up** 
 <p align="center">
-    <img scr="/image/Sign Up.JPG" width="100px">
+    <img scr="/image/SignUp.png">
 </p>
 
 ## 3. 사용기술

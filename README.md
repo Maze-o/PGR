@@ -42,7 +42,7 @@
 </p>
 <br>
 
-종료된 베팅리에서 경기내용을 확인할 수 있습니다.
+종료된 베팅리스트에서 경기내용을 확인할 수 있습니다.
 <br>
 <p align="center">
     <img src="/image/endgamelist.png">

@@ -47,7 +47,6 @@
 <p align="center">
     <img src="/image/endgamelist.png">
 </p>
-<br>
 <p align="center">
     <img src="/image/endgame.png">
 </p>

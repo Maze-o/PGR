@@ -26,7 +26,7 @@
 
 * **Sign Up** - 회원가입
 <p align="center">
-    <img scr="/image/SignUp.png">
+   <img src="/image/SignUp.png">
 <p>
 <br>
 

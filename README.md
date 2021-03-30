@@ -45,7 +45,7 @@
 
 <br>
 <p align="center">
-    <img src="/image/login.png>
+    <img src="/image/LoginMenu.png>
 <p>
 <br>
 

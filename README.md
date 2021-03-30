@@ -125,3 +125,29 @@
 <img src="https://user-images.githubusercontent.com/68638065/112986835-fb2eb500-919c-11eb-8917-539301797403.png" height="100px">
 </p>
 
+## 4. 개발진
+<div align="center">
+<table align="center">
+  <tr>
+    <th align="center"><strong>권혁진</strong></th>
+    <th align="center"><strong>박세현</strong></th>
+    <th align="center"><strong>문수찬</strong></th>
+    <th align="center"><strong>이영훈</strong></th>
+    <th align="center"><strong>정순일</strong></th>
+  </tr>
+  <tr>
+    <td align="center">hj10105@naver.com</td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td align="center">https://github.com/tuktarr</td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
+</table>
+</div>

@@ -24,11 +24,11 @@
 * 
 * **Sign In**
 
-* **Sign Up** 
-* <p align="center">
-*     <img scr="/image/SignUp.png">
-* </p>
-* <br>
+* **Sign Up** - 회원가입
+<p align="center">
+    <img scr="/image/SignUp.png">
+<p>
+<br>
 
 ## 3. 사용기술
 

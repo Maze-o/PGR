@@ -44,10 +44,9 @@
 * **Schedule** -- 지난 6개월 까지의 경기 일정과, 앞으로의 경기 일정을 볼 수 있습니다.
 
 <br>
-<p align="center">
+<p>
     <img src="/image/LoginMenu.png">
 <p>
-<br>
 
 * **Sign In** - 회원가입 시 입력했던 정보로 로그인 합니다.
 <br>

@@ -113,15 +113,15 @@
 <br>
 
 ## 3. 사용기술
-<img src="https://user-images.githubusercontent.com/68638065/112794367-bd009b00-90a1-11eb-9ac5-45936c12c2bf.png">
-<img src="https://user-images.githubusercontent.com/68638065/112794686-4021f100-90a2-11eb-899b-08eabb3a68c0.png">
-<img src="https://user-images.githubusercontent.com/68638065/112795727-e4586780-90a3-11eb-9381-ddb85bb90be2.png">
-<img src="https://user-images.githubusercontent.com/68638065/112795766-f2a68380-90a3-11eb-8aa8-3098b2118b18.png">
-<img src="https://user-images.githubusercontent.com/68638065/112795850-1669c980-90a4-11eb-8ec3-3d3fc9eba1d1.png">
-<img src="https://user-images.githubusercontent.com/68638065/112795937-36998880-90a4-11eb-9e67-5bb46cb423b2.png">
-<img src="https://user-images.githubusercontent.com/68638065/112986749-db978c80-919c-11eb-8867-3b23b32e1f2f.png">
-<img src="https://user-images.githubusercontent.com/68638065/112986778-e6eab800-919c-11eb-9185-e81fc2b9e81c.png">
-<img src="https://user-images.githubusercontent.com/68638065/112986835-fb2eb500-919c-11eb-8917-539301797403.png">
+<img src="https://user-images.githubusercontent.com/68638065/112794367-bd009b00-90a1-11eb-9ac5-45936c12c2bf.png" height="100px">
+<img src="https://user-images.githubusercontent.com/68638065/112794686-4021f100-90a2-11eb-899b-08eabb3a68c0.png" height="100px">
+<img src="https://user-images.githubusercontent.com/68638065/112795727-e4586780-90a3-11eb-9381-ddb85bb90be2.png" height="100px">
+<img src="https://user-images.githubusercontent.com/68638065/112795766-f2a68380-90a3-11eb-8aa8-3098b2118b18.png" height="100px">
+<img src="https://user-images.githubusercontent.com/68638065/112795850-1669c980-90a4-11eb-8ec3-3d3fc9eba1d1.png" height="100px">
+<img src="https://user-images.githubusercontent.com/68638065/112795937-36998880-90a4-11eb-9e67-5bb46cb423b2.png" height="100px">
+<img src="https://user-images.githubusercontent.com/68638065/112986749-db978c80-919c-11eb-8867-3b23b32e1f2f.png" height="100px">
+<img src="https://user-images.githubusercontent.com/68638065/112986778-e6eab800-919c-11eb-9185-e81fc2b9e81c.png" height="100px">
+<img src="https://user-images.githubusercontent.com/68638065/112986835-fb2eb500-919c-11eb-8917-539301797403.png" height="100px">
 
 
 

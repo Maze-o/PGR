@@ -48,6 +48,7 @@
     <img src="/image/login.png>
 <p>
 <br>
+
 * **Sign In** - 회원가입 시 입력했던 정보로 로그인 합니다.
 <br>
 <p align="center">
@@ -62,10 +63,10 @@
 <p>
 <br>
     
-<p align="center">
+<p>
     <img src="/image/MypageBtn.png">
 </p>
-<br>
+
 * **Mypage** -- 비밀번호 수정 및 자신의 베팅 내역과 가지고 있는 포인트를 확인할 수 있습니다.
 <br>
 <p align="center">

@@ -45,7 +45,7 @@
 
 <br>
 <p align="center">
-    <img src="/image/LoginMenu.png>
+    <img src="/image/LoginMenu.png">
 <p>
 <br>
 
@@ -53,7 +53,7 @@
 <br>
 <p align="center">
     <img src="/image/SignIn.png">
-</p>
+
 <br>
 
 * **Sign Up** - 이메일 인증을 통해 회원가입을 진행합니다. 이메일 인증이 완료되지 않으면 다른 정보들을 입력할 수 없습니다.

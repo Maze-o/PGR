@@ -33,7 +33,17 @@
 <br>
 
 * **Mypage** -- 비밀번호 수정 및 자신의 베팅 내역과 가지고 있는 포인트를 확인할 수 있습니다.
+<br>
+<p align="center">
+<img src="/image/마이페이지11.png">
+</p>
+<br>
 
+<br>
+<p align="center">
+<img src="/image/마이페이지22.png">
+</p>
+<br>
 
 * **Team** -- 프리미어 리그 팀들의 정보를 실시간으로 볼 수 있습니다.
 * **Schedule** -- 지난 6개월 까지의 경기 일정과, 앞으로의 경기 일정을 볼 수 있습니다.

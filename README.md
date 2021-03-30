@@ -25,6 +25,12 @@
 * **Notice** -- 관리자 권한을 가진 사람만 공지사항을 작성 할 수 있습니다.
 * **Gallery** -- 로그인 한 사람은 누구나 글을 쓸 수 있습니다.
 * **Betting** -- 회원가입 시, 기본 포인트가 지급됩니다. 그 포인트로 경기의 결과를 예상해 포인트를 걸어볼 수 있습니다.
+진행중인 베팅에 참여할 수 있습니다.
+<br>
+<p align="center">
+    <img src="/image/gamelist.png">
+</p>
+<br>
 
 <br>
 <p align="center">
@@ -38,11 +44,34 @@
 </p>
 <br>
 
+종료된 베팅룸에서 경기내용을 확인할 수 있습니다.
+<br>
+<p align="center">
+    <img src="/image/endgamelist.png">
+</p>
+<br>
+
+<br>
+<p align="center">
+    <img src="/image/endgame.png">
+</p>
+<br>
+
 
 
 * **Team** -- 프리미어 리그 팀들의 정보를 실시간으로 볼 수 있습니다.
-* **Schedule** -- 지난 6개월 까지의 경기 일정과, 앞으로의 경기 일정을 볼 수 있습니다.
+<br>
+<p align="center">
+    <img src="/image/team.png">
+</p>
+<br>
 
+* **Schedule** -- 지난 6개월 까지의 경기 일정과, 앞으로의 경기 일정을 볼 수 있습니다.
+<br>
+<p align="center">
+    <img src="/image/schedule.png">
+</p>
+<br>
 <br>
 <p>
     <img src="/image/LoginMenu.png">

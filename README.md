@@ -138,14 +138,14 @@
   <tr>
     <td align="center">hj10105@naver.com</td>
     <td align="center">sh020307@gmail.com</td>
-    <td align="center"></td>
+    <td align="center">msc0101312@gmail.com</td>
     <td align="center">ilsame9970@gmail.com</td>
     <td align="center"></td>
   </tr>
   <tr>
     <td align="center">https://github.com/tuktarr</td>
     <td align="center">https://github.com/sh020308</td>
-    <td align="center"></td>
+    <td align="center">https://github.com/msc010312</td>
     <td align="center">https://github.com/ilsame9970</td>
     <td align="center"></td>
   </tr>

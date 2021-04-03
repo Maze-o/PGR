@@ -3,9 +3,9 @@
 </p>
 
 ## 축구 통계 사이트
-<br>
-<a href="http://118.67.135.225:8080/index" target="_blank">PGR 사이트 링크</a>
-<br>
+
+<a href="http://118.67.135.225:8080" target="_blank">PGR 사이트 링크</a>
+
 ## 목차
 
 1. 개요

@@ -121,7 +121,7 @@
 .txt_field input[name=userEmail],
 #textEmail {
     display: inline-block;
-    width: 35%;
+    width: 450px;
 }
 
 #anno {

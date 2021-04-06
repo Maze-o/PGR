@@ -74,7 +74,14 @@
     <img src="/image/LoginMenu.png">
 <p>
 
-* **Sign In** - 회원가입 시 입력했던 정보로 로그인 합니다.
+<img scr="/image/ChattingModalBtn.png.png">
+
+* **Chatting** -- 사이트에 들어 온 사람들과 실시간으로 채팅을 할 수 있습니다.
+<br>
+<p align="center">
+    <img src="/image/chatting.png">
+
+* **Sign In** -- 회원가입 시 입력했던 정보로 로그인 합니다.
 <br>
 <p align="center">
     <img src="/image/SignIn.png">
@@ -125,6 +132,7 @@
 <img src="https://user-images.githubusercontent.com/68638065/112986749-db978c80-919c-11eb-8867-3b23b32e1f2f.png" height="100px">
 <img src="https://user-images.githubusercontent.com/68638065/112986778-e6eab800-919c-11eb-9185-e81fc2b9e81c.png" height="100px">
 <img src="https://user-images.githubusercontent.com/68638065/112986835-fb2eb500-919c-11eb-8917-539301797403.png" height="100px">
+<img src="/image/css.png" height="100px">
 </p>
 
 ## 4. 개발진

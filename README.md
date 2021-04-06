@@ -70,7 +70,9 @@
 </p>
 <br>
 
-<img scr="/image/ChattingModalBtn.png">
+<p>
+    <img scr="/image/ChattingModalBtn.png">
+</p>   
 
 * **Chatting** -- 사이트에 들어 온 사람들과 실시간으로 채팅을 할 수 있습니다.
 <br>

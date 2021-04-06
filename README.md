@@ -16,6 +16,7 @@
 ## 1. 개요
 ### PGR = 'Premier League + 잘알' 과 'programming + 잘알' 의 두 가지 의미를 가진 프로젝트 이름입니다.
 ### EPL(English Premier League)을 잘 몰라도 즐겁게 볼 수 있도록 도와줄 수 있는 축구 통계사이트입니다.
+<br>
 
 ## 2. 주요기능
 <br>

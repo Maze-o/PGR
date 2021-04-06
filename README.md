@@ -29,7 +29,7 @@
 * **Gallery** -- 로그인 한 사람은 누구나 글을 쓸 수 있습니다.
 <br>
 <p align ="center">
-    <img scr="/image/board.png">
+    <img src="/image/board.png">
 </p>
 <br>
 * **Betting** -- 회원가입 시, 기본 포인트가 지급됩니다. 그 포인트로 경기의 결과를 예상해 포인트를 걸어볼 수 있습니다.

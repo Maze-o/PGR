@@ -69,17 +69,19 @@
     <img src="/image/schedule.png">
 </p>
 <br>
-<br>
-<p>
-    <img src="/image/LoginMenu.png">
-<p>
 
-<img scr="/image/ChattingModalBtn.png.png">
+<img scr="/image/ChattingModalBtn.png">
 
 * **Chatting** -- 사이트에 들어 온 사람들과 실시간으로 채팅을 할 수 있습니다.
 <br>
 <p align="center">
     <img src="/image/chatting.png">
+</p>
+
+<br>
+<p>
+    <img src="/image/LoginMenu.png">
+<p>
 
 * **Sign In** -- 회원가입 시 입력했던 정보로 로그인 합니다.
 <br>

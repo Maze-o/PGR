@@ -4,7 +4,7 @@
 
 ## 축구 통계 사이트
 
-<a href="http://118.67.135.225:8080" target="_blank">PGR 사이트 링크</a>
+<a href="https://www.pgrepl.shop" target="_blank">PGR 사이트 링크</a>
 
 ## 목차
 

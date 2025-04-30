@@ -133,7 +133,7 @@
 <br>
 
 ## 3. 사용기술
-<p align="center">
+<div align="center">
 <img src="https://user-images.githubusercontent.com/68638065/112794367-bd009b00-90a1-11eb-9ac5-45936c12c2bf.png" height="100px">
 <img src="https://user-images.githubusercontent.com/68638065/112794686-4021f100-90a2-11eb-899b-08eabb3a68c0.png" height="100px">
 <img src="https://user-images.githubusercontent.com/68638065/112795727-e4586780-90a3-11eb-9381-ddb85bb90be2.png" height="100px">
@@ -144,7 +144,7 @@
 <img src="https://user-images.githubusercontent.com/68638065/112986778-e6eab800-919c-11eb-9185-e81fc2b9e81c.png" height="100px">
 <img src="https://user-images.githubusercontent.com/68638065/112986835-fb2eb500-919c-11eb-8917-539301797403.png" height="100px">
 <img src="/image/css.png" height="100px">
-</p>
+</div>
 
 ## 4. 개발진
 <div align="center">
